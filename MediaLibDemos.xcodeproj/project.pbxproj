@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F988F2AA15AD843C0083CB14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2514A49BA600C5B39B /* UIKit.framework */; };
+		F988F2AB15AD843C0083CB14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2714A49BA600C5B39B /* Foundation.framework */; };
+		F988F2AC15AD843C0083CB14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */; };
+		F988F2B215AD843C0083CB14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F988F2B015AD843C0083CB14 /* InfoPlist.strings */; };
+		F988F2B415AD843C0083CB14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F988F2B315AD843C0083CB14 /* main.m */; };
+		F988F2B815AD843C0083CB14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F988F2B715AD843C0083CB14 /* AppDelegate.m */; };
+		F988F2BB15AD843C0083CB14 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F988F2B915AD843C0083CB14 /* MainStoryboard_iPhone.storyboard */; };
+		F988F2BE15AD843C0083CB14 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F988F2BC15AD843C0083CB14 /* MainStoryboard_iPad.storyboard */; };
+		F988F2C115AD843C0083CB14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F988F2C015AD843C0083CB14 /* ViewController.m */; };
+		F988F2C515AD844A0083CB14 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */; };
+		F988F2C615AD84540083CB14 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB314A49E2400C5B39B /* AudioToolbox.framework */; };
+		F988F2C715AD84570083CB14 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB414A49E2400C5B39B /* AVFoundation.framework */; };
+		F988F2C815AD84730083CB14 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB514A49E2400C5B39B /* CoreFoundation.framework */; };
+		F988F2C915AD847A0083CB14 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB614A49E2400C5B39B /* CoreMedia.framework */; };
+		F988F2CA15AD847C0083CB14 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB714A49E2400C5B39B /* CoreVideo.framework */; };
+		F988F2CB15AD847E0083CB14 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB914A49E2400C5B39B /* Security.framework */; };
+		F988F2CC15AD84810083CB14 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB814A49E2400C5B39B /* libz.dylib */; };
+		F988F2CD15ADD6020083CB14 /* CommLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA8914A49D0C00C5B39B /* CommLibiOS.a */; };
+		F988F2CE15ADD60B0083CB14 /* MediaLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */; };
+		F988F2CF15ADD6150083CB14 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC497E14F264880007FE13 /* libavcodec.a */; };
+		F988F2D015ADD61C0083CB14 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC497F14F264880007FE13 /* libavdevice.a */; };
+		F988F2D115ADD6200083CB14 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498014F264880007FE13 /* libavfilter.a */; };
+		F988F2D215ADD6250083CB14 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498114F264880007FE13 /* libavformat.a */; };
+		F988F2D315ADD6280083CB14 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498214F264880007FE13 /* libavutil.a */; };
+		F988F2D415ADD62B0083CB14 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498414F264880007FE13 /* libswscale.a */; };
+		F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */; };
+		F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */; };
+		F9F6992215AC5D01004B6F37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2514A49BA600C5B39B /* UIKit.framework */; };
+		F9F6992315AC5D01004B6F37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2714A49BA600C5B39B /* Foundation.framework */; };
+		F9F6992415AC5D01004B6F37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */; };
+		F9F6992A15AC5D01004B6F37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F6992815AC5D01004B6F37 /* InfoPlist.strings */; };
+		F9F6992C15AC5D01004B6F37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F6992B15AC5D01004B6F37 /* main.m */; };
+		F9F6993015AC5D01004B6F37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F6992F15AC5D01004B6F37 /* AppDelegate.m */; };
+		F9F6993315AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F6993115AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard */; };
+		F9F6993615AC5D01004B6F37 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F6993415AC5D01004B6F37 /* MainStoryboard_iPad.storyboard */; };
+		F9F6993915AC5D01004B6F37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F6993815AC5D01004B6F37 /* ViewController.m */; };
+		F9F6993E15AC5FA3004B6F37 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */; };
+		F9F6993F15AC5FAE004B6F37 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB314A49E2400C5B39B /* AudioToolbox.framework */; };
+		F9F6994015AC5FB2004B6F37 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB414A49E2400C5B39B /* AVFoundation.framework */; };
+		F9F6994115AC5FB7004B6F37 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB514A49E2400C5B39B /* CoreFoundation.framework */; };
+		F9F6994215AC5FB9004B6F37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB614A49E2400C5B39B /* CoreMedia.framework */; };
+		F9F6994315AC5FBD004B6F37 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB714A49E2400C5B39B /* CoreVideo.framework */; };
+		F9F6994415AC5FC0004B6F37 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB914A49E2400C5B39B /* Security.framework */; };
+		F9F6994515AC5FC3004B6F37 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB814A49E2400C5B39B /* libz.dylib */; };
+		F9F6994615AC5FCE004B6F37 /* CommLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA8914A49D0C00C5B39B /* CommLibiOS.a */; };
+		F9F6994715AC5FD4004B6F37 /* MediaLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */; };
+		F9F6994815AC5FD7004B6F37 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC497E14F264880007FE13 /* libavcodec.a */; };
+		F9F6994915AC5FE1004B6F37 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC497F14F264880007FE13 /* libavdevice.a */; };
+		F9F6994A15AC5FE7004B6F37 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498014F264880007FE13 /* libavfilter.a */; };
+		F9F6994B15AC5FEA004B6F37 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498114F264880007FE13 /* libavformat.a */; };
+		F9F6994C15AC5FED004B6F37 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498214F264880007FE13 /* libavutil.a */; };
+		F9F6994D15AC5FF0004B6F37 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498414F264880007FE13 /* libswscale.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F988F2AF15AD843C0083CB14 /* RTMPStreamPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTMPStreamPlayer-Info.plist"; sourceTree = "<group>"; };
+		F988F2B115AD843C0083CB14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F988F2B315AD843C0083CB14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F988F2B515AD843C0083CB14 /* RTMPStreamPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTMPStreamPlayer-Prefix.pch"; sourceTree = "<group>"; };
+		F988F2B615AD843C0083CB14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F988F2B715AD843C0083CB14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F988F2BA15AD843C0083CB14 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F988F2BD15AD843C0083CB14 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F988F2BF15AD843C0083CB14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F988F2C015AD843C0083CB14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9BBFA2514A49BA600C5B39B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F9BBFA2714A49BA600C5B39B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F9BBFA8914A49D0C00C5B39B /* CommLibiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = CommLibiOS.a; sourceTree = "<group>"; };
+		F9BBFA8B14A49D0C00C5B39B /* Communication Library for iOS User Guide.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Communication Library for iOS User Guide.pdf"; sourceTree = "<group>"; };
+		F9BBFA8C14A49D0C00C5B39B /* WeborbClient Class Reference.odt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WeborbClient Class Reference.odt"; sourceTree = "<group>"; };
+		F9BBFA8E14A49D0C00C5B39B /* BinaryCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryCodec.h; sourceTree = "<group>"; };
+		F9BBFA8F14A49D0C00C5B39B /* IAttributeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAttributeStore.h; sourceTree = "<group>"; };
+		F9BBFA9014A49D0C00C5B39B /* IClientSharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IClientSharedObject.h; sourceTree = "<group>"; };
+		F9BBFA9114A49D0C00C5B39B /* IClientSharedObjectDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IClientSharedObjectDelegate.h; sourceTree = "<group>"; };
+		F9BBFA9214A49D0C00C5B39B /* IPendingServiceCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPendingServiceCallback.h; sourceTree = "<group>"; };
+		F9BBFA9314A49D0C00C5B39B /* IPersistable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPersistable.h; sourceTree = "<group>"; };
+		F9BBFA9414A49D0C00C5B39B /* IRTMProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRTMProtocol.h; sourceTree = "<group>"; };
+		F9BBFA9514A49D0D00C5B39B /* IServiceCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IServiceCall.h; sourceTree = "<group>"; };
+		F9BBFA9614A49D0D00C5B39B /* ISharedObjectListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISharedObjectListener.h; sourceTree = "<group>"; };
+		F9BBFA9714A49D0D00C5B39B /* Responder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Responder.h; sourceTree = "<group>"; };
+		F9BBFA9814A49D0D00C5B39B /* RTMPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMPClient.h; sourceTree = "<group>"; };
+		F9BBFA9914A49D0D00C5B39B /* WeborbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeborbClient.h; sourceTree = "<group>"; };
+		F9BBFA9F14A49D0D00C5B39B /* BroadcastStreamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastStreamClient.h; sourceTree = "<group>"; };
+		F9BBFAA014A49D0D00C5B39B /* MediaConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaConstants.h; sourceTree = "<group>"; };
+		F9BBFAA114A49D0D00C5B39B /* MediaStreamPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaStreamPlayer.h; sourceTree = "<group>"; };
+		F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MediaLibiOS.a; sourceTree = "<group>"; };
+		F9BBFAB314A49E2400C5B39B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F9BBFAB414A49E2400C5B39B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F9BBFAB514A49E2400C5B39B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F9BBFAB614A49E2400C5B39B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F9BBFAB714A49E2400C5B39B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		F9BBFAB814A49E2400C5B39B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F9BBFAB914A49E2400C5B39B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F9C3DBB01564C72C0006177B /* Media Library for iOS User Guide.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Media Library for iOS User Guide.docx"; sourceTree = "<group>"; };
+		F9C4CE06155966DE00B564C1 /* DEBUG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEBUG.h; sourceTree = "<group>"; };
+		F9C4CE07155966DE00B564C1 /* MemoryTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryTicker.h; sourceTree = "<group>"; };
+		F9C4CE08155966DE00B564C1 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		F9C4CE0A1559671300B564C1 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		F9EC497E14F264880007FE13 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		F9EC497F14F264880007FE13 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
+		F9EC498014F264880007FE13 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
+		F9EC498114F264880007FE13 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		F9EC498214F264880007FE13 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		F9EC498414F264880007FE13 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
+		F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F9F6992015AC5D01004B6F37 /* RTMPStreamPublisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamPublisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F6992715AC5D01004B6F37 /* RTMPStreamPublisher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTMPStreamPublisher-Info.plist"; sourceTree = "<group>"; };
+		F9F6992915AC5D01004B6F37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9F6992B15AC5D01004B6F37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9F6992D15AC5D01004B6F37 /* RTMPStreamPublisher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTMPStreamPublisher-Prefix.pch"; sourceTree = "<group>"; };
+		F9F6992E15AC5D01004B6F37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9F6992F15AC5D01004B6F37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9F6993215AC5D01004B6F37 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F9F6993515AC5D01004B6F37 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F9F6993715AC5D01004B6F37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F9F6993815AC5D01004B6F37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F988F2A515AD843B0083CB14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988F2AA15AD843C0083CB14 /* UIKit.framework in Frameworks */,
+				F988F2AB15AD843C0083CB14 /* Foundation.framework in Frameworks */,
+				F988F2AC15AD843C0083CB14 /* CoreGraphics.framework in Frameworks */,
+				F988F2C515AD844A0083CB14 /* CFNetwork.framework in Frameworks */,
+				F988F2C615AD84540083CB14 /* AudioToolbox.framework in Frameworks */,
+				F988F2C715AD84570083CB14 /* AVFoundation.framework in Frameworks */,
+				F988F2C815AD84730083CB14 /* CoreFoundation.framework in Frameworks */,
+				F988F2C915AD847A0083CB14 /* CoreMedia.framework in Frameworks */,
+				F988F2CA15AD847C0083CB14 /* CoreVideo.framework in Frameworks */,
+				F988F2CB15AD847E0083CB14 /* Security.framework in Frameworks */,
+				F988F2CC15AD84810083CB14 /* libz.dylib in Frameworks */,
+				F988F2CD15ADD6020083CB14 /* CommLibiOS.a in Frameworks */,
+				F988F2CE15ADD60B0083CB14 /* MediaLibiOS.a in Frameworks */,
+				F988F2CF15ADD6150083CB14 /* libavcodec.a in Frameworks */,
+				F988F2D015ADD61C0083CB14 /* libavdevice.a in Frameworks */,
+				F988F2D115ADD6200083CB14 /* libavfilter.a in Frameworks */,
+				F988F2D215ADD6250083CB14 /* libavformat.a in Frameworks */,
+				F988F2D315ADD6280083CB14 /* libavutil.a in Frameworks */,
+				F988F2D415ADD62B0083CB14 /* libswscale.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9F6991D15AC5D01004B6F37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F6992215AC5D01004B6F37 /* UIKit.framework in Frameworks */,
+				F9F6992315AC5D01004B6F37 /* Foundation.framework in Frameworks */,
+				F9F6992415AC5D01004B6F37 /* CoreGraphics.framework in Frameworks */,
+				F9F6993E15AC5FA3004B6F37 /* CFNetwork.framework in Frameworks */,
+				F9F6993F15AC5FAE004B6F37 /* AudioToolbox.framework in Frameworks */,
+				F9F6994015AC5FB2004B6F37 /* AVFoundation.framework in Frameworks */,
+				F9F6994115AC5FB7004B6F37 /* CoreFoundation.framework in Frameworks */,
+				F9F6994215AC5FB9004B6F37 /* CoreMedia.framework in Frameworks */,
+				F9F6994315AC5FBD004B6F37 /* CoreVideo.framework in Frameworks */,
+				F9F6994415AC5FC0004B6F37 /* Security.framework in Frameworks */,
+				F9F6994515AC5FC3004B6F37 /* libz.dylib in Frameworks */,
+				F9F6994615AC5FCE004B6F37 /* CommLibiOS.a in Frameworks */,
+				F9F6994715AC5FD4004B6F37 /* MediaLibiOS.a in Frameworks */,
+				F9F6994815AC5FD7004B6F37 /* libavcodec.a in Frameworks */,
+				F9F6994915AC5FE1004B6F37 /* libavdevice.a in Frameworks */,
+				F9F6994A15AC5FE7004B6F37 /* libavfilter.a in Frameworks */,
+				F9F6994B15AC5FEA004B6F37 /* libavformat.a in Frameworks */,
+				F9F6994C15AC5FED004B6F37 /* libavutil.a in Frameworks */,
+				F9F6994D15AC5FF0004B6F37 /* libswscale.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F988F2AD15AD843C0083CB14 /* RTMPStreamPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				F988F2BF15AD843C0083CB14 /* ViewController.h */,
+				F988F2C015AD843C0083CB14 /* ViewController.m */,
+				F988F2B615AD843C0083CB14 /* AppDelegate.h */,
+				F988F2B715AD843C0083CB14 /* AppDelegate.m */,
+				F988F2B915AD843C0083CB14 /* MainStoryboard_iPhone.storyboard */,
+				F988F2BC15AD843C0083CB14 /* MainStoryboard_iPad.storyboard */,
+				F988F2AE15AD843C0083CB14 /* Supporting Files */,
+			);
+			path = RTMPStreamPlayer;
+			sourceTree = "<group>";
+		};
+		F988F2AE15AD843C0083CB14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F988F2AF15AD843C0083CB14 /* RTMPStreamPlayer-Info.plist */,
+				F988F2B015AD843C0083CB14 /* InfoPlist.strings */,
+				F988F2B315AD843C0083CB14 /* main.m */,
+				F988F2B515AD843C0083CB14 /* RTMPStreamPlayer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9BBFA1614A49BA500C5B39B = {
+			isa = PBXGroup;
+			children = (
+				F9F3EDB8161070D200B0EA20 /* art */,
+				F9BBFA8714A49D0C00C5B39B /* lib */,
+				F9F6992515AC5D01004B6F37 /* RTMPStreamPublisher */,
+				F988F2AD15AD843C0083CB14 /* RTMPStreamPlayer */,
+				F9BBFA2414A49BA600C5B39B /* Frameworks */,
+				F9BBFA2214A49BA600C5B39B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9BBFA2214A49BA600C5B39B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9F6992015AC5D01004B6F37 /* RTMPStreamPublisher.app */,
+				F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9BBFA2414A49BA600C5B39B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */,
+				F9BBFA2514A49BA600C5B39B /* UIKit.framework */,
+				F9BBFA2714A49BA600C5B39B /* Foundation.framework */,
+				F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */,
+				F9BBFAB314A49E2400C5B39B /* AudioToolbox.framework */,
+				F9BBFAB414A49E2400C5B39B /* AVFoundation.framework */,
+				F9BBFAB514A49E2400C5B39B /* CoreFoundation.framework */,
+				F9BBFAB614A49E2400C5B39B /* CoreMedia.framework */,
+				F9BBFAB714A49E2400C5B39B /* CoreVideo.framework */,
+				F9BBFAB914A49E2400C5B39B /* Security.framework */,
+				F9BBFAB814A49E2400C5B39B /* libz.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9BBFA8714A49D0C00C5B39B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F9BBFA8814A49D0C00C5B39B /* CommLibiOS */,
+				F9BBFA9A14A49D0D00C5B39B /* MediaLibiOS */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		F9BBFA8814A49D0C00C5B39B /* CommLibiOS */ = {
+			isa = PBXGroup;
+			children = (
+				F9BBFA8914A49D0C00C5B39B /* CommLibiOS.a */,
+				F9BBFA8A14A49D0C00C5B39B /* doc */,
+				F9BBFA8D14A49D0C00C5B39B /* include */,
+			);
+			path = CommLibiOS;
+			sourceTree = "<group>";
+		};
+		F9BBFA8A14A49D0C00C5B39B /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				F9BBFA8B14A49D0C00C5B39B /* Communication Library for iOS User Guide.pdf */,
+				F9BBFA8C14A49D0C00C5B39B /* WeborbClient Class Reference.odt */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		F9BBFA8D14A49D0C00C5B39B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F9C4CE06155966DE00B564C1 /* DEBUG.h */,
+				F9C4CE07155966DE00B564C1 /* MemoryTicker.h */,
+				F9C4CE08155966DE00B564C1 /* Types.h */,
+				F9BBFA8E14A49D0C00C5B39B /* BinaryCodec.h */,
+				F9BBFA8F14A49D0C00C5B39B /* IAttributeStore.h */,
+				F9BBFA9014A49D0C00C5B39B /* IClientSharedObject.h */,
+				F9BBFA9114A49D0C00C5B39B /* IClientSharedObjectDelegate.h */,
+				F9BBFA9214A49D0C00C5B39B /* IPendingServiceCallback.h */,
+				F9BBFA9314A49D0C00C5B39B /* IPersistable.h */,
+				F9BBFA9414A49D0C00C5B39B /* IRTMProtocol.h */,
+				F9BBFA9514A49D0D00C5B39B /* IServiceCall.h */,
+				F9BBFA9614A49D0D00C5B39B /* ISharedObjectListener.h */,
+				F9BBFA9714A49D0D00C5B39B /* Responder.h */,
+				F9BBFA9814A49D0D00C5B39B /* RTMPClient.h */,
+				F9BBFA9914A49D0D00C5B39B /* WeborbClient.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F9BBFA9A14A49D0D00C5B39B /* MediaLibiOS */ = {
+			isa = PBXGroup;
+			children = (
+				F9BBFA9B14A49D0D00C5B39B /* doc */,
+				F9BBFA9E14A49D0D00C5B39B /* include */,
+				F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */,
+				F9EC497E14F264880007FE13 /* libavcodec.a */,
+				F9EC497F14F264880007FE13 /* libavdevice.a */,
+				F9EC498014F264880007FE13 /* libavfilter.a */,
+				F9EC498114F264880007FE13 /* libavformat.a */,
+				F9EC498214F264880007FE13 /* libavutil.a */,
+				F9EC498414F264880007FE13 /* libswscale.a */,
+			);
+			path = MediaLibiOS;
+			sourceTree = "<group>";
+		};
+		F9BBFA9B14A49D0D00C5B39B /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				F9C3DBB01564C72C0006177B /* Media Library for iOS User Guide.docx */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		F9BBFA9E14A49D0D00C5B39B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F9C4CE0A1559671300B564C1 /* VideoPlayer.h */,
+				F9BBFA9F14A49D0D00C5B39B /* BroadcastStreamClient.h */,
+				F9BBFAA014A49D0D00C5B39B /* MediaConstants.h */,
+				F9BBFAA114A49D0D00C5B39B /* MediaStreamPlayer.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F9F3EDB8161070D200B0EA20 /* art */ = {
+			isa = PBXGroup;
+			children = (
+				F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */,
+			);
+			path = art;
+			sourceTree = "<group>";
+		};
+		F9F6992515AC5D01004B6F37 /* RTMPStreamPublisher */ = {
+			isa = PBXGroup;
+			children = (
+				F9F6993715AC5D01004B6F37 /* ViewController.h */,
+				F9F6993815AC5D01004B6F37 /* ViewController.m */,
+				F9F6992E15AC5D01004B6F37 /* AppDelegate.h */,
+				F9F6992F15AC5D01004B6F37 /* AppDelegate.m */,
+				F9F6993115AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard */,
+				F9F6993415AC5D01004B6F37 /* MainStoryboard_iPad.storyboard */,
+				F9F6992615AC5D01004B6F37 /* Supporting Files */,
+			);
+			path = RTMPStreamPublisher;
+			sourceTree = "<group>";
+		};
+		F9F6992615AC5D01004B6F37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9F6992715AC5D01004B6F37 /* RTMPStreamPublisher-Info.plist */,
+				F9F6992815AC5D01004B6F37 /* InfoPlist.strings */,
+				F9F6992B15AC5D01004B6F37 /* main.m */,
+				F9F6992D15AC5D01004B6F37 /* RTMPStreamPublisher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F988F2A715AD843B0083CB14 /* RTMPStreamPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F988F2C215AD843C0083CB14 /* Build configuration list for PBXNativeTarget "RTMPStreamPlayer" */;
+			buildPhases = (
+				F988F2A415AD843B0083CB14 /* Sources */,
+				F988F2A515AD843B0083CB14 /* Frameworks */,
+				F988F2A615AD843B0083CB14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RTMPStreamPlayer;
+			productName = RTMPStreamPlayer;
+			productReference = F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9F6991F15AC5D01004B6F37 /* RTMPStreamPublisher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9F6993C15AC5D01004B6F37 /* Build configuration list for PBXNativeTarget "RTMPStreamPublisher" */;
+			buildPhases = (
+				F9F6991C15AC5D01004B6F37 /* Sources */,
+				F9F6991D15AC5D01004B6F37 /* Frameworks */,
+				F9F6991E15AC5D01004B6F37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RTMPStreamPublisher;
+			productName = RTMPStreamPublisher;
+			productReference = F9F6992015AC5D01004B6F37 /* RTMPStreamPublisher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9BBFA1814A49BA500C5B39B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "The Midnight Coders, Inc.";
+			};
+			buildConfigurationList = F9BBFA1B14A49BA500C5B39B /* Build configuration list for PBXProject "MediaLibDemos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F9BBFA1614A49BA500C5B39B;
+			productRefGroup = F9BBFA2214A49BA600C5B39B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9F6991F15AC5D01004B6F37 /* RTMPStreamPublisher */,
+				F988F2A715AD843B0083CB14 /* RTMPStreamPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F988F2A615AD843B0083CB14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988F2B215AD843C0083CB14 /* InfoPlist.strings in Resources */,
+				F988F2BB15AD843C0083CB14 /* MainStoryboard_iPhone.storyboard in Resources */,
+				F988F2BE15AD843C0083CB14 /* MainStoryboard_iPad.storyboard in Resources */,
+				F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9F6991E15AC5D01004B6F37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F6992A15AC5D01004B6F37 /* InfoPlist.strings in Resources */,
+				F9F6993315AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard in Resources */,
+				F9F6993615AC5D01004B6F37 /* MainStoryboard_iPad.storyboard in Resources */,
+				F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F988F2A415AD843B0083CB14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F988F2B415AD843C0083CB14 /* main.m in Sources */,
+				F988F2B815AD843C0083CB14 /* AppDelegate.m in Sources */,
+				F988F2C115AD843C0083CB14 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9F6991C15AC5D01004B6F37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F6992C15AC5D01004B6F37 /* main.m in Sources */,
+				F9F6993015AC5D01004B6F37 /* AppDelegate.m in Sources */,
+				F9F6993915AC5D01004B6F37 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F988F2B015AD843C0083CB14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988F2B115AD843C0083CB14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F988F2B915AD843C0083CB14 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988F2BA15AD843C0083CB14 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F988F2BC15AD843C0083CB14 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F988F2BD15AD843C0083CB14 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F9F6992815AC5D01004B6F37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F6992915AC5D01004B6F37 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9F6993115AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F6993215AC5D01004B6F37 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F9F6993415AC5D01004B6F37 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F6993515AC5D01004B6F37 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F988F2C315AD843C0083CB14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTMPStreamPlayer/RTMPStreamPlayer-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "RTMPStreamPlayer/RTMPStreamPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/CommLibiOS\"",
+					"\"$(SRCROOT)/lib/MediaLibiOS\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F988F2C415AD843C0083CB14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTMPStreamPlayer/RTMPStreamPlayer-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "RTMPStreamPlayer/RTMPStreamPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/CommLibiOS\"",
+					"\"$(SRCROOT)/lib/MediaLibiOS\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F9BBFA4014A49BA700C5B39B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 i386";
+			};
+			name = Debug;
+		};
+		F9BBFA4114A49BA700C5B39B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv6 armv7 i386";
+			};
+			name = Release;
+		};
+		F9F6993A15AC5D01004B6F37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTMPStreamPublisher/RTMPStreamPublisher-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "RTMPStreamPublisher/RTMPStreamPublisher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/CommLibiOS\"",
+					"\"$(SRCROOT)/lib/MediaLibiOS\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F9F6993B15AC5D01004B6F37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTMPStreamPublisher/RTMPStreamPublisher-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "RTMPStreamPublisher/RTMPStreamPublisher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/CommLibiOS\"",
+					"\"$(SRCROOT)/lib/MediaLibiOS\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F988F2C215AD843C0083CB14 /* Build configuration list for PBXNativeTarget "RTMPStreamPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F988F2C315AD843C0083CB14 /* Debug */,
+				F988F2C415AD843C0083CB14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9BBFA1B14A49BA500C5B39B /* Build configuration list for PBXProject "MediaLibDemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9BBFA4014A49BA700C5B39B /* Debug */,
+				F9BBFA4114A49BA700C5B39B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9F6993C15AC5D01004B6F37 /* Build configuration list for PBXNativeTarget "RTMPStreamPublisher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9F6993A15AC5D01004B6F37 /* Debug */,
+				F9F6993B15AC5D01004B6F37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9BBFA1814A49BA500C5B39B /* Project object */;
+}
