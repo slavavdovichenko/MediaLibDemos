@@ -35,7 +35,7 @@
     streamTextField.text = @"slavav";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
@@ -60,9 +60,10 @@
 
 -(void)doConnect {
     
+    //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
     upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
-    upstream.delegate = self;
     [upstream setPreviewLayer:previewView orientation:AVCaptureVideoOrientationPortrait];
+    upstream.delegate = self;
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];  
     
     btnConnect.title = @"Disconnect"; 

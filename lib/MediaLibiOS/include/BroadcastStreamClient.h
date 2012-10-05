@@ -24,12 +24,14 @@ enum publish_type
 	PUBLISH_LIVE,
 };
 
+typedef enum video_mode VideoMode;
 enum video_mode
 {
     VIDEO_CAPTURE,
     VIDEO_CUSTOM,
 };
 
+typedef enum audio_mode AudioMode;
 enum audio_mode
 {
     AUDIO_ON,
@@ -81,7 +83,7 @@ enum audio_mode
     CVPixelBufferRef frameBuffer;
 	BOOL             isUsingFrontFacingCamera;
     unsigned int     pixelFormatType;
-    int              videoMode;
+    VideoMode        videoMode;
     BOOL             locked;
    
     // audio
@@ -90,7 +92,7 @@ enum audio_mode
     AudioStreamBasicDescription	recordFormat;
     AudioQueueRef				queue;
     AudioQueueBufferRef			buffers[kNumberRecordBuffers];
-    int                         audioMode;
+    AudioMode                   audioMode;
     BOOL						isAudioRunning;
 }
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
@@ -102,9 +104,13 @@ enum audio_mode
 -(id)initWithClient:(RTMPClient *)client;
 -(id)init:(NSString *)url resolution:(VideoEncoderResolution)resolution;
 -(id)initWithClient:(RTMPClient *)client resolution:(VideoEncoderResolution)resolution;
+-(id)initOnlyAudio:(NSString *)url;
+-(id)initOnlyAudioWithClient:(RTMPClient *)client;
+-(id)initOnlyVideo:(NSString *)url resolution:(VideoEncoderResolution)resolution;
+-(id)initOnlyVideoWithClient:(RTMPClient *)client resolution:(VideoEncoderResolution)resolution;
 
--(void)setVideoMode:(int)mode;
--(void)setAudioMode:(int)mode;
+-(BOOL)setVideoMode:(VideoMode)mode;
+-(BOOL)setAudioMode:(AudioMode)mode;
 -(void)setPreviewLayer:(UIView *)preview orientation:(AVCaptureVideoOrientation)orientation;
 -(void)teardownPreviewLayer;
 -(void)switchCameras;
