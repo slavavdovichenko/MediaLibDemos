@@ -109,6 +109,7 @@ enum audio_mode
 -(id)initOnlyVideo:(NSString *)url resolution:(VideoEncoderResolution)resolution;
 -(id)initOnlyVideoWithClient:(RTMPClient *)client resolution:(VideoEncoderResolution)resolution;
 
+-(void)setVideoResolution:(VideoEncoderResolution)resolution;
 -(BOOL)setVideoMode:(VideoMode)mode;
 -(BOOL)setAudioMode:(AudioMode)mode;
 -(void)setPreviewLayer:(UIView *)preview orientation:(AVCaptureVideoOrientation)orientation;
