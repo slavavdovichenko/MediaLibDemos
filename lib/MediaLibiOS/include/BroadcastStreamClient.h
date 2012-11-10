@@ -110,10 +110,7 @@ enum audio_mode
 -(id)initOnlyVideoWithClient:(RTMPClient *)client resolution:(VideoEncoderResolution)resolution;
 
 -(void)setVideoResolution:(VideoEncoderResolution)resolution;
-<<<<<<< HEAD
-=======
 -(void)setVideoOrientation:(AVCaptureVideoOrientation)orientation;
->>>>>>> Added sound classes
 -(BOOL)setVideoMode:(VideoMode)mode;
 -(BOOL)setAudioMode:(AudioMode)mode;
 -(void)setPreviewLayer:(UIView *)preview;
