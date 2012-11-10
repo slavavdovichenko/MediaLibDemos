@@ -11,14 +11,20 @@
 @interface Fault : NSObject {
     NSString    *message;
     NSString    *detail;
+    NSString    *faultCode;
 }
 @property (nonatomic, readonly) NSString *message;
 @property (nonatomic, readonly) NSString *detail;
+@property (nonatomic, readonly) NSString *faultCode;
 
 -(id)initWithMessage:(NSString *)_message;
 -(id)initWithMessage:(NSString *)_message detail:(NSString *)_detail;
+-(id)initWithMessage:(NSString *)_message faultCode:(NSString *)_faultCode;
+-(id)initWithMessage:(NSString *)_message detail:(NSString *)_detail faultCode:(NSString *)_faultCode;
 +(id)fault:(NSString *)_message;
 +(id)fault:(NSString *)_message detail:(NSString *)_detail;
++(id)fault:(NSString *)_message faultCode:(NSString *)_faultCode;
++(id)fault:(NSString *)_message detail:(NSString *)_detail faultCode:(NSString *)_faultCode;
 @end
 
 
@@ -38,7 +44,6 @@
 
 @protocol IResponder <NSObject>
 -(id)responseHandler:(id)response;
-//-(void)responseHandler:(id)response;
 -(void)errorHandler:(Fault *)fault;
 @end
 

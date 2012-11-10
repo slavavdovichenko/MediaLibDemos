@@ -65,7 +65,7 @@
     player = [[MediaStreamPlayer alloc] init:hostTextField.text];
     player.delegate = self;
     player.player = _player;
-    player.isSynchronization = YES;
+    //player.isSynchronization = YES;
     [player stream:streamTextField.text];    
     
     btnConnect.title = @"Disconnect"; 

@@ -10,10 +10,11 @@
 #import "MediaConstants.h"
 #import "RTMPClient.h"
 
-#define INITIAL_BUFFER_SIZE 2500
+//#define INITIAL_BUFFER_SIZE 2500
+#define INITIAL_BUFFER_SIZE 256
 
 @protocol IVideoPlayer;
-@class AudioStream, VideoStream, SysTimer;
+@class AudioStream, VideoStream, SysTimer, NellyMoserDecoder;
 
 @interface MediaStreamPlayer : NSObject {
 	
@@ -47,7 +48,8 @@
     int         videoTimestamp;
     
     // audio stream
-    AudioStream *audio;
+    //AudioStream *audio;
+    NellyMoserDecoder *audio;
     // video stream
     VideoStream *video;
     
