@@ -11,7 +11,11 @@
 #import "RTMPClient.h"
 
 //#define INITIAL_BUFFER_SIZE 2500
+<<<<<<< HEAD
 #define INITIAL_BUFFER_SIZE 256
+=======
+#define INITIAL_BUFFER_SIZE 1000
+>>>>>>> commit
 
 @protocol IVideoPlayer;
 @class AudioStream, VideoStream, SysTimer, NellyMoserDecoder;
