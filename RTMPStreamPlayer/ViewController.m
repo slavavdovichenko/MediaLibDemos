@@ -35,7 +35,7 @@
     streamTextField.text = @"slavav";
 	streamTextField.delegate = self;
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
     
 }
 
