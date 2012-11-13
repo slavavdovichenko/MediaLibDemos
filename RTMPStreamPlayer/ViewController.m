@@ -7,12 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "VideoPlayer.h"
 #import "DEBUG.h"
+#import "VideoPlayer.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
@@ -35,7 +32,7 @@
     streamTextField.text = @"slavav";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
@@ -44,8 +41,8 @@
     // Release any retained subviews of the main view.
 }
 
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark -
@@ -65,7 +62,6 @@
     player = [[MediaStreamPlayer alloc] init:hostTextField.text];
     player.delegate = self;
     player.player = _player;
-    //player.isSynchronization = YES;
     [player stream:streamTextField.text];    
     
     btnConnect.title = @"Disconnect"; 
@@ -109,14 +105,7 @@
 }
 
 #pragma mark -
-#pragma mark UIAlertViewDelegate Methods 
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(int)index {
-	//[alertView release];	
-}
-
-#pragma mark -
-#pragma mark UITextFieldDelegate Methods 
+#pragma mark UITextFieldDelegate Methods
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
@@ -124,9 +113,9 @@
 }
 
 #pragma mark -
-#pragma mark IMediaStreamEvent Methods 
+#pragma mark IMediaStreamEvent Methods
 
--(void)stateChanged:(MediaStreamState)state description:(NSString *)description {
+-(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@", (int)state, description);
     
@@ -135,7 +124,7 @@
         case CONN_DISCONNECTED: {
             
             [self doDisconnect];
-            [self showAlert:[NSString stringWithString:description]];   
+            [self showAlert:[NSString stringWithString:description]];
             
             break;
         }
@@ -166,7 +155,7 @@
             if ([description isEqualToString:@"NetStream.Play.StreamNotFound"]) {
                 
                 [player stop];
-                [self showAlert:[NSString stringWithString:description]];   
+                [self showAlert:[NSString stringWithString:description]];
                 
                 break;
             }
@@ -181,15 +170,15 @@
     }
 }
 
--(void)connectFailed:(int)code description:(NSString *)description {
+-(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
     
     [self doDisconnect];
     
-    [self showAlert:(code == -1) ? 
-     [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] : 
-     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];    
+    [self showAlert:(code == -1) ?
+     [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] :
+     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
 }
 
 @end

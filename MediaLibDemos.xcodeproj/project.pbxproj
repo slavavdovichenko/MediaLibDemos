@@ -59,6 +59,34 @@
 		F9F6994B15AC5FEA004B6F37 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498114F264880007FE13 /* libavformat.a */; };
 		F9F6994C15AC5FED004B6F37 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498214F264880007FE13 /* libavutil.a */; };
 		F9F6994D15AC5FF0004B6F37 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498414F264880007FE13 /* libswscale.a */; };
+		F9F7031E1652641D004FCA9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2514A49BA600C5B39B /* UIKit.framework */; };
+		F9F7031F1652641D004FCA9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2714A49BA600C5B39B /* Foundation.framework */; };
+		F9F703201652641D004FCA9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */; };
+		F9F703261652641D004FCA9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F703241652641D004FCA9B /* InfoPlist.strings */; };
+		F9F703281652641D004FCA9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F703271652641D004FCA9B /* main.m */; };
+		F9F7032C1652641D004FCA9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F7032B1652641D004FCA9B /* AppDelegate.m */; };
+		F9F7032E1652641D004FCA9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F7032D1652641D004FCA9B /* Default.png */; };
+		F9F703301652641D004FCA9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F7032F1652641D004FCA9B /* Default@2x.png */; };
+		F9F703321652641D004FCA9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F703311652641D004FCA9B /* Default-568h@2x.png */; };
+		F9F703351652641D004FCA9B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F703331652641D004FCA9B /* MainStoryboard_iPhone.storyboard */; };
+		F9F703381652641D004FCA9B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F703361652641D004FCA9B /* MainStoryboard_iPad.storyboard */; };
+		F9F7033B1652641D004FCA9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F7033A1652641D004FCA9B /* ViewController.m */; };
+		F9F703401652646B004FCA9B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */; };
+		F9F7034116526472004FCA9B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB314A49E2400C5B39B /* AudioToolbox.framework */; };
+		F9F7034216526476004FCA9B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB414A49E2400C5B39B /* AVFoundation.framework */; };
+		F9F703431652647A004FCA9B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB514A49E2400C5B39B /* CoreFoundation.framework */; };
+		F9F703441652647D004FCA9B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB614A49E2400C5B39B /* CoreMedia.framework */; };
+		F9F7034516526481004FCA9B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB714A49E2400C5B39B /* CoreVideo.framework */; };
+		F9F7034616526484004FCA9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB914A49E2400C5B39B /* Security.framework */; };
+		F9F7034716526488004FCA9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB814A49E2400C5B39B /* libz.dylib */; };
+		F9F7034816526499004FCA9B /* CommLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA8914A49D0C00C5B39B /* CommLibiOS.a */; };
+		F9F70349165264A7004FCA9B /* MediaLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */; };
+		F9F7034A165264AF004FCA9B /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC497E14F264880007FE13 /* libavcodec.a */; };
+		F9F7034B165264B2004FCA9B /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC497F14F264880007FE13 /* libavdevice.a */; };
+		F9F7034C165264B6004FCA9B /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498014F264880007FE13 /* libavfilter.a */; };
+		F9F7034D165264C1004FCA9B /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498114F264880007FE13 /* libavformat.a */; };
+		F9F7034E165264C5004FCA9B /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498214F264880007FE13 /* libavutil.a */; };
+		F9F7034F165264C9004FCA9B /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498414F264880007FE13 /* libswscale.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +154,20 @@
 		F9F6993515AC5D01004B6F37 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F9F6993715AC5D01004B6F37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F9F6993815AC5D01004B6F37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9F7031C1652641D004FCA9B /* RTMPStreamComeback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamComeback.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F703231652641D004FCA9B /* RTMPStreamComeback-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTMPStreamComeback-Info.plist"; sourceTree = "<group>"; };
+		F9F703251652641D004FCA9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9F703271652641D004FCA9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9F703291652641D004FCA9B /* RTMPStreamComeback-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTMPStreamComeback-Prefix.pch"; sourceTree = "<group>"; };
+		F9F7032A1652641D004FCA9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9F7032B1652641D004FCA9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9F7032D1652641D004FCA9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F9F7032F1652641D004FCA9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F9F703311652641D004FCA9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F9F703341652641D004FCA9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F9F703371652641D004FCA9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F9F703391652641D004FCA9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F9F7033A1652641D004FCA9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +223,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9F703191652641D004FCA9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F7031E1652641D004FCA9B /* UIKit.framework in Frameworks */,
+				F9F7031F1652641D004FCA9B /* Foundation.framework in Frameworks */,
+				F9F703201652641D004FCA9B /* CoreGraphics.framework in Frameworks */,
+				F9F703401652646B004FCA9B /* CFNetwork.framework in Frameworks */,
+				F9F7034116526472004FCA9B /* AudioToolbox.framework in Frameworks */,
+				F9F7034216526476004FCA9B /* AVFoundation.framework in Frameworks */,
+				F9F703431652647A004FCA9B /* CoreFoundation.framework in Frameworks */,
+				F9F703441652647D004FCA9B /* CoreMedia.framework in Frameworks */,
+				F9F7034616526484004FCA9B /* Security.framework in Frameworks */,
+				F9F7034516526481004FCA9B /* CoreVideo.framework in Frameworks */,
+				F9F7034716526488004FCA9B /* libz.dylib in Frameworks */,
+				F9F7034816526499004FCA9B /* CommLibiOS.a in Frameworks */,
+				F9F70349165264A7004FCA9B /* MediaLibiOS.a in Frameworks */,
+				F9F7034A165264AF004FCA9B /* libavcodec.a in Frameworks */,
+				F9F7034B165264B2004FCA9B /* libavdevice.a in Frameworks */,
+				F9F7034C165264B6004FCA9B /* libavfilter.a in Frameworks */,
+				F9F7034D165264C1004FCA9B /* libavformat.a in Frameworks */,
+				F9F7034E165264C5004FCA9B /* libavutil.a in Frameworks */,
+				F9F7034F165264C9004FCA9B /* libswscale.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -216,6 +284,7 @@
 				F9BBFA8714A49D0C00C5B39B /* lib */,
 				F9F6992515AC5D01004B6F37 /* RTMPStreamPublisher */,
 				F988F2AD15AD843C0083CB14 /* RTMPStreamPlayer */,
+				F9F703211652641D004FCA9B /* RTMPStreamComeback */,
 				F9BBFA2414A49BA600C5B39B /* Frameworks */,
 				F9BBFA2214A49BA600C5B39B /* Products */,
 			);
@@ -226,6 +295,7 @@
 			children = (
 				F9F6992015AC5D01004B6F37 /* RTMPStreamPublisher.app */,
 				F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */,
+				F9F7031C1652641D004FCA9B /* RTMPStreamComeback.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +436,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9F703211652641D004FCA9B /* RTMPStreamComeback */ = {
+			isa = PBXGroup;
+			children = (
+				F9F703391652641D004FCA9B /* ViewController.h */,
+				F9F7033A1652641D004FCA9B /* ViewController.m */,
+				F9F7032A1652641D004FCA9B /* AppDelegate.h */,
+				F9F7032B1652641D004FCA9B /* AppDelegate.m */,
+				F9F703331652641D004FCA9B /* MainStoryboard_iPhone.storyboard */,
+				F9F703361652641D004FCA9B /* MainStoryboard_iPad.storyboard */,
+				F9F703221652641D004FCA9B /* Supporting Files */,
+			);
+			path = RTMPStreamComeback;
+			sourceTree = "<group>";
+		};
+		F9F703221652641D004FCA9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9F703231652641D004FCA9B /* RTMPStreamComeback-Info.plist */,
+				F9F703241652641D004FCA9B /* InfoPlist.strings */,
+				F9F703271652641D004FCA9B /* main.m */,
+				F9F703291652641D004FCA9B /* RTMPStreamComeback-Prefix.pch */,
+				F9F7032D1652641D004FCA9B /* Default.png */,
+				F9F7032F1652641D004FCA9B /* Default@2x.png */,
+				F9F703311652641D004FCA9B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,6 +501,23 @@
 			productReference = F9F6992015AC5D01004B6F37 /* RTMPStreamPublisher.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F9F7031B1652641D004FCA9B /* RTMPStreamComeback */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9F7033E1652641D004FCA9B /* Build configuration list for PBXNativeTarget "RTMPStreamComeback" */;
+			buildPhases = (
+				F9F703181652641D004FCA9B /* Sources */,
+				F9F703191652641D004FCA9B /* Frameworks */,
+				F9F7031A1652641D004FCA9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RTMPStreamComeback;
+			productName = RTMPStreamComeback;
+			productReference = F9F7031C1652641D004FCA9B /* RTMPStreamComeback.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -426,6 +541,7 @@
 			targets = (
 				F9F6991F15AC5D01004B6F37 /* RTMPStreamPublisher */,
 				F988F2A715AD843B0083CB14 /* RTMPStreamPlayer */,
+				F9F7031B1652641D004FCA9B /* RTMPStreamComeback */,
 			);
 		};
 /* End PBXProject section */
@@ -453,6 +569,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9F7031A1652641D004FCA9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F703261652641D004FCA9B /* InfoPlist.strings in Resources */,
+				F9F7032E1652641D004FCA9B /* Default.png in Resources */,
+				F9F703301652641D004FCA9B /* Default@2x.png in Resources */,
+				F9F703321652641D004FCA9B /* Default-568h@2x.png in Resources */,
+				F9F703351652641D004FCA9B /* MainStoryboard_iPhone.storyboard in Resources */,
+				F9F703381652641D004FCA9B /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -473,6 +602,16 @@
 				F9F6992C15AC5D01004B6F37 /* main.m in Sources */,
 				F9F6993015AC5D01004B6F37 /* AppDelegate.m in Sources */,
 				F9F6993915AC5D01004B6F37 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9F703181652641D004FCA9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F703281652641D004FCA9B /* main.m in Sources */,
+				F9F7032C1652641D004FCA9B /* AppDelegate.m in Sources */,
+				F9F7033B1652641D004FCA9B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +662,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9F6993515AC5D01004B6F37 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F9F703241652641D004FCA9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F703251652641D004FCA9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9F703331652641D004FCA9B /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F703341652641D004FCA9B /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F9F703361652641D004FCA9B /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F703371652641D004FCA9B /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -663,6 +826,53 @@
 			};
 			name = Release;
 		};
+		F9F7033C1652641D004FCA9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTMPStreamComeback/RTMPStreamComeback-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "RTMPStreamComeback/RTMPStreamComeback-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/CommLibiOS\"",
+					"\"$(SRCROOT)/lib/MediaLibiOS\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F9F7033D1652641D004FCA9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RTMPStreamComeback/RTMPStreamComeback-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "RTMPStreamComeback/RTMPStreamComeback-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/CommLibiOS\"",
+					"\"$(SRCROOT)/lib/MediaLibiOS\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -692,6 +902,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F9F7033E1652641D004FCA9B /* Build configuration list for PBXNativeTarget "RTMPStreamComeback" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9F7033C1652641D004FCA9B /* Debug */,
+				F9F7033D1652641D004FCA9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

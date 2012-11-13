@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MediaStreamPlayer.h"
 
-@interface ViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate, IMediaStreamEvent> {
+@interface ViewController : UIViewController <UITextFieldDelegate, IMediaStreamEvent> {
     
     MediaStreamPlayer       *player;
-    
+
 	IBOutlet UITextField	*hostTextField;
 	IBOutlet UITextField	*streamTextField;
     IBOutlet UIImageView    *previewView;

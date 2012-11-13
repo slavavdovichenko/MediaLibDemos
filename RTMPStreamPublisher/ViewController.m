@@ -9,12 +9,8 @@
 #import "ViewController.h"
 #import "DEBUG.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
-
 
 #pragma mark -
 #pragma mark  View lifecycle
@@ -44,10 +40,9 @@
     // Release any retained subviews of the main view.
 }
 
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
-
 
 #pragma mark -
 #pragma mark Private Methods 
@@ -115,6 +110,7 @@
  
 }
 
+
 #pragma mark -
 #pragma mark UITextFieldDelegate Methods 
 
@@ -126,7 +122,7 @@
 #pragma mark -
 #pragma mark IMediaStreamEvent Methods 
 
--(void)stateChanged:(MediaStreamState)state description:(NSString *)description {
+-(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@", (int)state, description);
     
@@ -178,7 +174,7 @@
     }
 }
 
--(void)connectFailed:(int)code description:(NSString *)description {
+-(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
     
