@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RTMPClient.h"
 #import "BroadcastStreamClient.h"
 #import "MediaStreamPlayer.h"
 
 @interface ViewController : UIViewController <IMediaStreamEvent> {
     
-    RTMPClient              *client;
-    BroadcastStreamClient   *upstream;
-    MediaStreamPlayer       *player;
+    BroadcastStreamClient    *upstream;
+    MediaStreamPlayer        *player;
     
-    IBOutlet UIView         *previewView;
-    IBOutlet UIImageView    *streamView;
+    UIActivityIndicatorView  *netActivity;
+    
+    IBOutlet UIImageView     *streamView;
     IBOutlet UIBarButtonItem *btnConnect;
     IBOutlet UIBarButtonItem *btnToggle;
     IBOutlet UIBarButtonItem *btnPublish;

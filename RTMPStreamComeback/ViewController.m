@@ -24,14 +24,18 @@ static NSString *stream = @"myStream";
     
     [super viewDidLoad];
     
-    client = nil;
     upstream = nil;
     player = nil;
+	
+	// Create and add the activity indicator
+	netActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	netActivity.center = CGPointMake(160.0f, 200.0f);
+	[self.view addSubview:netActivity];
     
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -54,24 +58,29 @@ static NSString *stream = @"myStream";
 
 -(void)doConnect {
     
-    client = [[RTMPClient alloc] init:host];
-    upstream = [[BroadcastStreamClient alloc] initWithClient:client resolution:RESOLUTION_LOW];
-    //[upstream setAudioMode:AUDIO_OFF];
+    upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_LOW];
     [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
-    [upstream setPreviewLayer:previewView];
-    //
     upstream.delegate = self;
     [upstream stream:stream publishType:PUBLISH_LIVE];
+    
+    [netActivity startAnimating];
     
     btnConnect.title = @"Disconnect";
 }
 
 -(void)doPlay {
     
+    if (player) {
+        [player resume];
+        return;
+    }
+    
+    [self camerasToggle:nil];
+    
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:streamView];
     _player.orientation = UIImageOrientationRight;
     
-    player = [[MediaStreamPlayer alloc] initWithClient:client];
+    player = [[MediaStreamPlayer alloc] init:host];
     player.delegate = self;
     player.player = _player;
     [player stream:stream];
@@ -79,19 +88,20 @@ static NSString *stream = @"myStream";
 
 -(void)doDisconnect {
     
-    [upstream disconnect];
+    if (upstream)
+        [upstream disconnect];
+    if (player)
+        [player disconnect];
+    
     upstream = nil;
     player = nil;
-    client = nil;
     
     btnConnect.title = @"Connect";
     btnToggle.enabled = NO;
     btnPublish.title = @"Start";
     btnPublish.enabled = NO;
     
-    previewView.hidden = YES;
     streamView.hidden = YES;
-    
 }
 
 #pragma mark -
@@ -127,7 +137,7 @@ static NSString *stream = @"myStream";
 
 -(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@", (int)state, description);
+    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: sender = %@, %d = %@", [sender class], (int)state, description);
     
     if (sender == upstream) {
         
@@ -148,14 +158,15 @@ static NSString *stream = @"myStream";
                 
                 [self publishControl:nil];
                 
-                previewView.hidden = NO;
                 btnPublish.enabled = YES;
                 
                 break;
-                
             }
                 
             case STREAM_PAUSED: {
+                
+                if (player)
+                    [player pause];
                 
                 btnPublish.title = @"Start";
                 btnToggle.enabled = NO;
@@ -184,12 +195,13 @@ static NSString *stream = @"myStream";
                 
             case STREAM_CREATED: {
                 
+                [netActivity stopAnimating];
+                
                 [player start];
                 
                 streamView.hidden = NO;
                 
                 break;
-                
             }
                 
             default:
@@ -201,9 +213,6 @@ static NSString *stream = @"myStream";
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
-    
-    if (sender != upstream)
-        return;
     
     [self doDisconnect];
     

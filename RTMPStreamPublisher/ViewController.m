@@ -57,7 +57,7 @@
     
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
     upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
-    //[upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     [upstream setPreviewLayer:previewView];
     upstream.delegate = self;
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];  

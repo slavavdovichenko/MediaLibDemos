@@ -69,6 +69,7 @@ enum audio_mode
     
     // media service
     NSString    *fileName;
+    NSString    *customType;
     PublishType publishType;
     
     // capture session
@@ -97,6 +98,7 @@ enum audio_mode
 }
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
+@property (nonatomic, retain) NSString *customType;
 @property MediaStreamState state;
 @property BOOL isAudioRunning;
 

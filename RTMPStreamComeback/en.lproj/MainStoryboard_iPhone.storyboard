@@ -35,25 +35,15 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="OWD-9I-yCM"/>
                                 </items>
                             </toolbar>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnd-Gt-hYy">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="197" id="YYD-xr-c8j"/>
-                                </constraints>
-                            </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhX-lG-FHZ">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnd-Gt-hYy"/>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UxP-Gw-3KX" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="6vn-qp-rSR"/>
+                            <constraint firstItem="Gnd-Gt-hYy" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="Ady-Io-ta2"/>
                             <constraint firstItem="UxP-Gw-3KX" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Hm0-sj-b8A"/>
-                            <constraint firstAttribute="bottom" secondItem="fhX-lG-FHZ" secondAttribute="bottom" constant="243" id="InB-Gl-1zb"/>
                             <constraint firstItem="Gnd-Gt-hYy" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="KNg-c6-mdV"/>
                             <constraint firstItem="Gnd-Gt-hYy" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="KfF-Vi-uOB"/>
-                            <constraint firstItem="fhX-lG-FHZ" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="SyL-pz-clW"/>
-                            <constraint firstItem="fhX-lG-FHZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="mxr-eg-Ar7"/>
-                            <constraint firstItem="fhX-lG-FHZ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="oUs-Tk-Ipb"/>
                             <constraint firstItem="UxP-Gw-3KX" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="phP-cb-YLD"/>
                             <constraint firstItem="Gnd-Gt-hYy" firstAttribute="bottom" secondItem="UxP-Gw-3KX" secondAttribute="top" type="default" id="sMQ-26-1Fu"/>
                         </constraints>
@@ -62,7 +52,6 @@
                         <outlet property="btnConnect" destination="wl1-hT-lyC" id="ebk-uT-TqL"/>
                         <outlet property="btnPublish" destination="n8v-3b-RcK" id="l36-yx-jHo"/>
                         <outlet property="btnToggle" destination="ETB-ld-C1Z" id="7zm-ow-fcV"/>
-                        <outlet property="previewView" destination="fhX-lG-FHZ" id="gyJ-aW-sAs"/>
                         <outlet property="streamView" destination="Gnd-Gt-hYy" id="tVv-e0-rBe"/>
                     </connections>
                 </viewController>
@@ -86,7 +75,7 @@
                 <relationship kind="outlet" name="btnPublish" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnToggle" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="hostTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="previewView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="streamTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="streamView" candidateClass="UIImageView"/>
             </relationships>

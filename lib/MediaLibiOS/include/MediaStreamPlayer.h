@@ -57,7 +57,6 @@
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
 @property (readonly) MediaStreamState state;
-//@property BOOL isSynchronization;
 
 -(id)init:(NSString *)url;
 -(id)initWithClient:(RTMPClient *)client;
