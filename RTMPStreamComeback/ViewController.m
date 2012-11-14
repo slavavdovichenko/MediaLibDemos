@@ -35,7 +35,7 @@ static NSString *stream = @"myStream";
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
