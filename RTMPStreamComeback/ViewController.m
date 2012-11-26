@@ -11,8 +11,8 @@
 #import "VideoPlayer.h"
 
 
-//static NSString *host = @"rtmp://demo.eudata.biz:1935/live";
-static NSString *host = @"rtmp://10.0.1.33:1935/live";
+static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
+//static NSString *host = @"rtmp://10.0.1.33:1935/live";
 static NSString *stream = @"myStream";
 
 
