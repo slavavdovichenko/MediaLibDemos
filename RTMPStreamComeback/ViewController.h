@@ -15,6 +15,9 @@
     BroadcastStreamClient    *upstream;
     MediaStreamPlayer        *player;
     
+    int                      upstreamCross;
+    int                      downstreamCross;
+    
     UIActivityIndicatorView  *netActivity;
     
     IBOutlet UIImageView     *streamView;

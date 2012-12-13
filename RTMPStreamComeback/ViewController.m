@@ -15,6 +15,10 @@ static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 static NSString *stream = @"myStream";
 
+// cross stream mode
+static BOOL isCrossStreams = NO;
+//static BOOL isCrossStreams = YES;
+
 
 @implementation ViewController
 
@@ -27,6 +31,9 @@ static NSString *stream = @"myStream";
     
     upstream = nil;
     player = nil;
+    
+    upstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 2 : 1) : 0;
+    downstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 1 : 2) : 0;
 	
 	// Create and add the activity indicator
 	netActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -36,7 +43,7 @@ static NSString *stream = @"myStream";
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -62,7 +69,7 @@ static NSString *stream = @"myStream";
     upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_LOW];
     [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     upstream.delegate = self;
-    [upstream stream:stream publishType:PUBLISH_LIVE];
+    [upstream stream:[NSString stringWithFormat:@"%@%d", stream, upstreamCross] publishType:PUBLISH_LIVE];
     
     [netActivity startAnimating];
     
@@ -84,7 +91,10 @@ static NSString *stream = @"myStream";
     player = [[MediaStreamPlayer alloc] init:host];
     player.delegate = self;
     player.player = _player;
-    [player stream:stream];
+    [player stream:[NSString stringWithFormat:@"%@%d", stream, downstreamCross]];
+    
+    btnPublish.title = @"Pause";
+    btnToggle.enabled = YES;
 }
 
 -(void)doDisconnect {
@@ -121,7 +131,10 @@ static NSString *stream = @"myStream";
     
     NSLog(@"publishControl: stream = %@", stream);
     
-    (upstream.state != STREAM_PLAYING) ? [upstream start] : [upstream pause];
+    if (isCrossStreams)
+        player ? (player.state != STREAM_PLAYING ? [player start] : [player pause]) : [self doPlay];
+    else
+        (upstream.state != STREAM_PLAYING) ? [upstream start] : [upstream pause];
 }
 
 -(IBAction)camerasToggle:(id)sender {
@@ -157,7 +170,7 @@ static NSString *stream = @"myStream";
                 if (![description isEqualToString:@"RTMP.Client.isConnected"])
                     break;
                 
-                [self publishControl:nil];
+                [upstream start];
                 
                 btnPublish.enabled = YES;
                 
@@ -177,10 +190,8 @@ static NSString *stream = @"myStream";
                 
             case STREAM_PLAYING: {
                 
-                [self doPlay];
-                
-                btnPublish.title = @"Pause";
-                btnToggle.enabled = YES;
+                if (!isCrossStreams) 
+                    [self doPlay];
                 
                 break;
             }
