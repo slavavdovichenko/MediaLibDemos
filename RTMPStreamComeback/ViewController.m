@@ -41,7 +41,7 @@ static BOOL isCrossStreams = NO;
 	[self.view addSubview:netActivity];
     
     // setup the simultaneous record and playback
-    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
     [DebLog setIsActive:YES];
 }
