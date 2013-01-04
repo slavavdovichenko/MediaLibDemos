@@ -66,7 +66,7 @@ static BOOL isCrossStreams = NO;
 
 -(void)doConnect {
     
-    upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_LOW];
+    upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_CIF];
     [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     upstream.delegate = self;
     [upstream stream:[NSString stringWithFormat:@"%@%d", stream, upstreamCross] publishType:PUBLISH_LIVE];

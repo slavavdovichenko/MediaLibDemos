@@ -26,6 +26,7 @@ typedef enum video_encoder_resolution VideoEncoderResolution;
 enum video_encoder_resolution
 {
     RESOLUTION_LOW,     // 192x144px
+    RESOLUTION_CIF,     // 352x288px
     RESOLUTION_MEDIUM,  // 480x360px
     RESOLUTION_VGA,     // 640x480px
     RESOLUTION_HIGH,    // 1280x720px

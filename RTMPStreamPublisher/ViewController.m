@@ -21,7 +21,7 @@
     
     //hostTextField.text = @"rtmp://192.168.2.100:1935/weborb";
     
-    //hostTextField.text = @"rtmp://192.168.1.101:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     //hostTextField.text = @"rtmp://192.168.1.63:1935/live";
@@ -58,7 +58,7 @@
     /*/
     upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
     /*/
-    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
+    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_CIF];
     [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     [upstream switchCameras];
     [upstream setPreviewLayer:previewView];
