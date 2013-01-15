@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -47,9 +45,16 @@
                                 </items>
                             </toolbar>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="lbf-S3-hxa">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Quu-Nx-ScR">
+                                <rect key="frame" x="175" y="389" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -57,10 +62,12 @@
                         <outlet property="btnConnect" destination="cEj-yc-gYz" id="lzx-6p-xuO"/>
                         <outlet property="btnPlay" destination="hbU-7M-k9l" id="oSq-Vs-H0H"/>
                         <outlet property="hostTextField" destination="3If-5d-UJt" id="yhZ-uX-617"/>
+                        <outlet property="memoryLabel" destination="Quu-Nx-ScR" id="ETb-ek-VP0"/>
                         <outlet property="previewView" destination="lbf-S3-hxa" id="a9z-EV-Aa3"/>
                         <outlet property="streamTextField" destination="anp-IW-UPw" id="Bfc-5F-2dt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
@@ -77,8 +84,10 @@
                 <relationship kind="outlet" name="btnPublish" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnToggle" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="hostTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="memoryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="streamTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="streamView" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>

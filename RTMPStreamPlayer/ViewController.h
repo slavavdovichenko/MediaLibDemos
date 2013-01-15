@@ -7,17 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MediaStreamPlayer.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate, IMediaStreamEvent> {
-    
-    MediaStreamPlayer       *player;
+@interface ViewController : UIViewController <UITextFieldDelegate> {
 
 	IBOutlet UITextField	*hostTextField;
 	IBOutlet UITextField	*streamTextField;
     IBOutlet UIImageView    *previewView;
     IBOutlet UIBarButtonItem *btnConnect;
     IBOutlet UIBarButtonItem *btnPlay;
+    IBOutlet UILabel         *memoryLabel;
     
 }
 

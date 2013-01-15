@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BroadcastStreamClient.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate, IMediaStreamEvent> {
-    
-    BroadcastStreamClient   *upstream;
+@interface ViewController : UIViewController <UITextFieldDelegate> {
     
 	IBOutlet UITextField	*hostTextField;
 	IBOutlet UITextField	*streamTextField;
@@ -19,6 +16,7 @@
     IBOutlet UIBarButtonItem *btnConnect;
     IBOutlet UIBarButtonItem *btnToggle;
     IBOutlet UIBarButtonItem *btnPublish;
+    IBOutlet UILabel        *memoryLabel;
     
 }
 

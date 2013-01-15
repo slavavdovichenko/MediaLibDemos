@@ -8,16 +8,39 @@
 
 #import "ViewController.h"
 #import "DEBUG.h"
+#import "MemoryTicker.h"
+#import "BroadcastStreamClient.h"
+#import "MediaStreamPlayer.h"
 #import "VideoPlayer.h"
 
 
-static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
-//static NSString *host = @"rtmp://10.0.1.33:1935/live";
+//static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
+static NSString *host = @"rtmp://10.0.1.33:1935/live";
+//static NSString *host = @"rtmp://192.168.2.63:1935/live";
+//static NSString *host = @"rtmp://192.168.2.102:1935/live";
 static NSString *stream = @"myStream";
 
 // cross stream mode
 static BOOL isCrossStreams = NO;
 //static BOOL isCrossStreams = YES;
+
+
+@interface ViewController () <IMediaStreamEvent> {
+    
+    MemoryTicker            *memoryTicker;
+    
+    BroadcastStreamClient   *upstream;
+    MediaStreamPlayer       *player;
+    
+    int                     upstreamCross;
+    int                     downstreamCross;
+    
+    UIActivityIndicatorView *netActivity;
+}
+
+-(void)sizeMemory:(NSNumber *)memory;
+-(void)setDisconnect;
+@end
 
 
 @implementation ViewController
@@ -28,6 +51,9 @@ static BOOL isCrossStreams = NO;
 -(void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
+    memoryTicker.asNumber = YES;
     
     upstream = nil;
     player = nil;
@@ -43,7 +69,7 @@ static BOOL isCrossStreams = NO;
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -58,6 +84,14 @@ static BOOL isCrossStreams = NO;
 #pragma mark -
 #pragma mark Private Methods
 
+// MEMORY
+
+-(void)sizeMemory:(NSNumber *)memory {
+    memoryLabel.text = [NSString stringWithFormat:@"%d", [memory intValue]];
+}
+
+// ALERT
+
 -(void)showAlert:(NSString *)message {
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive" message:message delegate:self
                                        cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -66,7 +100,7 @@ static BOOL isCrossStreams = NO;
 
 -(void)doConnect {
     
-    upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_CIF];
+    upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_LOW];
     [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     upstream.delegate = self;
     [upstream stream:[NSString stringWithFormat:@"%@%d", stream, upstreamCross] publishType:PUBLISH_LIVE];
@@ -103,6 +137,11 @@ static BOOL isCrossStreams = NO;
         [upstream disconnect];
     if (player)
         [player disconnect];
+    
+    [self setDisconnect];
+}
+
+-(void)setDisconnect {
     
     upstream = nil;
     player = nil;
@@ -159,7 +198,7 @@ static BOOL isCrossStreams = NO;
                 
             case CONN_DISCONNECTED: {
                 
-                [self doDisconnect];
+                [self setDisconnect];
                 [self showAlert:[NSString stringWithString:description]];
                 
                 break;
@@ -226,7 +265,7 @@ static BOOL isCrossStreams = NO;
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
     
-    [self doDisconnect];
+    [self setDisconnect];
     
     [self showAlert:(code == -1) ?
      [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] :

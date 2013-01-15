@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -38,22 +38,37 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Vpk-Lv-ZyX"/>
                                 </items>
                             </toolbar>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-C6-MxG"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-C6-MxG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="921" id="09h-8J-CVg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIB-AB-5ie">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XLe-SH-vzY"/>
+                                    <constraint firstAttribute="width" constant="152" id="qHN-of-mcv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="t0k-C6-MxG" firstAttribute="bottom" secondItem="B0h-BS-OpL" secondAttribute="top" type="default" id="2Zz-bx-0Nm"/>
+                            <constraint firstAttribute="trailing" secondItem="SIB-AB-5ie" secondAttribute="trailing" constant="128" id="93g-bM-PUZ"/>
                             <constraint firstItem="B0h-BS-OpL" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="C7J-xu-8zn"/>
                             <constraint firstItem="t0k-C6-MxG" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="HFZ-DQ-fvp"/>
                             <constraint firstItem="B0h-BS-OpL" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="R6m-AL-RJb"/>
                             <constraint firstItem="t0k-C6-MxG" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="dj1-0V-2Sj"/>
                             <constraint firstItem="t0k-C6-MxG" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="jWF-Yp-POC"/>
+                            <constraint firstItem="SIB-AB-5ie" firstAttribute="top" secondItem="t0k-C6-MxG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xgZ-xY-wk3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnConnect" destination="bnY-VL-OIU" id="ioF-C7-543"/>
                         <outlet property="btnPublish" destination="d4x-ds-3En" id="sd6-H3-Lqk"/>
                         <outlet property="btnToggle" destination="3Im-cO-QIB" id="VhA-nW-WRy"/>
+                        <outlet property="memoryLabel" destination="SIB-AB-5ie" id="Dmi-xn-4bu"/>
                         <outlet property="streamView" destination="t0k-C6-MxG" id="Hui-tk-uN5"/>
                     </connections>
                 </viewController>
@@ -77,7 +92,8 @@
                 <relationship kind="outlet" name="btnPublish" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnToggle" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="hostTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="memoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previewView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="streamTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="streamView" candidateClass="UIImageView"/>
             </relationships>

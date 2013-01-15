@@ -25,6 +25,7 @@
     RTMPClient	*socket;
     MediaStreamState state;
 	NSString	*_url;
+    NSArray     *parameters;
     //
     int         streamID;
     
@@ -46,6 +47,7 @@
 }
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
+@property (nonatomic, retain) NSArray *parameters;
 @property (readonly) MediaStreamState state;
 
 -(id)init:(NSString *)url;

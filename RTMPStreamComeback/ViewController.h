@@ -7,23 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BroadcastStreamClient.h"
-#import "MediaStreamPlayer.h"
 
-@interface ViewController : UIViewController <IMediaStreamEvent> {
-    
-    BroadcastStreamClient    *upstream;
-    MediaStreamPlayer        *player;
-    
-    int                      upstreamCross;
-    int                      downstreamCross;
-    
-    UIActivityIndicatorView  *netActivity;
+@interface ViewController : UIViewController {
     
     IBOutlet UIImageView     *streamView;
     IBOutlet UIBarButtonItem *btnConnect;
     IBOutlet UIBarButtonItem *btnToggle;
     IBOutlet UIBarButtonItem *btnPublish;
+    IBOutlet UILabel         *memoryLabel;
     
 }
 

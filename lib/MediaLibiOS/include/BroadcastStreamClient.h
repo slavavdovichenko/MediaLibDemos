@@ -51,6 +51,7 @@ enum audio_mode
     RTMPClient      *socket;
 	MediaStreamState state;
 	NSString		*_url;
+    NSArray         *parameters;
     //
     int streamID;
     int audioChannelID;
@@ -98,6 +99,7 @@ enum audio_mode
 }
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
+@property (nonatomic, retain) NSArray *parameters;
 @property (nonatomic, retain) NSString *customType;
 @property MediaStreamState state;
 @property BOOL isAudioRunning;

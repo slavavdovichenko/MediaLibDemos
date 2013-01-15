@@ -8,7 +8,19 @@
 
 #import "ViewController.h"
 #import "DEBUG.h"
+#import "MemoryTicker.h"
+#import "MediaStreamPlayer.h"
 #import "VideoPlayer.h"
+
+
+@interface ViewController () <IMediaStreamEvent> {
+    MemoryTicker            *memoryTicker;
+    MediaStreamPlayer       *player;
+}
+
+-(void)sizeMemory:(NSNumber *)memory;
+-(void)setDisconnect;
+@end
 
 
 @implementation ViewController
@@ -20,16 +32,18 @@
     
     [super viewDidLoad];
     
-    //hostTextField.text = @"rtmp://192.168.2.100:1935/weborb";
+    memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
+    memoryTicker.asNumber = YES;
     
     //hostTextField.text = @"rtmp://192.168.1.101:1935/live";
-    //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
-    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
-    //hostTextField.text = @"rtmp://192.168.1.63:1935/live";
-    hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    hostTextField.text = @"rtmp://10.0.1.33:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.102:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
+    //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
     
-    streamTextField.text = @"slavav";
+    streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
     //[DebLog setIsActive:YES];
@@ -47,6 +61,14 @@
 
 #pragma mark -
 #pragma mark Private Methods 
+
+// MEMORY
+
+-(void)sizeMemory:(NSNumber *)memory {
+    memoryLabel.text = [NSString stringWithFormat:@"%d", [memory intValue]];
+}
+
+// ALERT
 
 -(void)showAlert:(NSString *)message {
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive" message:message delegate:self 
@@ -70,6 +92,11 @@
 -(void)doDisconnect {
     
     [player disconnect];
+    [self setDisconnect];
+}
+
+-(void)setDisconnect {
+
     player = nil;
     
     btnConnect.title = @"Connect";
@@ -123,7 +150,7 @@
             
         case CONN_DISCONNECTED: {
             
-            [self doDisconnect];
+            [self setDisconnect];
             [self showAlert:[NSString stringWithString:description]];
             
             break;
@@ -174,7 +201,7 @@
     
     NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
     
-    [self doDisconnect];
+    [self setDisconnect];
     
     [self showAlert:(code == -1) ?
      [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] :
