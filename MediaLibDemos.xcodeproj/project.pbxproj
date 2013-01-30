@@ -714,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vyacheslav Vdovichenko (7ZR8MVB488)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RTMPStreamPlayer/RTMPStreamPlayer-Prefix.pch";
@@ -727,6 +728,7 @@
 					"\"$(SRCROOT)/lib/MediaLibiOS\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0B4E4C41-3752-4A3A-97C5-29D3154EB833";
 				VALID_ARCHS = "i386 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -736,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vyacheslav Vdovichenko (7ZR8MVB488)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RTMPStreamPlayer/RTMPStreamPlayer-Prefix.pch";
@@ -749,6 +752,7 @@
 					"\"$(SRCROOT)/lib/MediaLibiOS\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0B4E4C41-3752-4A3A-97C5-29D3154EB833";
 				VALID_ARCHS = "i386 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -806,6 +810,7 @@
 		F9F6993A15AC5D01004B6F37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vyacheslav Vdovichenko (7ZR8MVB488)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RTMPStreamPublisher/RTMPStreamPublisher-Prefix.pch";
@@ -818,6 +823,7 @@
 					"\"$(SRCROOT)/lib/MediaLibiOS\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0B4E4C41-3752-4A3A-97C5-29D3154EB833";
 				VALID_ARCHS = "i386 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -826,6 +832,7 @@
 		F9F6993B15AC5D01004B6F37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vyacheslav Vdovichenko (7ZR8MVB488)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RTMPStreamPublisher/RTMPStreamPublisher-Prefix.pch";
@@ -838,6 +845,7 @@
 					"\"$(SRCROOT)/lib/MediaLibiOS\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0B4E4C41-3752-4A3A-97C5-29D3154EB833";
 				VALID_ARCHS = "i386 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -850,6 +858,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vyacheslav Vdovichenko (7ZR8MVB488)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RTMPStreamComeback/RTMPStreamComeback-Prefix.pch";
@@ -863,6 +872,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0B4E4C41-3752-4A3A-97C5-29D3154EB833";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -874,6 +884,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vyacheslav Vdovichenko (7ZR8MVB488)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RTMPStreamComeback/RTMPStreamComeback-Prefix.pch";
@@ -886,6 +897,7 @@
 					"\"$(SRCROOT)/lib/MediaLibiOS\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0B4E4C41-3752-4A3A-97C5-29D3154EB833";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

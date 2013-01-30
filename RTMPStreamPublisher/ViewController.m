@@ -36,6 +36,8 @@
     
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.text = @"rtmp://10.0.1.33:1935/live";
+    //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
+    //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://192.168.2.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
@@ -89,7 +91,9 @@
     [upstream setPreviewLayer:previewView];
     //
     upstream.delegate = self;
-    [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];  
+    //[upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
+    [upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
+    //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
     
     btnConnect.title = @"Disconnect"; 
 }
