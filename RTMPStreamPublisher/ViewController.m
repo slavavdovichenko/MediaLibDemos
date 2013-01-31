@@ -47,7 +47,7 @@
     streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
     
 }
 
@@ -91,8 +91,8 @@
     [upstream setPreviewLayer:previewView];
     //
     upstream.delegate = self;
-    //[upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
-    [upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
+    [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
+    //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
     
     btnConnect.title = @"Disconnect"; 
@@ -179,7 +179,6 @@
             if (![description isEqualToString:@"RTMP.Client.isConnected"])
                 break;
             
-            //[self publishControl:nil];
             [upstream start];
             
             hostTextField.hidden = YES;
