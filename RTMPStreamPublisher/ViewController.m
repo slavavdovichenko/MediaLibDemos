@@ -40,7 +40,7 @@
     //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://192.168.2.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
-    //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    //hostTextField.text = @"rtmp://demo.eudata.biz:1935/euphonia";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
 
@@ -83,14 +83,16 @@
     
     /*/
     upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
+    upstream.delegate = self;
     /*/
     //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
     upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
-    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
-    [upstream switchCameras];
-    [upstream setPreviewLayer:previewView];
-    //
     upstream.delegate = self;
+    [upstream setPreviewLayer:previewView];
+    //[upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+    //[upstream switchCameras];
+    //
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];

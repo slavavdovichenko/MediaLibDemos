@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #define MEDIA_CHUNK_SIZE 4096
-#define SHOULD_CONNECT @"You should use a valid 'connect' method to connect the client"
+#define SHOULD_CONNECT @"You should use a valid 'connect', 'attach' or 'stream' method for making the new client connection"
 #define SHOULD_DISCONNECT @"You should use 'disconnect' method before making the new client connection"
+#define SHOULD_STOP @"You should use 'stop' method before making the new stream"
 
 typedef enum media_stream_state MediaStreamState;
 enum media_stream_state
