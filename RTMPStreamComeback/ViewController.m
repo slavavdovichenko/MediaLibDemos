@@ -29,6 +29,7 @@ static BOOL isCrossStreams = NO;
     
     MemoryTicker            *memoryTicker;
     
+    RTMPClient              *socket;
     BroadcastStreamClient   *upstream;
     MediaStreamPlayer       *player;
     
@@ -69,7 +70,7 @@ static BOOL isCrossStreams = NO;
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -100,9 +101,12 @@ static BOOL isCrossStreams = NO;
 
 -(void)doConnect {
     
-    upstream = [[BroadcastStreamClient alloc] init:host resolution:RESOLUTION_LOW];
-    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    socket = [[RTMPClient alloc] init:host];
+    
+    upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
     upstream.delegate = self;
+    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    [upstream switchCameras];
     [upstream stream:[NSString stringWithFormat:@"%@%d", stream, upstreamCross] publishType:PUBLISH_LIVE];
     
     [netActivity startAnimating];
@@ -117,12 +121,10 @@ static BOOL isCrossStreams = NO;
         return;
     }
     
-    [self camerasToggle:nil];
-    
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:streamView];
     _player.orientation = UIImageOrientationRight;
     
-    player = [[MediaStreamPlayer alloc] init:host];
+    player = [[MediaStreamPlayer alloc] initWithClient:socket];
     player.delegate = self;
     player.player = _player;
     [player stream:[NSString stringWithFormat:@"%@%d", stream, downstreamCross]];
@@ -133,19 +135,23 @@ static BOOL isCrossStreams = NO;
 
 -(void)doDisconnect {
     
-    if (upstream)
-        [upstream disconnect];
     if (player)
         [player disconnect];
     
-    [self setDisconnect];
+    if (upstream)
+       [upstream disconnect];
+
+    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
     
-    upstream = nil;
+    NSLog(@" ******************> setDisconnect");
+   
     player = nil;
-    
+    upstream = nil;
+    socket = nil;
+   
     btnConnect.title = @"Connect";
     btnToggle.enabled = NO;
     btnPublish.title = @"Start";
@@ -163,7 +169,7 @@ static BOOL isCrossStreams = NO;
     
     NSLog(@"connectControl: host = %@", host);
     
-    (!upstream) ? [self doConnect] : [self doDisconnect];
+    (streamView.hidden) ? [self doConnect] : [self doDisconnect];
 }
 
 -(IBAction)publishControl:(id)sender {
