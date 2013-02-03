@@ -14,8 +14,9 @@
 #import "VideoPlayer.h"
 
 
+static NSString *host = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
 //static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
-static NSString *host = @"rtmp://10.0.1.33:1935/live";
+//static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.102:1935/live";
 static NSString *stream = @"myStream";
@@ -56,6 +57,7 @@ static BOOL isCrossStreams = NO;
     memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
     memoryTicker.asNumber = YES;
     
+    socket = nil;
     upstream = nil;
     player = nil;
     
@@ -101,25 +103,32 @@ static BOOL isCrossStreams = NO;
 
 -(void)doConnect {
     
-    socket = [[RTMPClient alloc] init:host];
+    if (!socket) {
+        socket = [[RTMPClient alloc] init:host];
+        if (!socket) {
+            [self showAlert:@"Socket has not be created"];
+            return;
+        }
+    }
+    
+    NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
     upstream.delegate = self;
     [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     [upstream switchCameras];
-    [upstream stream:[NSString stringWithFormat:@"%@%d", stream, upstreamCross] publishType:PUBLISH_LIVE];
-    
+    [upstream stream:name publishType:PUBLISH_LIVE];
+        
     [netActivity startAnimating];
     
     btnConnect.title = @"Disconnect";
+    streamView.hidden = NO;
+
 }
 
 -(void)doPlay {
     
-    if (player) {
-        [player resume];
-        return;
-    }
+    NSString *name = [NSString stringWithFormat:@"%@%d", stream, downstreamCross];
     
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:streamView];
     _player.orientation = UIImageOrientationRight;
@@ -127,7 +136,7 @@ static BOOL isCrossStreams = NO;
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
     player.delegate = self;
     player.player = _player;
-    [player stream:[NSString stringWithFormat:@"%@%d", stream, downstreamCross]];
+    [player stream:name];
     
     btnPublish.title = @"Pause";
     btnToggle.enabled = YES;
@@ -141,7 +150,8 @@ static BOOL isCrossStreams = NO;
     if (upstream)
        [upstream disconnect];
 
-    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
+    [self setDisconnect];
+    //[self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
@@ -150,7 +160,7 @@ static BOOL isCrossStreams = NO;
    
     player = nil;
     upstream = nil;
-    socket = nil;
+    //socket = nil;
    
     btnConnect.title = @"Connect";
     btnToggle.enabled = NO;
@@ -235,7 +245,7 @@ static BOOL isCrossStreams = NO;
                 
             case STREAM_PLAYING: {
                 
-                if (!isCrossStreams) 
+                if (!isCrossStreams)
                     [self doPlay];
                 
                 break;

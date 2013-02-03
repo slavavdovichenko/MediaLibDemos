@@ -35,13 +35,13 @@
     memoryTicker.asNumber = YES;
     
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
-    hostTextField.text = @"rtmp://10.0.1.33:1935/live";
+    //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://192.168.2.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://demo.eudata.biz:1935/euphonia";
-    //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
+    hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
 
     streamTextField.text = @"myStream";
@@ -89,8 +89,8 @@
     upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     upstream.delegate = self;
     [upstream setPreviewLayer:previewView];
-    //[upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
-    [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream switchCameras];
     //
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
@@ -191,6 +191,10 @@
             
             break;
            
+        }
+        
+        case STREAM_CREATED: {
+            //[upstream setPreviewLayer:previewView];
         }
             
         case STREAM_PAUSED: {
