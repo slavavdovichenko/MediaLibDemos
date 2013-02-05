@@ -14,9 +14,9 @@
 #import "VideoPlayer.h"
 
 
-static NSString *host = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
+//static NSString *host = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
 //static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
-//static NSString *host = @"rtmp://10.0.1.33:1935/live";
+static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.102:1935/live";
 static NSString *stream = @"myStream";
@@ -72,7 +72,7 @@ static BOOL isCrossStreams = NO;
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -150,17 +150,19 @@ static BOOL isCrossStreams = NO;
     if (upstream)
        [upstream disconnect];
 
-    [self setDisconnect];
-    //[self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
+    //[self setDisconnect];
+    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
     
     NSLog(@" ******************> setDisconnect");
-   
+    
+    [socket disconnect];
+    socket = nil;
+  
     player = nil;
     upstream = nil;
-    //socket = nil;
    
     btnConnect.title = @"Connect";
     btnToggle.enabled = NO;

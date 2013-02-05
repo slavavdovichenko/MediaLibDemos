@@ -15,6 +15,7 @@
 
 @interface ViewController () <IMediaStreamEvent> {
     MemoryTicker            *memoryTicker;
+    RTMPClient              *socket;
     MediaStreamPlayer       *player;
 }
 
@@ -35,6 +36,9 @@
     memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
     memoryTicker.asNumber = YES;
     
+    player = nil;
+    socket = nil;
+    
     //hostTextField.text = @"rtmp://192.168.1.101:1935/live";
     hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
@@ -49,7 +53,7 @@
     streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
@@ -83,8 +87,22 @@
     
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:previewView];
     _player.orientation = UIImageOrientationRight;
+    
+    //
+    
+    if (!socket) {
+        socket = [[RTMPClient alloc] init:hostTextField.text];
+        if (!socket) {
+            [self showAlert:@"Socket has not be created"];
+            return;
+        }
+    }
+    player = [[MediaStreamPlayer alloc] initWithClient:socket];
+    
+    //
    
     player = [[MediaStreamPlayer alloc] init:hostTextField.text];
+    
     player.delegate = self;
     player.player = _player;
     [player stream:streamTextField.text];    
@@ -95,10 +113,15 @@
 -(void)doDisconnect {
     
     [player disconnect];
+    
     [self setDisconnect];
+    //[self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
+    
+    //[socket disconnect];
+    //socket = nil;
 
     player = nil;
     
