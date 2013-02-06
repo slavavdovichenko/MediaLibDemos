@@ -42,9 +42,17 @@
 
 @end
 
+
 @protocol IResponder <NSObject>
 -(id)responseHandler:(id)response;
 -(void)errorHandler:(Fault *)fault;
+@end
+
+
+@interface ResponseContext : NSObject
+@property (nonatomic, assign) id response;
+@property (nonatomic, assign) id context;
++(id)response:(id)response context:(id)context;
 @end
 
 
@@ -52,9 +60,10 @@
     id  _responder;
     SEL _responseHandler;
     SEL _errorHandler;
-    Responder *chained;
 }
+
 @property (nonatomic, retain) Responder *chained;
+@property (nonatomic, retain) id context;
 
 -(id)initWithResponder:(id)responder selResponseHandler:(SEL)selResponseHandler selErrorHandler:(SEL)selErrorHandler;
 +(id)responder:(id)responder selResponseHandler:(SEL)selResponseHandler selErrorHandler:(SEL)selErrorHandler;
