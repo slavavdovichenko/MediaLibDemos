@@ -53,7 +53,7 @@
     streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
     
 }
 
