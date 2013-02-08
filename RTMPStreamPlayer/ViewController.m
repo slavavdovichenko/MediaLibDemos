@@ -86,7 +86,7 @@
 -(void)doConnect {
     
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:previewView];
-    _player.orientation = UIImageOrientationRight;
+    //_player.orientation = UIImageOrientationRight;
     
     //
     

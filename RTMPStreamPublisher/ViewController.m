@@ -111,7 +111,7 @@
     //
     upstream.delegate = self;
     [upstream setPreviewLayer:previewView];
-    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    //[upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream switchCameras];
     
