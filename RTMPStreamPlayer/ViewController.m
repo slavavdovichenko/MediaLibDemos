@@ -114,14 +114,14 @@
     
     [player disconnect];
     
-    [self setDisconnect];
-    //[self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
+    //[self setDisconnect];
+    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
     
-    //[socket disconnect];
-    //socket = nil;
+    [socket disconnect];
+    socket = nil;
 
     player = nil;
     
