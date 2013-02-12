@@ -51,7 +51,7 @@
     streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
@@ -85,37 +85,22 @@
 
 -(void)doConnect {
     
-    /*/
-    
-    upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
-    upstream.delegate = self;
-    
-    /*/
+    //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
+    //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
+    //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     
     //
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
-        NSLog(@" ++++++++++++++++++++++++++++++ doConnect: socket = %@", socket);
         if (!socket) {
             [self showAlert:@"Socket has not be created"];
             return;
         }
     }
-    
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
-    
     //
     
-    //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
-    //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
-    //
     upstream.delegate = self;
-    [upstream setPreviewLayer:previewView];
-    //[upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
-    //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
-    //[upstream switchCameras];
-    
-    //
     
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
@@ -125,11 +110,7 @@
 }
 
 -(void)doDisconnect {
-    
     [upstream disconnect];
-    
-    //[self setDisconnect];
-    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
@@ -200,7 +181,6 @@
         case CONN_DISCONNECTED: {
             
             [self setDisconnect];
-            [self showAlert:[NSString stringWithString:description]];   
             
             break;
         }
@@ -223,7 +203,7 @@
         }
         
         case STREAM_CREATED: {
-            //[upstream setPreviewLayer:previewView];
+            [upstream setPreviewLayer:previewView];
         }
             
         case STREAM_PAUSED: {

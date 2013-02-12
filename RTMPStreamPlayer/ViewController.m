@@ -53,7 +53,7 @@
     streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
@@ -86,10 +86,11 @@
 -(void)doConnect {
     
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:previewView];
-    //_player.orientation = UIImageOrientationRight;
+    _player.orientation = UIImageOrientationRight;
     
-    //
+    player = [[MediaStreamPlayer alloc] init:hostTextField.text];
     
+    /*/
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
         if (!socket) {
@@ -98,10 +99,7 @@
         }
     }
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
-    
-    //
-   
-    player = [[MediaStreamPlayer alloc] init:hostTextField.text];
+    /*/
     
     player.delegate = self;
     player.player = _player;
@@ -111,17 +109,15 @@
 }
 
 -(void)doDisconnect {
-    
     [player disconnect];
-    
-    //[self setDisconnect];
-    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
 }
 
 -(void)setDisconnect {
     
+    /*/
     [socket disconnect];
     socket = nil;
+    /*/
 
     player = nil;
     
@@ -143,7 +139,7 @@
 
 -(IBAction)connectControl:(id)sender {
     
-    NSLog(@"connectControl: host = %@", hostTextField.text);
+    NSLog(@"******************************************** connectControl: host = %@", hostTextField.text);
     
     (!player) ? [self doConnect] : [self doDisconnect];
     
@@ -151,7 +147,7 @@
 
 -(IBAction)playControl:(id)sender; {
     
-    NSLog(@"playControl: stream = %@", streamTextField.text);
+    NSLog(@"********************************************* playControl: stream = %@", streamTextField.text);
     
     (player.state != STREAM_PLAYING) ? [player start] : [player pause];
     
@@ -177,8 +173,7 @@
         case CONN_DISCONNECTED: {
             
             [self setDisconnect];
-            [self showAlert:[NSString stringWithString:description]];
-            
+             
             break;
         }
             

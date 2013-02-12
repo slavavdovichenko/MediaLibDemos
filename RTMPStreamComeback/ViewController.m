@@ -72,7 +72,7 @@ static BOOL isCrossStreams = NO;
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -115,8 +115,6 @@ static BOOL isCrossStreams = NO;
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
     upstream.delegate = self;
-    [upstream setVideoOrientation:AVCaptureVideoOrientationPortrait];
-    [upstream switchCameras];
     [upstream stream:name publishType:PUBLISH_LIVE];
         
     [netActivity startAnimating];
@@ -143,15 +141,8 @@ static BOOL isCrossStreams = NO;
 }
 
 -(void)doDisconnect {
-    
-    if (player)
-        [player disconnect];
-    
-    if (upstream)
-       [upstream disconnect];
-
-    //[self setDisconnect];
-    [self performSelector:@selector(setDisconnect) withObject:nil afterDelay:1.0f];
+    [player disconnect];
+    [upstream disconnect];
 }
 
 -(void)setDisconnect {
@@ -217,8 +208,7 @@ static BOOL isCrossStreams = NO;
             case CONN_DISCONNECTED: {
                 
                 [self setDisconnect];
-                [self showAlert:[NSString stringWithString:description]];
-                
+                 
                 break;
             }
                 

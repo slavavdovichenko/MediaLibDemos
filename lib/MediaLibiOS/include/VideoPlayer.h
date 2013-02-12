@@ -8,16 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VideoFrameData : NSObject {
-   
-    uint8_t *data;
-    size_t  size;
-    size_t  bytesPerRow;
-    size_t  width;
-    size_t  height;
-    int     timestamp;
-    uint8_t *baseAddress;
-}
+
+@interface VideoFrameData : NSObject
 @property (readonly) uint8_t *data;
 @property size_t size;
 @property size_t bytesPerRow;
@@ -31,17 +23,15 @@
 +(id)videoFrame:(uint8_t *)_data size:(size_t)_size width:(size_t)_width height:(size_t)_height timestamp:(int)_timestamp;
 @end
 
+
 @protocol IVideoPlayer <NSObject>
 -(void)playVideoFrame:(VideoFrameData *)data;
 @optional
 -(void)playImageBuffer:(CVPixelBufferRef)frameBuffer;
 @end
 
-@interface FramesPlayer : NSObject <IVideoPlayer> {
-    UIImageView *drawImage;    
-    CGFloat     scale;
-    UIImageOrientation orientation;
-}
+
+@interface FramesPlayer : NSObject <IVideoPlayer>
 @property CGFloat scale;
 @property UIImageOrientation orientation;
 
