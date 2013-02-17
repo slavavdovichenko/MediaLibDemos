@@ -14,8 +14,6 @@
 #import "MediaConstants.h"
 #import "RTMPClient.h"
 
-#define kNumberRecordBuffers 3
-
 typedef enum publish_type PublishType;
 enum publish_type
 {
@@ -41,62 +39,8 @@ enum audio_mode
 @protocol IVideoPlayer;
 @class VideoEncoder, VideoCodec, AudioCodec, SysTimer;
 
-@interface BroadcastStreamClient : NSObject {
-    
-    // delegates
-    id <IMediaStreamEvent>  delegate;
-    id <IVideoPlayer>       player;
-    
-    // rtmp
-    RTMPClient      *socket;
-	MediaStreamState state;
-	NSString		*_url;
-    NSArray         *parameters;
-    //
-    int streamID;
-    int audioChannelID;
-    int videoChannelID;
-    int commandChannelID;
-    int audioTimestamp;
-    int videoTimestamp;
-    int startTimestamp;
-    
-    //
-    CMTime pts;
-    CMTime duration;
-    
-    // system timer
-    SysTimer    *sysTimer;
-    
-    // media service
-    NSString    *fileName;
-    NSString    *customType;
-    PublishType publishType;
-    
-    // capture session
-    AVCaptureSession *captureSession;
-    
-    // video
-	AVCaptureVideoPreviewLayer  *previewLayer;
-    VideoEncoderResolution      _resolution;
-    //VideoEncoder     *videoEncoder;
-    VideoCodec       *videoCodec;
-    AVCaptureOutput  *videoOutput;
-    CVPixelBufferRef frameBuffer;
-	BOOL             isUsingFrontFacingCamera;
-    unsigned int     pixelFormatType;
-    VideoMode        videoMode;
-    BOOL             locked;
-   
-    // audio
-    AudioCodec                  *audioCodec;
-    // audio queue
-    AudioStreamBasicDescription	recordFormat;
-    AudioQueueRef				queue;
-    AudioQueueBufferRef			buffers[kNumberRecordBuffers];
-    AudioMode                   audioMode;
-    BOOL						isAudioRunning;
-}
+@interface BroadcastStreamClient : NSObject
+
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
 @property (nonatomic, retain) NSArray *parameters;

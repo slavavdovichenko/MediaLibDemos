@@ -10,41 +10,10 @@
 #import "MediaConstants.h"
 #import "RTMPClient.h"
 
-#define INITIAL_BUFFER_SIZE 256
-
 @protocol IVideoPlayer;
 @class VideoStream, SysTimer, NellyMoserDecoder;
 
-@interface MediaStreamPlayer : NSObject {
-	
-    // delegate
-	id <IMediaStreamEvent>  delegate;
-    id <IVideoPlayer>       player;
-    
-    // rtmp
-    RTMPClient	*socket;
-    MediaStreamState state;
-	NSString	*_url;
-    NSArray     *parameters;
-    //
-    int         streamID;
-    
-    // stream options
-    NSString    *streamName;
-    int         timestamp;
-    int         start;
-    int         duration;
-    BOOL        reset;
-    
-    //
-    SysTimer    *sysTimer;
-    
-    // audio stream
-    NellyMoserDecoder *audio;
-    // video stream
-    VideoStream *video;
-    
-}
+@interface MediaStreamPlayer : NSObject
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
 @property (nonatomic, retain) NSArray *parameters;

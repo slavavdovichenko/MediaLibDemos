@@ -85,11 +85,11 @@
 
 -(void)doConnect {
     
-    upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
+    //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
     //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     
-    /*/
+    //
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
         if (!socket) {
@@ -98,7 +98,7 @@
         }
     }
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
-    /*/
+    //
     
     upstream.delegate = self;
     
