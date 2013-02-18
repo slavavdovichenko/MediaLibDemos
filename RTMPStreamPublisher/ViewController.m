@@ -97,7 +97,9 @@
             return;
         }
     }
-    upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
+    
+    upstream = [[BroadcastStreamClient alloc] initWithClient:socket];
+    [upstream setVideoResolution:RESOLUTION_LOW bitRate:512000];
     //
     
     upstream.delegate = self;
@@ -105,6 +107,10 @@
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
+    
+    
+    [upstream setAudioPickingSeconds:0.05f];
+    [upstream setAudioBitrate:64000];
     
     btnConnect.title = @"Disconnect"; 
 }

@@ -57,13 +57,18 @@ enum audio_mode
 -(id)initOnlyVideo:(NSString *)url resolution:(VideoEncoderResolution)resolution;
 -(id)initOnlyVideoWithClient:(RTMPClient *)client resolution:(VideoEncoderResolution)resolution;
 
--(void)setVideoResolution:(VideoEncoderResolution)resolution;
--(void)setVideoOrientation:(AVCaptureVideoOrientation)orientation NS_DEPRECATED_IOS(5_0, 5_0);
 -(BOOL)setVideoMode:(VideoMode)mode;
--(BOOL)setAudioMode:(AudioMode)mode;
+-(void)setVideoResolution:(VideoEncoderResolution)resolution;
+-(void)setVideoBitrate:(uint)bitRate;
+-(void)setVideoResolution:(VideoEncoderResolution)resolution bitRate:(uint)bitRate;
+-(void)setVideoOrientation:(AVCaptureVideoOrientation)orientation NS_DEPRECATED_IOS(5_0, 5_0);
 -(void)setPreviewLayer:(UIView *)preview;
 -(void)teardownPreviewLayer;
 -(void)switchCameras;
+
+-(BOOL)setAudioMode:(AudioMode)mode;
+-(BOOL)setAudioPickingSeconds:(float)seconds;
+-(void)setAudioBitrate:(uint)bitRate;
 
 -(BOOL)connect:(NSString *)url name:(NSString *)name publishType:(PublishType)type;
 -(BOOL)attach:(RTMPClient *)client name:(NSString *)name publishType:(PublishType)type;
