@@ -67,7 +67,7 @@ enum audio_mode
 -(void)switchCameras;
 
 -(BOOL)setAudioMode:(AudioMode)mode;
--(BOOL)setAudioPickingSeconds:(float)seconds;
+-(void)setAudioPickingSeconds:(float)seconds;
 -(void)setAudioBitrate:(uint)bitRate;
 
 -(BOOL)connect:(NSString *)url name:(NSString *)name publishType:(PublishType)type;

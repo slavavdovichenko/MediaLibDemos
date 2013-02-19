@@ -109,8 +109,8 @@
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
     
     
-    //[upstream setAudioPickingSeconds:0.05f];
-    //[upstream setAudioBitrate:64000];
+    [upstream setAudioPickingSeconds:0.05f];
+    [upstream setAudioBitrate:64000];
     
     btnConnect.title = @"Disconnect"; 
 }
