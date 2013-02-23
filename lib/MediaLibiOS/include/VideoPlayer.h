@@ -15,12 +15,12 @@
 @property size_t bytesPerRow;
 @property size_t width;
 @property size_t height;
-@property int timestamp;
+@property uint   timestamp;
 @property uint8_t *baseAddress;
 
 -(id)initWithData:(uint8_t *)_data size:(size_t)_size;
--(id)initWithFrame:(uint8_t *)_data size:(size_t)_size width:(size_t)_width height:(size_t)_height timestamp:(int)_timestamp;
-+(id)videoFrame:(uint8_t *)_data size:(size_t)_size width:(size_t)_width height:(size_t)_height timestamp:(int)_timestamp;
+-(id)initWithFrame:(uint8_t *)_data size:(size_t)_size width:(size_t)_width height:(size_t)_height timestamp:(uint)_timestamp;
++(id)videoFrame:(uint8_t *)_data size:(size_t)_size width:(size_t)_width height:(size_t)_height timestamp:(uint)_timestamp;
 @end
 
 

@@ -16,9 +16,9 @@
 
 //static NSString *host = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
 //static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
-static NSString *host = @"rtmp://10.0.1.33:1935/live";
-//static NSString *host = @"rtmp://192.168.2.63:1935/live";
-//static NSString *host = @"rtmp://192.168.2.102:1935/live";
+//static NSString *host = @"rtmp://10.0.1.33:1935/live";
+static NSString *host = @"rtmp://192.168.2.63:1935/live";
+//static NSString *host = @"rtmp://192.168.2.101:1935/live";
 static NSString *stream = @"myStream";
 
 // cross stream mode
@@ -129,7 +129,7 @@ static BOOL isCrossStreams = NO;
     NSString *name = [NSString stringWithFormat:@"%@%d", stream, downstreamCross];
     
     FramesPlayer *_player = [[FramesPlayer alloc] initWithView:streamView];
-    _player.orientation = UIImageOrientationRight;
+    //_player.orientation = UIImageOrientationRight;
     
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
     player.delegate = self;
