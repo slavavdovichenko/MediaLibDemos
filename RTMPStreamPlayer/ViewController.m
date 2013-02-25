@@ -44,8 +44,8 @@
     //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://10.0.1.132:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
-    //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
-    hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
+    hostTextField.text = @"rtmp://192.168.2.63:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
     //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
