@@ -38,13 +38,13 @@
     memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
     memoryTicker.asNumber = YES;
     
-    hostTextField.text = @"rtmp://10.0.1.33:1935/live";
+    //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
 
@@ -112,6 +112,8 @@
     //[upstream setAudioPickingSeconds:0.05f];
     //[upstream setAudioBitrate:64000];
     
+    //
+    
     btnConnect.title = @"Disconnect"; 
 }
 
@@ -148,6 +150,7 @@
     NSLog(@"connectControl: host = %@", hostTextField.text);
     
     (!upstream) ? [self doConnect] : [self doDisconnect];
+    //(!upstream) ? [self performSelectorInBackground:@selector(doConnect) withObject:nil] : [self performSelectorInBackground:@selector(doDisconnect) withObject:nil];
 }
 
 -(IBAction)publishControl:(id)sender {
@@ -180,7 +183,7 @@
 
 -(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@", (int)state, description);
+    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@, MAIN THREAD = %@", (int)state, description, [NSThread isMainThread]?@"YES":@"NO");
     
     switch (state) {
             
@@ -236,7 +239,7 @@
 
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
+    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@, , MAIN THREAD = %@", code, description, [NSThread isMainThread]?@"YES":@"NO");
     
     [self setDisconnect];
     
