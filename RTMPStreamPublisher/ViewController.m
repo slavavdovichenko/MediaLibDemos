@@ -51,7 +51,7 @@
     streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
@@ -150,7 +150,6 @@
     NSLog(@"connectControl: host = %@", hostTextField.text);
     
     (!upstream) ? [self doConnect] : [self doDisconnect];
-    //(!upstream) ? [self performSelectorInBackground:@selector(doConnect) withObject:nil] : [self performSelectorInBackground:@selector(doDisconnect) withObject:nil];
 }
 
 -(IBAction)publishControl:(id)sender {
