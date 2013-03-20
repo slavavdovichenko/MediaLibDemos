@@ -53,7 +53,7 @@
     streamTextField.text = @"outgoingaudio_c100"; //@"myStream";
 	streamTextField.delegate = self;
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
 }
 
