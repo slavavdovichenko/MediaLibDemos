@@ -19,7 +19,9 @@
 @class CrowdNode, RTMProtocol, Packet;
 @protocol IStreamDispatcher, IPendingServiceCall;
 
-@interface RTMPClient : NSObject <NSStreamDelegate> {
+@interface RTMPClient : NSObject <NSStreamDelegate>
+//
+{
 	// delegates
     NSMutableArray  *owners;
 		
@@ -59,6 +61,7 @@
 	
 	// test
 }
+//
 @property (nonatomic, assign, getter = getDelegates, setter = addDelegate:) id <IRTMPClientDelegate> delegate;
 @property float	timeoutHandshake;
 

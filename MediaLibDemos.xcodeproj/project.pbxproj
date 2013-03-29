@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F97C89161705810B00F0B611 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97C8914170580EC00F0B611 /* CoreData.framework */; };
+		F97C89171705811500F0B611 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97C8914170580EC00F0B611 /* CoreData.framework */; };
+		F97C89181705811E00F0B611 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97C8914170580EC00F0B611 /* CoreData.framework */; };
 		F988F2AA15AD843C0083CB14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2514A49BA600C5B39B /* UIKit.framework */; };
 		F988F2AB15AD843C0083CB14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2714A49BA600C5B39B /* Foundation.framework */; };
 		F988F2AC15AD843C0083CB14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */; };
@@ -94,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F97C8914170580EC00F0B611 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F988F2AF15AD843C0083CB14 /* RTMPStreamPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTMPStreamPlayer-Info.plist"; sourceTree = "<group>"; };
 		F988F2B115AD843C0083CB14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			files = (
 				F988F2AA15AD843C0083CB14 /* UIKit.framework in Frameworks */,
 				F988F2AB15AD843C0083CB14 /* Foundation.framework in Frameworks */,
+				F97C89171705811500F0B611 /* CoreData.framework in Frameworks */,
 				F988F2AC15AD843C0083CB14 /* CoreGraphics.framework in Frameworks */,
 				F988F2C515AD844A0083CB14 /* CFNetwork.framework in Frameworks */,
 				F988F2C615AD84540083CB14 /* AudioToolbox.framework in Frameworks */,
@@ -207,6 +212,7 @@
 			files = (
 				F9F6992215AC5D01004B6F37 /* UIKit.framework in Frameworks */,
 				F9F6992315AC5D01004B6F37 /* Foundation.framework in Frameworks */,
+				F97C89161705810B00F0B611 /* CoreData.framework in Frameworks */,
 				F9F6992415AC5D01004B6F37 /* CoreGraphics.framework in Frameworks */,
 				F9F6993E15AC5FA3004B6F37 /* CFNetwork.framework in Frameworks */,
 				F9F6993F15AC5FAE004B6F37 /* AudioToolbox.framework in Frameworks */,
@@ -233,6 +239,7 @@
 			files = (
 				F9F7031E1652641D004FCA9B /* UIKit.framework in Frameworks */,
 				F9F7031F1652641D004FCA9B /* Foundation.framework in Frameworks */,
+				F97C89181705811E00F0B611 /* CoreData.framework in Frameworks */,
 				F9F703201652641D004FCA9B /* CoreGraphics.framework in Frameworks */,
 				F9F703401652646B004FCA9B /* CFNetwork.framework in Frameworks */,
 				F9F7034116526472004FCA9B /* AudioToolbox.framework in Frameworks */,
@@ -326,6 +333,7 @@
 				F9BBFAB614A49E2400C5B39B /* CoreMedia.framework */,
 				F9BBFAB714A49E2400C5B39B /* CoreVideo.framework */,
 				F9BBFAB914A49E2400C5B39B /* Security.framework */,
+				F97C8914170580EC00F0B611 /* CoreData.framework */,
 				F9BBFAB814A49E2400C5B39B /* libz.dylib */,
 			);
 			name = Frameworks;
