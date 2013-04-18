@@ -229,4 +229,8 @@
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
 }
 
+-(void)metadataReceived:(id)sender metadata:(NSDictionary *)metadata {
+    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: METADATA = %@", metadata);
+}
+
 @end

@@ -39,7 +39,7 @@ enum audio_mode
 @protocol IVideoPlayer;
 @class VideoEncoder, VideoCodec, AudioCodec, SysTimer;
 
-@interface BroadcastStreamClient : NSObject
+@interface BroadcastStreamClient : NSObject 
 
 @property (nonatomic, assign) id <IMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
@@ -47,6 +47,7 @@ enum audio_mode
 @property (nonatomic, retain) NSString *customType;
 @property MediaStreamState state;
 @property BOOL isAudioRunning;
+@property BOOL isUsingFrontFacingCamera;
 
 -(id)init:(NSString *)url;
 -(id)initWithClient:(RTMPClient *)client;
@@ -74,6 +75,7 @@ enum audio_mode
 -(BOOL)attach:(RTMPClient *)client name:(NSString *)name publishType:(PublishType)type;
 -(BOOL)stream:(NSString *)name publishType:(PublishType)type;
 -(BOOL)sendFrame:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp;
+-(void)sendMetadata:(NSDictionary *)data;
 -(void)start;
 -(void)pause;
 -(void)resume;

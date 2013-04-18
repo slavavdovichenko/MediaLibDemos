@@ -142,6 +142,14 @@
     
 }
 
+-(void)sendMetadata {
+    
+    NSString *camera = upstream.isUsingFrontFacingCamera ? @"FRONT" : @"BACK";
+    NSDate *date = [NSDate date];
+    NSDictionary *meta = [NSDictionary dictionaryWithObjectsAndKeys:camera, @"camera", [date description], @"date", nil];
+    [upstream sendMetadata:meta];
+}
+
 #pragma mark -
 #pragma mark Public Methods 
 
@@ -165,9 +173,12 @@
     
     NSLog(@"camerasToggle:");
     
-    if (upstream.state == STREAM_PLAYING)
-        [upstream switchCameras];
- 
+    if (upstream.state != STREAM_PLAYING)
+        return;
+    
+    [upstream switchCameras];
+    
+    [self sendMetadata];
 }
 
 
@@ -226,6 +237,8 @@
         }
             
         case STREAM_PLAYING: {
+            
+            [self sendMetadata];
             
             btnPublish.title = @"Pause";
             btnToggle.enabled = YES;

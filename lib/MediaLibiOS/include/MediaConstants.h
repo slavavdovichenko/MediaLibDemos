@@ -36,4 +36,6 @@ enum video_encoder_resolution
 @protocol IMediaStreamEvent <NSObject>
 -(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description;
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description;
+@optional
+-(void)metadataReceived:(id)sender metadata:(NSDictionary *)metadata;
 @end

@@ -165,6 +165,14 @@ static BOOL isCrossStreams = NO;
     streamView.hidden = YES;
 }
 
+-(void)sendMetadata {
+    
+    NSString *camera = upstream.isUsingFrontFacingCamera ? @"FRONT" : @"BACK";
+    NSDate *date = [NSDate date];
+    NSDictionary *meta = [NSDictionary dictionaryWithObjectsAndKeys:camera, @"camera", [date description], @"date", nil];
+    [upstream sendMetadata:meta];
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
@@ -191,9 +199,12 @@ static BOOL isCrossStreams = NO;
     
     NSLog(@"camerasToggle:");
     
-    if (upstream.state == STREAM_PLAYING)
-        [upstream switchCameras];
+    if (upstream.state != STREAM_PLAYING)
+        return;
     
+    [upstream switchCameras];
+    
+    [self sendMetadata];
 }
 
 #pragma mark -
@@ -239,6 +250,8 @@ static BOOL isCrossStreams = NO;
                 
             case STREAM_PLAYING: {
                 
+                [self sendMetadata];
+               
                 if (!isCrossStreams)
                     [self doPlay];
                 
@@ -280,6 +293,10 @@ static BOOL isCrossStreams = NO;
     [self showAlert:(code == -1) ?
      [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] :
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+}
+
+-(void)metadataReceived:(id)sender metadata:(NSDictionary *)metadata {
+    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: METADATA = %@", metadata);
 }
 
 @end
