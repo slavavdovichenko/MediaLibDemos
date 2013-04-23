@@ -53,3 +53,8 @@
 -(void)setObject:(id)anObject forObjectKey:(id)objectKey;
 @end
 
+@interface NSObject (AMF)
+-(void)onAMFSerialaize;
+-(void)onAMFDeserialaze;
+@end
+

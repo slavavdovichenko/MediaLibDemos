@@ -46,11 +46,13 @@
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
-    hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    hostTextField.text = @"rtmp://demo.eudata.biz:1936/wcc";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
     
-    streamTextField.text = @"outgoingaudio_c109"; //@"myStream";
+    //streamTextField.text = @"outgoingaudio_c109";
+    streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
     //[DebLog setIsActive:YES];

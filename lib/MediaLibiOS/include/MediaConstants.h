@@ -13,6 +13,10 @@
 #define SHOULD_DISCONNECT @"You should use 'disconnect' method before making the new client connection"
 #define SHOULD_STOP @"You should use 'stop' method before making the new stream"
 
+// is Echo Cancellation needed?
+static BOOL isEchoCancellation = NO;
+//static BOOL isEchoCancellation = YES;
+
 typedef enum media_stream_state MediaStreamState;
 enum media_stream_state
 {
