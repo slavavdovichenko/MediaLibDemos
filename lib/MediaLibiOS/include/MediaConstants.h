@@ -14,7 +14,7 @@
 #define SHOULD_STOP @"You should use 'stop' method before making the new stream"
 
 // is Echo Cancellation needed?
-static BOOL isEchoCancellation = NO;
+//static BOOL isEchoCancellation = NO;
 //static BOOL isEchoCancellation = YES;
 
 typedef enum media_stream_state MediaStreamState;

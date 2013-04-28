@@ -15,15 +15,17 @@
 
 
 //static NSString *host = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
-static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
+//static NSString *host = @"rtmp://demo.eudata.biz:1935/wcc";
+static NSString *host = @"rtmp://192.168.1.100:1935/live";
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
-static NSString *stream = @"outgoingaudio_c109"; //@"myStream";
+//static NSString *stream = @"outgoingaudio_c109";
+static NSString *stream = @"myStream";
 
 // cross stream mode
-static BOOL isCrossStreams = NO;
-//static BOOL isCrossStreams = YES;
+//static BOOL isCrossStreams = NO;
+static BOOL isCrossStreams = YES;
 
 
 @interface ViewController () <IMediaStreamEvent> {
@@ -60,6 +62,8 @@ static BOOL isCrossStreams = NO;
     socket = nil;
     upstream = nil;
     player = nil;
+    
+    echoCancellationOn;
     
     upstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 2 : 1) : 0;
     downstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 1 : 2) : 0;
