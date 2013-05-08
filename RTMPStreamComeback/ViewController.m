@@ -54,6 +54,8 @@ static BOOL isCrossStreams = YES;
 
 -(void)viewDidLoad {
     
+    //[DebLog setIsActive:YES];
+    
     [super viewDidLoad];
     
     memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
@@ -75,8 +77,6 @@ static BOOL isCrossStreams = YES;
     
     // setup the simultaneous record and playback
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    //[DebLog setIsActive:YES];
 }
 
 -(void)didReceiveMemoryWarning {
