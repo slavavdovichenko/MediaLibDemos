@@ -41,7 +41,7 @@
     player = nil;
     socket = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
@@ -91,7 +91,8 @@
 -(void)doConnect {
     
     FramesPlayer *framesPlayer = [[FramesPlayer alloc] initWithView:previewView];
-    //framesPlayer.orientation = UIImageOrientationRight;
+    framesPlayer.orientation = UIImageOrientationRight;
+    //framesPlayer.orientation = UIImageOrientationLeft;
     
     player = [[MediaStreamPlayer alloc] init:hostTextField.text];
     

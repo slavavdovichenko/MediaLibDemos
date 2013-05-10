@@ -41,7 +41,7 @@
     socket = nil;
     upstream = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
@@ -105,6 +105,8 @@
     }
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
+    [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+    //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     //[upstream setVideoBitrate:512000];
     //
     

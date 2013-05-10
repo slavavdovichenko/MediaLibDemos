@@ -62,10 +62,11 @@ enum audio_mode
 -(void)setVideoResolution:(VideoEncoderResolution)resolution;
 -(void)setVideoBitrate:(uint)bitRate;
 -(void)setVideoResolution:(VideoEncoderResolution)resolution bitRate:(uint)bitRate;
--(void)setVideoOrientation:(AVCaptureVideoOrientation)orientation NS_DEPRECATED_IOS(5_0, 5_0);
+-(void)setVideoOrientation:(AVCaptureVideoOrientation)orientation;
 -(void)setPreviewLayer:(UIView *)preview;
 -(void)teardownPreviewLayer;
 -(void)switchCameras;
+-(AVCaptureSession *)getCaptureSession;
 
 -(BOOL)setAudioMode:(AudioMode)mode;
 -(void)setAudioPickingSeconds:(float)seconds;
