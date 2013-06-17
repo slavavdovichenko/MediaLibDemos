@@ -24,8 +24,8 @@ static NSString *stream = @"outgoingaudio_c11";
 //static NSString *stream = @"myStream";
 
 // cross stream mode
-//static BOOL isCrossStreams = NO;
-static BOOL isCrossStreams = YES;
+static BOOL isCrossStreams = NO;
+//static BOOL isCrossStreams = YES;
 
 
 @interface ViewController () <IMediaStreamEvent> {
@@ -54,7 +54,7 @@ static BOOL isCrossStreams = YES;
 
 -(void)viewDidLoad {
     
-    //[DebLog setIsActive:YES];
+    [DebLog setIsActive:YES];
     
     [super viewDidLoad];
     
