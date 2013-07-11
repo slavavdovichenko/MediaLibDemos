@@ -54,7 +54,7 @@ static BOOL isCrossStreams = NO;
 
 -(void)viewDidLoad {
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
     [super viewDidLoad];
     
@@ -174,7 +174,7 @@ static BOOL isCrossStreams = NO;
     NSString *camera = upstream.isUsingFrontFacingCamera ? @"FRONT" : @"BACK";
     NSDate *date = [NSDate date];
     NSDictionary *meta = [NSDictionary dictionaryWithObjectsAndKeys:camera, @"camera", [date description], @"date", nil];
-    [upstream sendMetadata:meta];
+    [upstream sendMetadata:meta event:@"changedCamera:"];
 }
 
 #pragma mark -
@@ -299,8 +299,8 @@ static BOOL isCrossStreams = NO;
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
 }
 
--(void)metadataReceived:(id)sender metadata:(NSDictionary *)metadata {
-    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: METADATA = %@", metadata);
+-(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
+    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
 }
 
 @end

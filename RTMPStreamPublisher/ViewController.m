@@ -156,7 +156,6 @@
     NSString *camera = upstream.isUsingFrontFacingCamera ? @"FRONT" : @"BACK";
     NSDate *date = [NSDate date];
     NSDictionary *meta = [NSDictionary dictionaryWithObjectsAndKeys:camera, @"camera", [date description], @"date", nil];
-    //[upstream sendMetadata:meta];
     [upstream sendMetadata:meta event:@"changedCamera:"];
 }
 
