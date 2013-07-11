@@ -41,5 +41,5 @@ enum video_encoder_resolution
 -(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description;
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description;
 @optional
--(void)metadataReceived:(id)sender metadata:(NSDictionary *)metadata;
+-(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata;
 @end

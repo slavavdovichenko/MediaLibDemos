@@ -49,9 +49,10 @@
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
-    //hostTextField.text = @"rtmp://demo.eudata.biz:1936/wcc";
-    //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
+    hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc"; // crtmp
+    //hostTextField.text = @"rtmp://sks30iyy9if.rtmphost.com:1935/callmeios"; // rtmpd
+    //hostTextField.text = @"rtmp://ec2-23-20-3-70.compute-1.amazonaws.com:1935/live";
+    //hostTextField.text = @"rtmp://192.168.1.100:1935/live";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
 
@@ -155,7 +156,8 @@
     NSString *camera = upstream.isUsingFrontFacingCamera ? @"FRONT" : @"BACK";
     NSDate *date = [NSDate date];
     NSDictionary *meta = [NSDictionary dictionaryWithObjectsAndKeys:camera, @"camera", [date description], @"date", nil];
-    [upstream sendMetadata:meta];
+    //[upstream sendMetadata:meta];
+    [upstream sendMetadata:meta event:@"changedCamera:"];
 }
 
 #pragma mark -

@@ -77,6 +77,7 @@ enum audio_mode
 -(BOOL)stream:(NSString *)name publishType:(PublishType)type;
 -(BOOL)sendFrame:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp;
 -(void)sendMetadata:(NSDictionary *)data;
+-(void)sendMetadata:(NSDictionary *)data event:(NSString *)event;
 -(void)start;
 -(void)pause;
 -(void)resume;

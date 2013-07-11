@@ -51,8 +51,9 @@
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
     hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
+    //hostTextField.text = @"rtmp://sks30iyy9if.rtmphost.com:1935/callmeios";
     //hostTextField.text = @"rtmp://demo.eudata.biz:1936/wcc";
-    //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
+    //hostTextField.text = @"rtmp://192.168.1.100:1935/live";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
     hostTextField.delegate = self;
     
@@ -235,8 +236,8 @@
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
 }
 
--(void)metadataReceived:(id)sender metadata:(NSDictionary *)metadata {
-    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: METADATA = %@", metadata);
+-(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
+    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
 }
 
 @end
