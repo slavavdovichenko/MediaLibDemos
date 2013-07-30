@@ -72,3 +72,8 @@
 
 @interface SubscribeResponder : Responder 
 @end
+
+@interface ResponderBlocksContext : NSObject
++(Responder *)responderBlocksContext:(void(^)(id))responseBlock error:(void(^)(Fault *))errorBlock;
+@end
+

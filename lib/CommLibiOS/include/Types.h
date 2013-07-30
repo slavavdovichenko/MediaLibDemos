@@ -58,3 +58,12 @@
 -(void)onAMFDeserialaze;
 @end
 
+@interface NSString (Chars)
+-(NSString *)firstCharToUpper;
+@end
+
+@interface NSObject (Properties)
+-(BOOL)resolveProperty:(NSString *)name;
+-(BOOL)resolveProperty:(NSString *)name value:(id)value;
+@end
+

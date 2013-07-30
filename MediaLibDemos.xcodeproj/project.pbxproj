@@ -35,9 +35,6 @@
 		F988F2D215ADD6250083CB14 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498114F264880007FE13 /* libavformat.a */; };
 		F988F2D315ADD6280083CB14 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498214F264880007FE13 /* libavutil.a */; };
 		F988F2D415ADD62B0083CB14 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC498414F264880007FE13 /* libswscale.a */; };
-		F98DE6DB169DAB140053E77B /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = F98DE6DA169DAB140053E77B /* license.bin */; };
-		F98DE6DC169DAB140053E77B /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = F98DE6DA169DAB140053E77B /* license.bin */; };
-		F98DE6DD169DAB140053E77B /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = F98DE6DA169DAB140053E77B /* license.bin */; };
 		F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */; };
 		F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */; };
 		F9F6992215AC5D01004B6F37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2514A49BA600C5B39B /* UIKit.framework */; };
@@ -109,7 +106,6 @@
 		F988F2BD15AD843C0083CB14 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F988F2BF15AD843C0083CB14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F988F2C015AD843C0083CB14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F98DE6DA169DAB140053E77B /* license.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = license.bin; sourceTree = "<group>"; };
 		F9BBFA2514A49BA600C5B39B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9BBFA2714A49BA600C5B39B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F9BBFA2914A49BA600C5B39B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -288,15 +284,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F98DE6D9169DAB140053E77B /* com.themidnightcoders.license */ = {
-			isa = PBXGroup;
-			children = (
-				F98DE6DA169DAB140053E77B /* license.bin */,
-			);
-			name = com.themidnightcoders.license;
-			path = ../../../../WebORBiOS/CommLibiOS/com.themidnightcoders.license;
-			sourceTree = "<group>";
-		};
 		F9BBFA1614A49BA500C5B39B = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +329,6 @@
 		F9BBFA8714A49D0C00C5B39B /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				F98DE6D9169DAB140053E77B /* com.themidnightcoders.license */,
 				F9BBFA8814A49D0C00C5B39B /* CommLibiOS */,
 				F9BBFA9A14A49D0D00C5B39B /* MediaLibiOS */,
 			);
@@ -577,7 +563,6 @@
 				F988F2BB15AD843C0083CB14 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F988F2BE15AD843C0083CB14 /* MainStoryboard_iPad.storyboard in Resources */,
 				F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */,
-				F98DE6DC169DAB140053E77B /* license.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +574,6 @@
 				F9F6993315AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9F6993615AC5D01004B6F37 /* MainStoryboard_iPad.storyboard in Resources */,
 				F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */,
-				F98DE6DB169DAB140053E77B /* license.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +587,6 @@
 				F9F703321652641D004FCA9B /* Default-568h@2x.png in Resources */,
 				F9F703351652641D004FCA9B /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9F703381652641D004FCA9B /* MainStoryboard_iPad.storyboard in Resources */,
-				F98DE6DD169DAB140053E77B /* license.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
