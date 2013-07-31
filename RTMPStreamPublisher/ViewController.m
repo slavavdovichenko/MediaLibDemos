@@ -271,5 +271,25 @@
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];    
 }
 
+//
+-(void)pixelBufferShouldBePublished:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp {
+    
+    //[upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp]} event:@"videoFrameOptions:"];
+    
+    //
+    CVPixelBufferRef frameBuffer = pixelBuffer;
+    
+    // Get the base address of the pixel buffer.
+    uint8_t *baseAddress = CVPixelBufferGetBaseAddress(frameBuffer);
+    // Get the data size for contiguous planes of the pixel buffer.
+    size_t bufferSize = CVPixelBufferGetDataSize(frameBuffer);
+    // Get the pixel buffer width and height.
+    size_t width = CVPixelBufferGetWidth(frameBuffer);
+    size_t height = CVPixelBufferGetHeight(frameBuffer);
+    
+    [upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp], @"bufferSize":[NSNumber numberWithInt:bufferSize], @"width":[NSNumber numberWithInt:width], @"height":[NSNumber numberWithInt:height]} event:@"videoFrameOptions:"];
+    // 
+}
+//
 
 @end

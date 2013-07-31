@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreVideo/CoreVideo.h>
 
 #define MEDIA_CHUNK_SIZE 4096
 #define SHOULD_CONNECT @"You should use a valid 'connect', 'attach' or 'stream' method for making the new client connection"
@@ -42,4 +43,5 @@ enum video_encoder_resolution
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description;
 @optional
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata;
+-(void)pixelBufferShouldBePublished:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp;
 @end
