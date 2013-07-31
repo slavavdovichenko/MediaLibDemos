@@ -268,10 +268,11 @@
     
     [self showAlert:(code == -1) ? 
      [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] : 
-     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];    
+     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+    
 }
 
-//
+//// Send metadata for each video frame
 -(void)pixelBufferShouldBePublished:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp {
     
     //[upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp]} event:@"videoFrameOptions:"];
