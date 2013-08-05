@@ -41,22 +41,24 @@
     player = nil;
     socket = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
     //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
     //hostTextField.text = @"rtmp://10.0.1.132:1935/mediaAppDummy";
-    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
+    hostTextField.text = @"rtmp://192.168.2.100:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
     //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
     //hostTextField.text = @"rtmp://sks30iyy9if.rtmphost.com:1935/callmeios";
-    hostTextField.text = @"rtmp://192.168.1.101:1935/live";
+    //hostTextField.text = @"rtmp://192.168.1.101:1935/live";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
+    //hostTextField.text = @"rtmp://194.29.209.51:1935/wcc";
     hostTextField.delegate = self;
     
     streamTextField.text = @"outgoingaudio_c109";
+    //streamTextField.text = @"incomingaudio_1111";
     //streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     

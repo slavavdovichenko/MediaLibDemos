@@ -46,14 +46,15 @@
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
-    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
+    hostTextField.text = @"rtmp://192.168.2.100:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
     //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc"; // crtmp
     //hostTextField.text = @"rtmp://sks30iyy9if.rtmphost.com:1935/callmeios"; // rtmpd
     //hostTextField.text = @"rtmp://ec2-23-20-3-70.compute-1.amazonaws.com:1935/live";
-    hostTextField.text = @"rtmp://192.168.1.101:1935/live";
+    //hostTextField.text = @"rtmp://192.168.1.101:1935/live";
     //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
+    //hostTextField.text = @"rtmp://194.29.209.51:1935/wcc";
     hostTextField.delegate = self;
 
     streamTextField.text = @"outgoingaudio_c109";
@@ -272,7 +273,7 @@
     
 }
 
-//// Send metadata for each video frame
+/*/// Send metadata for each video frame
 -(void)pixelBufferShouldBePublished:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp {
     
     //[upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp]} event:@"videoFrameOptions:"];
@@ -291,6 +292,6 @@
     [upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp], @"bufferSize":[NSNumber numberWithInt:bufferSize], @"width":[NSNumber numberWithInt:width], @"height":[NSNumber numberWithInt:height]} event:@"videoFrameOptions:"];
     // 
 }
-//
+/*/
 
 @end
