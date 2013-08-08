@@ -11,10 +11,14 @@
 #import "IClientSharedObject.h"
 #import "ISharedObjectListener.h"
 
+#define SOCKET_THREAD_IS_RUNNING @"SocketThreadIsRunning"
+
+
 @protocol IRTMPClientDelegate <IPendingServiceCallback>
 -(void)connectedEvent;
 -(void)disconnectedEvent;
 @end
+
 
 @class CrowdNode, RTMProtocol, Packet, MetaData;
 @protocol IStreamDispatcher, IPendingServiceCall;
@@ -24,6 +28,9 @@
 {
 	// delegates
     NSMutableArray  *owners;
+    
+    // thread
+    NSThread        *socketThread;
 		
 	// socket
 	NSString		*_host;
@@ -69,6 +76,9 @@
 // init
 -(id)init:(NSString *)url;
 -(id)init:(NSString *)url andParams:(NSArray *)params;
+
+// spawn socket thread
+-(void)spawnSocketThread;
 
 // delegates
 -(BOOL)isDelegate:(id)owner;
