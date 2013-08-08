@@ -45,16 +45,10 @@
     
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
-    //hostTextField.text = @"rtmp://10.0.2.34:1935/mediaAppDummy";
-    //hostTextField.text = @"rtmp://10.0.1.132:1935/mediaAppDummy";
-    hostTextField.text = @"rtmp://192.168.2.100:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.100:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
-    //hostTextField.text = @"rtmp://demo.eudata.biz:1935/wcc";
-    //hostTextField.text = @"rtmp://sks30iyy9if.rtmphost.com:1935/callmeios";
-    //hostTextField.text = @"rtmp://192.168.1.101:1935/live";
-    //hostTextField.text = @"rtmp://streaming-dev2.affectiva.com:1935/videorecording-dev2";
-    //hostTextField.text = @"rtmp://194.29.209.51:1935/wcc";
+    hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     hostTextField.delegate = self;
     
     streamTextField.text = @"outgoingaudio_c109";
@@ -174,7 +168,7 @@
 
 -(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@", (int)state, description);
+    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@ [%@]", (int)state, description, [NSThread isMainThread]?@"M":@"T");
     
     switch (state) {
             
@@ -228,7 +222,7 @@
 
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
+    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@ [%@]", code, description, [NSThread isMainThread]?@"M":@"T");
     
     [self setDisconnect];
     
@@ -238,7 +232,7 @@
 }
 
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
-    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
+    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@ [%@]", event, metadata, [NSThread isMainThread]?@"M":@"T");
 }
 
 @end
