@@ -21,8 +21,7 @@
 //static NSString *host = @"rtmp://192.168.2.102:1935/live";
 static NSString *host = @"rtmp://80.74.155.7/live";
 
-//static NSString *stream = @"outgoingaudio_c11";
-static NSString *stream = @"ubcue1";
+static NSString *stream = @"outgoingaudio_c11";
 //static NSString *stream = @"myStream";
 
 // cross stream mode
@@ -309,7 +308,7 @@ static BOOL isCrossStreams = NO;
     NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
 }
 
-//// Send metadata for each video frame
+/*/// Send metadata for each video frame
  -(void)pixelBufferShouldBePublished:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp {
      
      //[upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp]} event:@"videoFrameOptions:"];
@@ -328,6 +327,6 @@ static BOOL isCrossStreams = NO;
      [upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp], @"bufferSize":[NSNumber numberWithInt:bufferSize], @"width":[NSNumber numberWithInt:width], @"height":[NSNumber numberWithInt:height]} event:@"videoFrameOptions:"];
      //
  }
- //
+/*/
 
 @end
