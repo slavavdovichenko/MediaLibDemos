@@ -45,7 +45,7 @@
     
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
-    hostTextField.text = @"rtmp://192.168.2.103:1935/live";
+    hostTextField.text = @"rtmp://192.168.2.105:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
     //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
@@ -90,7 +90,7 @@
     framesPlayer.orientation = UIImageOrientationRight;
     //framesPlayer.orientation = UIImageOrientationLeft;
     
-    /*/
+    //
     player = [[MediaStreamPlayer alloc] init:hostTextField.text];
     /*/
     if (!socket) {
@@ -104,7 +104,7 @@
     }
     
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
-    //
+    /*/
     
     player.delegate = self;
     player.player = framesPlayer;
@@ -208,7 +208,8 @@
             if ([description isEqualToString:@"NetStream.Play.StreamNotFound"]) {
                 
                 [player stop];
-                [self showAlert:[NSString stringWithString:description]];
+                //[self showAlert:[NSString stringWithString:description]];
+                [self performSelector:@selector(showAlert:) withObject:description];
                 
                 break;
             }
@@ -229,9 +230,17 @@
     
     [self setDisconnect];
     
-    [self showAlert:(code == -1) ?
+    /*/
+     [self showAlert:(code == -1) ?
      [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] :
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+    
+    /*/
+    
+    [self performSelector:@selector(showAlert:) withObject:(code == -1) ?
+     @"Unable to connect to the server. Make sure the hostname/IP address and port number are valid" :
+     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+    //
 }
 
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {

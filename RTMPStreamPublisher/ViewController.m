@@ -45,7 +45,7 @@
     
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.2.103:1935/live";
+    hostTextField.text = @"rtmp://192.168.2.105:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
@@ -98,7 +98,9 @@
             [self showAlert:@"Socket has not be created"];
             return;
         }
-    }
+        
+        [socket spawnSocketThread];
+   }
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
     [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
@@ -261,9 +263,17 @@
     
     [self setDisconnect];
     
+    /*/
     [self showAlert:(code == -1) ? 
      [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] : 
      [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+    
+    /*/
+    
+    [self performSelector:@selector(showAlert:) withObject:(code == -1) ?
+     @"Unable to connect to the server. Make sure the hostname/IP address and port number are valid" :
+     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+    //
     
 }
 
