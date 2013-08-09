@@ -78,9 +78,11 @@
 // ALERT
 
 -(void)showAlert:(NSString *)message {
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive" message:message delegate:self 
-                                       cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [av show];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive" message:message delegate:self
+                                           cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [av show];
+    });
 }
 
 // ACTIONS
@@ -263,18 +265,9 @@
     
     [self setDisconnect];
     
-    /*/
     [self showAlert:(code == -1) ? 
-     [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] : 
-     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
-    
-    /*/
-    
-    [self performSelector:@selector(showAlert:) withObject:(code == -1) ?
-     @"Unable to connect to the server. Make sure the hostname/IP address and port number are valid" :
-     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
-    //
-    
+     @"Unable to connect to the server. Make sure the hostname/IP address and port number are valid" : 
+     [NSString stringWithFormat:@"connectFailedEvent: %@", description]];
 }
 
 /*/// Send metadata for each video frame

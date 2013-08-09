@@ -17,9 +17,12 @@
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
-static NSString *host = @"rtmp://192.168.1.102:1935/live";
+//static NSString *host = @"rtmp://192.168.1.102:1935/live";
+//static NSString *host = @"rtmp://192.168.2.102:1935/live";
+static NSString *host = @"rtmp://80.74.155.7/live";
 
-static NSString *stream = @"outgoingaudio_c11";
+//static NSString *stream = @"outgoingaudio_c11";
+static NSString *stream = @"ubcue1";
 //static NSString *stream = @"myStream";
 
 // cross stream mode
@@ -64,7 +67,7 @@ static BOOL isCrossStreams = NO;
     upstream = nil;
     player = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     upstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 2 : 1) : 0;
     downstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 1 : 2) : 0;
@@ -99,9 +102,11 @@ static BOOL isCrossStreams = NO;
 // ALERT
 
 -(void)showAlert:(NSString *)message {
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive" message:message delegate:self
-                                       cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [av show];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive" message:message delegate:self
+                                           cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [av show];
+    });
 }
 
 -(void)doConnect {
@@ -112,6 +117,8 @@ static BOOL isCrossStreams = NO;
             [self showAlert:@"Socket has not be created"];
             return;
         }
+        
+        [socket spawnSocketThread];
     }
     
     NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
@@ -294,12 +301,33 @@ static BOOL isCrossStreams = NO;
     [self setDisconnect];
     
     [self showAlert:(code == -1) ?
-     [NSString stringWithFormat:@"Unable to connect to the server. Make sure the hostname/IP address and port number are valid\n"] :
-     [NSString stringWithFormat:@"connectFailedEvent: %@ \n", description]];
+     @"Unable to connect to the server. Make sure the hostname/IP address and port number are valid" :
+     [NSString stringWithFormat:@"connectFailedEvent: %@", description]];
 }
 
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
     NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
 }
+
+//// Send metadata for each video frame
+ -(void)pixelBufferShouldBePublished:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp {
+     
+     //[upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp]} event:@"videoFrameOptions:"];
+     
+     //
+     CVPixelBufferRef frameBuffer = pixelBuffer;
+     
+     // Get the base address of the pixel buffer.
+     uint8_t *baseAddress = CVPixelBufferGetBaseAddress(frameBuffer);
+     // Get the data size for contiguous planes of the pixel buffer.
+     size_t bufferSize = CVPixelBufferGetDataSize(frameBuffer);
+     // Get the pixel buffer width and height.
+     size_t width = CVPixelBufferGetWidth(frameBuffer);
+     size_t height = CVPixelBufferGetHeight(frameBuffer);
+     
+     [upstream sendMetadata:@{@"videoTimestamp":[NSNumber numberWithInt:timestamp], @"bufferSize":[NSNumber numberWithInt:bufferSize], @"width":[NSNumber numberWithInt:width], @"height":[NSNumber numberWithInt:height]} event:@"videoFrameOptions:"];
+     //
+ }
+ //
 
 @end
