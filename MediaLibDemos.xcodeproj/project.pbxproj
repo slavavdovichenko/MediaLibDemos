@@ -140,6 +140,7 @@
 		F9C4CE07155966DE00B564C1 /* MemoryTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryTicker.h; sourceTree = "<group>"; };
 		F9C4CE08155966DE00B564C1 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		F9C4CE0A1559671300B564C1 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		F9E0D96217BA1C4E0003BE82 /* AMFSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMFSerializer.h; sourceTree = "<group>"; };
 		F9EC497E14F264880007FE13 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
 		F9EC497F14F264880007FE13 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
 		F9EC498014F264880007FE13 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavfilter.a; sourceTree = "<group>"; };
@@ -357,6 +358,7 @@
 		F9BBFA8D14A49D0C00C5B39B /* include */ = {
 			isa = PBXGroup;
 			children = (
+				F9E0D96217BA1C4E0003BE82 /* AMFSerializer.h */,
 				F9C4CE06155966DE00B564C1 /* DEBUG.h */,
 				F9C4CE07155966DE00B564C1 /* MemoryTicker.h */,
 				F9C4CE08155966DE00B564C1 /* Types.h */,
@@ -864,6 +866,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "i386 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -889,6 +892,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "i386 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -117,7 +117,6 @@
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
     
-    
     //[upstream setAudioPickingSeconds:0.05f];
     //[upstream setAudioBitrate:64000];
     
@@ -184,7 +183,7 @@
     
     if (upstream.state != STREAM_PLAYING)
         return;
-    
+     
     [upstream switchCameras];
     
     [self sendMetadata];
