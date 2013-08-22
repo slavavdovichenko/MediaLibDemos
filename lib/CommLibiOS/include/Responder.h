@@ -12,10 +12,12 @@
     NSString    *message;
     NSString    *detail;
     NSString    *faultCode;
+    id context;
 }
 @property (nonatomic, readonly) NSString *message;
 @property (nonatomic, readonly) NSString *detail;
 @property (nonatomic, readonly) NSString *faultCode;
+@property (nonatomic, assign) id context;
 
 -(id)initWithMessage:(NSString *)_message;
 -(id)initWithMessage:(NSString *)_message detail:(NSString *)_detail;

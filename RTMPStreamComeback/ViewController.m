@@ -123,6 +123,7 @@ static BOOL isCrossStreams = NO;
     NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
+    [upstream setVideoBitrate:32000];
     upstream.delegate = self;
     [upstream stream:name publishType:PUBLISH_LIVE];
         

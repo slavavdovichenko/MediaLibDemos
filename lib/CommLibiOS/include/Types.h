@@ -60,6 +60,7 @@
 
 @interface NSString (Chars)
 -(NSString *)firstCharToUpper;
+-(NSString *)stringByTrimmingWhitespace;
 @end
 
 @interface NSObject (Properties)
