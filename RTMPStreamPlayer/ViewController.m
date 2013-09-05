@@ -41,7 +41,7 @@
     player = nil;
     socket = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
