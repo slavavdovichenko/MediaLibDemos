@@ -52,9 +52,9 @@
     //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     hostTextField.delegate = self;
     
-    streamTextField.text = @"outgoingaudio_c109";
+    //streamTextField.text = @"outgoingaudio_c109";
     //streamTextField.text = @"incomingaudio_1111";
-    //streamTextField.text = @"myStream";
+    streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
 }
