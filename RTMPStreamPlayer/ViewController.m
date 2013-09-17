@@ -52,9 +52,10 @@
     //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     hostTextField.delegate = self;
     
-    //streamTextField.text = @"outgoingaudio_c109";
+    //streamTextField.text = @"slavav";
+    streamTextField.text = @"outgoingaudio_c109";
     //streamTextField.text = @"incomingaudio_1111";
-    streamTextField.text = @"myStream";
+    //streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
 }
@@ -94,8 +95,8 @@
     //framesPlayer.orientation = UIImageOrientationLeft;
     
     //
-    player = [[MediaStreamPlayer alloc] init:hostTextField.text];
-    /*/
+    //player = [[MediaStreamPlayer alloc] init:hostTextField.text];
+    //
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
         if (!socket) {
@@ -107,7 +108,7 @@
     }
     
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
-    /*/
+    //
     
     player.delegate = self;
     player.player = framesPlayer;
