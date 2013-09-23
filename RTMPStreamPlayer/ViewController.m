@@ -123,10 +123,10 @@
 
 -(void)setDisconnect {
     
-    /*/
+    //
     [socket disconnect];
     socket = nil;
-    /*/
+    //
 
     player = nil;
     

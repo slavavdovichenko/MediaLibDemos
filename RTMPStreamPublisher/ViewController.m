@@ -102,7 +102,11 @@
             return;
         }
         
-        [socket spawnSocketThread];
+        NSLog(@"doConnect: (1) socket.retainCount = %d", socket.retainCount);
+        
+        //[socket spawnSocketThread];
+        
+        NSLog(@"doConnect: (2) socket.retainCount = %d", socket.retainCount);
    }
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
@@ -113,6 +117,8 @@
     
     upstream.delegate = self;
     
+    NSLog(@"doConnect: (3) socket.retainCount = %d", socket.retainCount);
+    
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
@@ -121,8 +127,10 @@
     //[upstream setAudioBitrate:64000];
     
     //
+    NSLog(@"doConnect: (4) socket.retainCount = %d", socket.retainCount);
     
     btnConnect.title = @"Disconnect"; 
+    
 }
 
 -(void)doDisconnect {
@@ -130,13 +138,18 @@
 }
 
 -(void)setDisconnect {
+    
+    NSLog(@"setDisconnect: socket.retainCount = %d", socket.retainCount);
+    
+    [upstream teardownPreviewLayer];
+    [upstream release];
+    upstream = nil;
 
     //
     [socket disconnect];
+    [socket release];
     socket = nil;
     //
-    
-    upstream = nil;
     
     btnConnect.title = @"Connect";
     btnToggle.enabled = NO;

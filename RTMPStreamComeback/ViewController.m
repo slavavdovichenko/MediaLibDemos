@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 #import "DEBUG.h"
 #import "MemoryTicker.h"
 #import "BroadcastStreamClient.h"
@@ -32,6 +33,7 @@ static BOOL isCrossStreams = NO;
 @interface ViewController () <IMediaStreamEvent> {
     
     MemoryTicker            *memoryTicker;
+    FramesPlayer            *screen;
     
     RTMPClient              *socket;
     BroadcastStreamClient   *upstream;
@@ -61,7 +63,7 @@ static BOOL isCrossStreams = NO;
     
     memoryTicker = [[MemoryTicker alloc] initWithResponder:self andMethod:@selector(sizeMemory:)];
     memoryTicker.asNumber = YES;
-    
+
     socket = nil;
     upstream = nil;
     player = nil;
@@ -110,6 +112,9 @@ static BOOL isCrossStreams = NO;
 
 -(void)doConnect {
     
+    NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
+    
+    
     if (!socket) {
         socket = [[RTMPClient alloc] init:host];
         if (!socket) {
@@ -120,10 +125,11 @@ static BOOL isCrossStreams = NO;
         [socket spawnSocketThread];
     }
     
-    NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
-    
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
-    [upstream setVideoBitrate:128000];
+    //upstream = [[BroadcastStreamClient alloc] initOnlyAudioWithClient:socket];
+    //upstream = [[BroadcastStreamClient alloc] initOnlyVideoWithClient:socket resolution:RESOLUTION_LOW];
+    //[upstream setVideoBitrate:128000];
+    
     upstream.delegate = self;
     [upstream stream:name publishType:PUBLISH_LIVE];
         
@@ -138,12 +144,12 @@ static BOOL isCrossStreams = NO;
     
     NSString *name = [NSString stringWithFormat:@"%@%d", stream, downstreamCross];
     
-    FramesPlayer *_player = [[FramesPlayer alloc] initWithView:streamView];
-    //_player.orientation = UIImageOrientationRight;
+    screen = [[FramesPlayer alloc] initWithView:streamView];
+    screen.orientation = UIImageOrientationRight;
     
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
     player.delegate = self;
-    player.player = _player;
+    player.player = screen;
     [player stream:name];
     
     btnPublish.title = @"Pause";
@@ -161,7 +167,7 @@ static BOOL isCrossStreams = NO;
     
     [socket disconnect];
     socket = nil;
-  
+    screen = nil;
     player = nil;
     upstream = nil;
     
@@ -200,7 +206,7 @@ static BOOL isCrossStreams = NO;
     NSLog(@"publishControl: stream = %@", stream);
     
     if (isCrossStreams)
-        player ? (player.state != STREAM_PLAYING ? [player start] : [player pause]) : [self doPlay];
+        player ? ((player.state != STREAM_PLAYING ? [player start] : [player pause])) : [self doPlay];
     else
         (upstream.state != STREAM_PLAYING) ? [upstream start] : [upstream pause];
 }
