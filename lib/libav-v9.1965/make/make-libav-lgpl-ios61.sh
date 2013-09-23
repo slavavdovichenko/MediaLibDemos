@@ -7,7 +7,7 @@
 #
 ##############################################################
 # 1. download libav from http://ffmpeg.org/download.html     #
-# 2. copy make-libav-lgpl-ios61.sh to ./l                    #
+# 2. copy make-libav-lgpl-ios61.sh to ./libav                #
 # 3. cd ./libav && ./make-libav-lgpl-ios61.sh                #
 ##############################################################
 

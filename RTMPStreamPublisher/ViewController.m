@@ -52,8 +52,8 @@
     //hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     hostTextField.delegate = self;
 
-    streamTextField.text = @"outgoingaudio_c109";
-    //streamTextField.text = @"myStream";
+    //streamTextField.text = @"outgoingaudio_c109";
+    streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
 }
@@ -102,11 +102,7 @@
             return;
         }
         
-        NSLog(@"doConnect: (1) socket.retainCount = %d", socket.retainCount);
-        
-        //[socket spawnSocketThread];
-        
-        NSLog(@"doConnect: (2) socket.retainCount = %d", socket.retainCount);
+        [socket spawnSocketThread];
    }
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
@@ -117,17 +113,12 @@
     
     upstream.delegate = self;
     
-    NSLog(@"doConnect: (3) socket.retainCount = %d", socket.retainCount);
-    
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
     
     //[upstream setAudioPickingSeconds:0.05f];
     //[upstream setAudioBitrate:64000];
-    
-    //
-    NSLog(@"doConnect: (4) socket.retainCount = %d", socket.retainCount);
     
     btnConnect.title = @"Disconnect"; 
     
@@ -138,18 +129,12 @@
 }
 
 -(void)setDisconnect {
-    
-    NSLog(@"setDisconnect: socket.retainCount = %d", socket.retainCount);
+
+    [socket disconnect];
+    socket = nil;
     
     [upstream teardownPreviewLayer];
-    [upstream release];
     upstream = nil;
-
-    //
-    [socket disconnect];
-    [socket release];
-    socket = nil;
-    //
     
     btnConnect.title = @"Connect";
     btnToggle.enabled = NO;

@@ -79,6 +79,7 @@
 
 // spawn socket thread
 -(void)spawnSocketThread;
+-(NSThread *)getSocketThread;
 
 // delegates
 -(BOOL)isDelegate:(id)owner;

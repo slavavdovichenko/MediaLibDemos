@@ -53,9 +53,9 @@
     hostTextField.delegate = self;
     
     //streamTextField.text = @"slavav";
-    streamTextField.text = @"outgoingaudio_c109";
+    //streamTextField.text = @"outgoingaudio_c109";
     //streamTextField.text = @"incomingaudio_1111";
-    //streamTextField.text = @"myStream";
+    streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
 }
@@ -123,10 +123,8 @@
 
 -(void)setDisconnect {
     
-    //
     [socket disconnect];
     socket = nil;
-    //
 
     player = nil;
     
@@ -212,8 +210,7 @@
             if ([description isEqualToString:@"NetStream.Play.StreamNotFound"]) {
                 
                 [player stop];
-                //[self showAlert:[NSString stringWithString:description]];
-                [self performSelector:@selector(showAlert:) withObject:description];
+                [self showAlert:description];
                 
                 break;
             }
