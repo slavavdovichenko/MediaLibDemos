@@ -19,11 +19,11 @@
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
 //static NSString *host = @"rtmp://192.168.1.102:1935/live";
-//static NSString *host = @"rtmp://192.168.2.102:1935/live";
-static NSString *host = @"rtmp://80.74.155.7/live";
+static NSString *host = @"rtmp://192.168.2.102:1935/live";
+//static NSString *host = @"rtmp://80.74.155.7/live";
 
-static NSString *stream = @"outgoingaudio_c11";
-//static NSString *stream = @"myStream";
+//static NSString *stream = @"outgoingaudio_c11";
+static NSString *stream = @"myStream";
 
 // cross stream mode
 static BOOL isCrossStreams = NO;
