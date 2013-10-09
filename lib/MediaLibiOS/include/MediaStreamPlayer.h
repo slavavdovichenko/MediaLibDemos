@@ -1,6 +1,6 @@
 //
 //  MediaStreamPlayer.h
-//  RTMPStream
+//  MediaLibiOS
 //
 //  Created by Vyacheslav Vdovichenko on 9/18/11.
 //  Copyright 2011 The Midnight Coders, Inc. All rights reserved.

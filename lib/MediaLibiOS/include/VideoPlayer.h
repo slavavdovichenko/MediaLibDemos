@@ -1,12 +1,17 @@
 //
 //  VideoPlayer.h
-//  MediaLibiOS+FFmpeg-09
+//  MediaLibiOS
 //
 //  Created by Vyacheslav Vdovichenko on 4/28/12.
 //  Copyright (c) 2012 The Midnight Coders, Inc. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import <UIKit/UIKit.h>
+#else
+#import <AppKit/AppKit.h>
+#define UIImage NSImage
+#endif
 
 
 @interface VideoFrameData : NSObject

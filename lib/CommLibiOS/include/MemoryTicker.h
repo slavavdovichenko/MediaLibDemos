@@ -20,6 +20,9 @@
 @property BOOL asNumber;
 
 -(id)initWithResponder:(id)_responder andMethod:(SEL)method;
+
+-(void)applicationUsedMemoryReport;
+
 +(double)getAvailableMemoryInBytes;
 +(double)getAvailableMemoryInKiloBytes;
 +(NSString *)showAvailableMemoryInBytes;

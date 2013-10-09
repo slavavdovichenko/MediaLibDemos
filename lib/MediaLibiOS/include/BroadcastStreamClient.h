@@ -1,11 +1,17 @@
 //
 //  BroadcastStreamClient.h
-//  RTMPStream
+//  MediaLibiOS
 //
 //  Created by Vyacheslav Vdovichenko on 8/15/11.
 //  Copyright 2011 The Midnight Coders, Inc. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+#import <UIKit/UIKit.h>
+#else
+#import <AppKit/AppKit.h>
+#define UIImage NSImage
+#endif
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>

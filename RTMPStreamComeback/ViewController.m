@@ -18,12 +18,13 @@
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
-//static NSString *host = @"rtmp://192.168.1.102:1935/live";
-static NSString *host = @"rtmp://192.168.2.102:1935/live";
+static NSString *host = @"rtmp://192.168.1.104:1935/live";
+//static NSString *host = @"rtmp://192.168.2.104:1935/live";
 //static NSString *host = @"rtmp://80.74.155.7/live";
 
 //static NSString *stream = @"outgoingaudio_c11";
-static NSString *stream = @"myStream";
+//static NSString *stream = @"myStream";
+static NSString *stream = @"slavav";
 
 // cross stream mode
 static BOOL isCrossStreams = NO;
@@ -128,7 +129,7 @@ static BOOL isCrossStreams = NO;
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudioWithClient:socket];
     //upstream = [[BroadcastStreamClient alloc] initOnlyVideoWithClient:socket resolution:RESOLUTION_LOW];
-    //[upstream setVideoBitrate:128000];
+    //[upstream setVideoBitrate:32000];
     
     upstream.delegate = self;
     [upstream stream:name publishType:PUBLISH_LIVE];

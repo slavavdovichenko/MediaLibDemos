@@ -1,6 +1,6 @@
 //
 //  MediaConstants.h
-//  MediaLibBuilder
+//  MediaLibiOS
 //
 //  Created by Vyacheslav Vdovichenko on 8/15/11.
 //  Copyright 2011 The Midnight Coders, Inc. All rights reserved.
