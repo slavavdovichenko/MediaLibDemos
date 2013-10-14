@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MediaConstants.h"
+#import "MPMediaData.h"
 #import "RTMPClient.h"
 
 #define isEchoCancellation [MediaStreamPlayer getEchoCancellationOn]
@@ -18,10 +18,10 @@
 @class VideoStream, SysTimer, NellyMoserDecoder;
 
 @interface MediaStreamPlayer : NSObject
-@property (nonatomic, assign) id <IMediaStreamEvent> delegate;
+@property (nonatomic, assign) id <MPIMediaStreamEvent> delegate;
 @property (nonatomic, retain) id <IVideoPlayer> player;
 @property (nonatomic, retain) NSArray *parameters;
-@property (readonly) MediaStreamState state;
+@property (readonly) MPMediaStreamState state;
 
 -(id)init:(NSString *)url;
 -(id)initWithClient:(RTMPClient *)client;

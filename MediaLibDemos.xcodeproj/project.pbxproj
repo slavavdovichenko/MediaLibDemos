@@ -242,7 +242,6 @@
 		F9BBFA9814A49D0D00C5B39B /* RTMPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMPClient.h; sourceTree = "<group>"; };
 		F9BBFA9914A49D0D00C5B39B /* WeborbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeborbClient.h; sourceTree = "<group>"; };
 		F9BBFA9F14A49D0D00C5B39B /* BroadcastStreamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastStreamClient.h; sourceTree = "<group>"; };
-		F9BBFAA014A49D0D00C5B39B /* MediaConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaConstants.h; sourceTree = "<group>"; };
 		F9BBFAA114A49D0D00C5B39B /* MediaStreamPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaStreamPlayer.h; sourceTree = "<group>"; };
 		F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MediaLibiOS.a; sourceTree = "<group>"; };
 		F9BBFAB314A49E2400C5B39B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -271,6 +270,8 @@
 		F9D3D9E217F029CF0064C812 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F9D3D9E317F029CF0064C812 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F9E0D96217BA1C4E0003BE82 /* AMFSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMFSerializer.h; sourceTree = "<group>"; };
+		F9F1358E180A974E002FE11C /* MPMediaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaData.h; sourceTree = "<group>"; };
+		F9F1358F180A97ED002FE11C /* MPMediaEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaEncoder.h; sourceTree = "<group>"; };
 		F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F9F6992015AC5D01004B6F37 /* RTMPStreamPublisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamPublisher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F6992715AC5D01004B6F37 /* RTMPStreamPublisher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTMPStreamPublisher-Info.plist"; sourceTree = "<group>"; };
@@ -726,9 +727,10 @@
 		F9BBFA9E14A49D0D00C5B39B /* include */ = {
 			isa = PBXGroup;
 			children = (
+				F9F1358F180A97ED002FE11C /* MPMediaEncoder.h */,
+				F9F1358E180A974E002FE11C /* MPMediaData.h */,
 				F9C4CE0A1559671300B564C1 /* VideoPlayer.h */,
 				F9BBFA9F14A49D0D00C5B39B /* BroadcastStreamClient.h */,
-				F9BBFAA014A49D0D00C5B39B /* MediaConstants.h */,
 				F9BBFAA114A49D0D00C5B39B /* MediaStreamPlayer.h */,
 			);
 			path = include;

@@ -96,9 +96,9 @@ static NSString *stream = @"myStream";
         [socket spawnSocketThread];
     }
     
-    //upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
+    upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudioWithClient:socket];
-    upstream = [[BroadcastStreamClient alloc] initOnlyVideoWithClient:socket resolution:RESOLUTION_LOW];
+    //upstream = [[BroadcastStreamClient alloc] initOnlyVideoWithClient:socket resolution:RESOLUTION_LOW];
     
     upstream.delegate = self;
     [upstream stream:stream publishType:PUBLISH_LIVE];

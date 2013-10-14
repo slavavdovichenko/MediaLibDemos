@@ -11,9 +11,9 @@
 #import "MemoryTicker.h"
 #import "BroadcastStreamClient.h"
 #import "MediaStreamPlayer.h"
+#import "MPMediaEncoder.h"
 
-
-@interface ViewController () <IMediaStreamEvent> {
+@interface ViewController () <MPIMediaStreamEvent> {
     MemoryTicker            *memoryTicker;
     RTMPClient              *socket;
     BroadcastStreamClient   *upstream;
@@ -49,7 +49,7 @@
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
     hostTextField.text = @"rtmp://192.168.1.104:1935/live";
-    //hostTextField.text = @"rtmp://192.168.2.104:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
     streamTextField.text = @"slavav";
@@ -91,11 +91,28 @@
 
 -(void)doConnect {
     
+#if 0
+    
+    NSString *url = [NSString stringWithFormat:@"%@/%@", hostTextField.text, streamTextField.text];
+    upstream = [[BroadcastStreamClient alloc] init:url  resolution:RESOLUTION_LOW];
+    upstream.delegate = self;
+    upstream.encoder = [MPMediaEncoder new];
+    [upstream start];
+    
+    btnConnect.title = @"Disconnect";
+    
+    return;
+
+#endif
+    
+#if 0
+    
+    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
     //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
-    //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
+
+#else
     
-    //
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
         if (!socket) {
@@ -107,19 +124,18 @@
    }
     
     upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
+    
+#endif
+    
+    upstream.delegate = self;
+    
     [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     //[upstream setVideoBitrate:512000];
-    //
-    
-    upstream.delegate = self;
     
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
     //[upstream stream:streamTextField.text publishType:PUBLISH_APPEND];
-    
-    //[upstream setAudioPickingSeconds:0.05f];
-    //[upstream setAudioBitrate:64000];
     
     btnConnect.title = @"Disconnect"; 
     
@@ -198,11 +214,11 @@
 }
 
 #pragma mark -
-#pragma mark IMediaStreamEvent Methods 
+#pragma mark MPIMediaStreamEvent Methods 
 
--(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
+-(void)stateChanged:(id)sender state:(MPMediaStreamState)state description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@ [%@]", (int)state, description, [NSThread isMainThread]?@"M":@"T");
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> stateChangedEvent: %d = %@ [%@]", (int)state, description, [NSThread isMainThread]?@"M":@"T");
     
     switch (state) {
             
@@ -215,23 +231,25 @@
             
         case CONN_CONNECTED: {
             
-            if (![description isEqualToString:@"RTMP.Client.isConnected"])
+            if (![description isEqualToString:MP_RTMP_CLIENT_IS_CONNECTED])
                 break;
             
             [upstream start];
             
+            /*/
             hostTextField.hidden = YES;
             streamTextField.hidden = YES;
             previewView.hidden = NO;
             
             btnPublish.enabled = YES;
+            /*/
             
             break;
            
         }
         
         case STREAM_CREATED: {
-            [upstream setPreviewLayer:previewView];
+            //[upstream setPreviewLayer:previewView];
             break;
         }
             
@@ -244,9 +262,19 @@
         }
             
         case STREAM_PLAYING: {
-            
+           
             [self sendMetadata];
             
+            //
+            [upstream setPreviewLayer:previewView];
+            
+            hostTextField.hidden = YES;
+            streamTextField.hidden = YES;
+            previewView.hidden = NO;
+            
+            btnPublish.enabled = YES;
+            //
+           
             btnPublish.title = @"Pause";
             btnToggle.enabled = YES;
             
@@ -260,7 +288,7 @@
 
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@, [%@]", code, description, [NSThread isMainThread]?@"M":@"T");
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> connectFailedEvent: %d = %@, [%@]", code, description, [NSThread isMainThread]?@"M":@"T");
     
     [self setDisconnect];
     

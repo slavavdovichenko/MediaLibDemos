@@ -13,7 +13,7 @@
 #import "VideoPlayer.h"
 
 
-@interface ViewController () <IMediaStreamEvent> {
+@interface ViewController () <MPIMediaStreamEvent> {
     MemoryTicker            *memoryTicker;
     RTMPClient              *socket;
     MediaStreamPlayer       *player;
@@ -49,10 +49,11 @@
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
     hostTextField.text = @"rtmp://192.168.1.104:1935/live";
-    //hostTextField.text = @"rtmp://192.168.2.104:1935/live";
+    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
     
     streamTextField.text = @"slavav";
+    //streamTextField.text = @"mediaencoder";
     //streamTextField.text = @"outgoingaudio_c109";
     //streamTextField.text = @"incomingaudio_1111";
     //streamTextField.text = @"myStream";
@@ -94,9 +95,12 @@
     framesPlayer.orientation = UIImageOrientationRight;
     //framesPlayer.orientation = UIImageOrientationLeft;
     
-    //
+#if 1
+    
     player = [[MediaStreamPlayer alloc] init:hostTextField.text];
-    /*/
+
+#else
+    
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
         if (!socket) {
@@ -104,11 +108,12 @@
             return;
         }
         
-        //[socket spawnSocketThread];
+        [socket spawnSocketThread];
     }
     
     player = [[MediaStreamPlayer alloc] initWithClient:socket];
-    /*/
+    
+#endif
     
     player.delegate = self;
     player.player = framesPlayer;
@@ -169,11 +174,11 @@
 }
 
 #pragma mark -
-#pragma mark IMediaStreamEvent Methods
+#pragma mark MPIMediaStreamEvent Methods
 
--(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
+-(void)stateChanged:(id)sender state:(MPMediaStreamState)state description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: %d = %@ [%@]", (int)state, description, [NSThread isMainThread]?@"M":@"T");
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> stateChangedEvent: %d = %@ [%@]", (int)state, description, [NSThread isMainThread]?@"M":@"T");
     
     switch (state) {
             
@@ -207,7 +212,7 @@
             
         case STREAM_PLAYING: {
             
-            if ([description isEqualToString:@"NetStream.Play.StreamNotFound"]) {
+            if ([description isEqualToString:MP_NETSTREAM_PLAY_STREAM_NOT_FOUND]) {
                 
                 [player stop];
                 [self showAlert:description];
@@ -227,7 +232,7 @@
 
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@ [%@]", code, description, [NSThread isMainThread]?@"M":@"T");
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> connectFailedEvent: %d = %@ [%@]", code, description, [NSThread isMainThread]?@"M":@"T");
     
     [self setDisconnect];
     
@@ -237,7 +242,7 @@
 }
 
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
-    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@ [%@]", event, metadata, [NSThread isMainThread]?@"M":@"T");
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@ [%@]", event, metadata, [NSThread isMainThread]?@"M":@"T");
 }
 
 @end

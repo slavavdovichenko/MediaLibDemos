@@ -13,13 +13,14 @@
 #import "BroadcastStreamClient.h"
 #import "MediaStreamPlayer.h"
 #import "VideoPlayer.h"
+#import "MPMediaEncoder.h"
 
 
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
 static NSString *host = @"rtmp://192.168.1.104:1935/live";
-//static NSString *host = @"rtmp://192.168.2.104:1935/live";
+//static NSString *host = @"rtmp://192.168.2.101:1935/live";
 //static NSString *host = @"rtmp://80.74.155.7/live";
 
 //static NSString *stream = @"outgoingaudio_c11";
@@ -31,7 +32,7 @@ static BOOL isCrossStreams = NO;
 //static BOOL isCrossStreams = YES;
 
 
-@interface ViewController () <IMediaStreamEvent> {
+@interface ViewController () <MPIMediaStreamEvent> {
     
     MemoryTicker            *memoryTicker;
     FramesPlayer            *screen;
@@ -225,11 +226,11 @@ static BOOL isCrossStreams = NO;
 }
 
 #pragma mark -
-#pragma mark IMediaStreamEvent Methods
+#pragma mark MPIMediaStreamEvent Methods
 
--(void)stateChanged:(id)sender state:(MediaStreamState)state description:(NSString *)description {
+-(void)stateChanged:(id)sender state:(MPMediaStreamState)state description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> stateChangedEvent: sender = %@, %d = %@", [sender class], (int)state, description);
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> stateChangedEvent: sender = %@, %d = %@", [sender class], (int)state, description);
     
     if (sender == upstream) {
         
@@ -244,7 +245,7 @@ static BOOL isCrossStreams = NO;
                 
             case CONN_CONNECTED: {
                 
-                if (![description isEqualToString:@"RTMP.Client.isConnected"])
+                if (![description isEqualToString:MP_RTMP_CLIENT_IS_CONNECTED])
                     break;
                 
                 [upstream start];
@@ -303,7 +304,7 @@ static BOOL isCrossStreams = NO;
 
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <IMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
     
     [self setDisconnect];
     
@@ -313,7 +314,7 @@ static BOOL isCrossStreams = NO;
 }
 
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
-    NSLog(@" $$$$$$ <IMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
 }
 
 /*/// Send metadata for each video frame
