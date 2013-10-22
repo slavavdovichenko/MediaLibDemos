@@ -19,7 +19,7 @@
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
-static NSString *host = @"rtmp://192.168.1.104:1935/live";
+static NSString *host = @"rtmp://192.168.1.100:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
 //static NSString *host = @"rtmp://80.74.155.7/live";
 
@@ -114,8 +114,21 @@ static BOOL isCrossStreams = NO;
 
 -(void)doConnect {
     
-    NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
+#if 0 // use ffmpeg rtmp
     
+    NSString *url = [NSString stringWithFormat:@"%@/%@", hostTextField.text, streamTextField.text];
+    upstream = [[BroadcastStreamClient alloc] init:url  resolution:RESOLUTION_LOW];
+    upstream.delegate = self;
+    upstream.encoder = [MPMediaEncoder new];
+    [upstream start];
+    
+    btnConnect.title = @"Disconnect";
+    
+    return;
+    
+#endif
+    
+    NSString *name = [NSString stringWithFormat:@"%@%d", stream, upstreamCross];
     
     if (!socket) {
         socket = [[RTMPClient alloc] init:host];
@@ -248,6 +261,9 @@ static BOOL isCrossStreams = NO;
                 if (![description isEqualToString:MP_RTMP_CLIENT_IS_CONNECTED])
                     break;
                 
+#if 0  // use encoder -> MPMediaEncoder instance
+                upstream.encoder = [MPMediaEncoder new];
+#endif
                 [upstream start];
                 
                 btnPublish.enabled = YES;

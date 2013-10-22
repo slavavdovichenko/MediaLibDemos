@@ -153,10 +153,13 @@ static NSString *stream = @"myStream";
                 
             case CONN_CONNECTED: {
                 
-                if (![description isEqualToString:@"RTMP.Client.isConnected"])
+                if (![description isEqualToString:MP_RTMP_CLIENT_IS_CONNECTED)
                     break;
                 
-                [upstream start];
+#if 1  // use encoder -> MPMediaEncoder instance
+                upstream.encoder = [MPMediaEncoder new];
+#endif
+               [upstream start];
                 break;
             }
                 

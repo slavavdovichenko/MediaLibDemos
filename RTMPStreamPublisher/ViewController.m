@@ -48,7 +48,7 @@
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.104:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.100:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
@@ -91,7 +91,7 @@
 
 -(void)doConnect {
     
-#if 0
+#if 0 // use ffmpeg rtmp
     
     NSString *url = [NSString stringWithFormat:@"%@/%@", hostTextField.text, streamTextField.text];
     upstream = [[BroadcastStreamClient alloc] init:url  resolution:RESOLUTION_LOW];
@@ -105,13 +105,13 @@
 
 #endif
     
-#if 0
+#if 0 // use inside RTMPClient instance
     
     upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
     //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
 
-#else
+#else // use outside RTMPClient instance
     
     if (!socket) {
         socket = [[RTMPClient alloc] init:hostTextField.text];
@@ -129,7 +129,7 @@
     
     upstream.delegate = self;
     
-    [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+    //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     //[upstream setVideoBitrate:512000];
     
@@ -234,22 +234,16 @@
             if (![description isEqualToString:MP_RTMP_CLIENT_IS_CONNECTED])
                 break;
             
+#if 0  // use encoder -> MPMediaEncoder instance
+            upstream.encoder = [MPMediaEncoder new];
+#endif
             [upstream start];
-            
-            /*/
-            hostTextField.hidden = YES;
-            streamTextField.hidden = YES;
-            previewView.hidden = NO;
-            
-            btnPublish.enabled = YES;
-            /*/
             
             break;
            
         }
         
         case STREAM_CREATED: {
-            //[upstream setPreviewLayer:previewView];
             break;
         }
             
@@ -265,17 +259,14 @@
            
             [self sendMetadata];
             
-            //
             [upstream setPreviewLayer:previewView];
             
             hostTextField.hidden = YES;
             streamTextField.hidden = YES;
             previewView.hidden = NO;
             
-            btnPublish.enabled = YES;
-            //
-           
             btnPublish.title = @"Pause";
+            btnPublish.enabled = YES;
             btnToggle.enabled = YES;
             
             break;

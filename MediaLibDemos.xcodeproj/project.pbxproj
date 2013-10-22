@@ -130,6 +130,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9215AFC1816961800748EBB /* MPMediaDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaDecoder.h; sourceTree = "<group>"; };
 		F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F96A82AF17E8627200FF1B11 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		F96A82B017E8627200FF1B11 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
@@ -587,9 +588,9 @@
 				F988F2BF15AD843C0083CB14 /* ViewController.h */,
 				F988F2C015AD843C0083CB14 /* ViewController.m */,
 				F988F2B615AD843C0083CB14 /* AppDelegate.h */,
+				F988F2BC15AD843C0083CB14 /* MainStoryboard_iPad.storyboard */,
 				F988F2B715AD843C0083CB14 /* AppDelegate.m */,
 				F988F2B915AD843C0083CB14 /* MainStoryboard_iPhone.storyboard */,
-				F988F2BC15AD843C0083CB14 /* MainStoryboard_iPad.storyboard */,
 				F988F2AE15AD843C0083CB14 /* Supporting Files */,
 			);
 			path = RTMPStreamPlayer;
@@ -727,6 +728,7 @@
 		F9BBFA9E14A49D0D00C5B39B /* include */ = {
 			isa = PBXGroup;
 			children = (
+				F9215AFC1816961800748EBB /* MPMediaDecoder.h */,
 				F9F1358F180A97ED002FE11C /* MPMediaEncoder.h */,
 				F9F1358E180A974E002FE11C /* MPMediaData.h */,
 				F9C4CE0A1559671300B564C1 /* VideoPlayer.h */,
