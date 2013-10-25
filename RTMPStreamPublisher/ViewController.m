@@ -105,11 +105,11 @@
 
 #endif
     
-#if 0 // use inside RTMPClient instance
+#if 1 // use inside RTMPClient instance
     
-    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
+    //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
-    //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
+    upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
 
 #else // use outside RTMPClient instance
     
@@ -127,11 +127,11 @@
     
 #endif
     
-    upstream.delegate = self;
-    
-    //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+    [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     //[upstream setVideoBitrate:512000];
+    
+    upstream.delegate = self;
     
     [upstream stream:streamTextField.text publishType:PUBLISH_LIVE];
     //[upstream stream:streamTextField.text publishType:PUBLISH_RECORD];
@@ -198,7 +198,10 @@
     
     if (upstream.state != STREAM_PLAYING)
         return;
-     
+    
+    [upstream setVideoOrientation:
+     upstream.isUsingFrontFacingCamera ? AVCaptureVideoOrientationLandscapeRight : AVCaptureVideoOrientationLandscapeLeft];
+    
     [upstream switchCameras];
     
     [self sendMetadata];

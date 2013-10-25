@@ -905,6 +905,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "The Midnight Coders, Inc.";
+				TargetAttributes = {
+					F9F6991F15AC5D01004B6F37 = {
+						DevelopmentTeam = 73FSJC7BUF;
+					};
+				};
 			};
 			buildConfigurationList = F9BBFA1B14A49BA500C5B39B /* Build configuration list for PBXProject "MediaLibDemos" */;
 			compatibilityVersion = "Xcode 3.2";
