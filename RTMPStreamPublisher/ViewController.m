@@ -48,7 +48,7 @@
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.100:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
@@ -105,7 +105,7 @@
 
 #endif
     
-#if 1 // use inside RTMPClient instance
+#if 0 // use inside RTMPClient instance
     
     //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];

@@ -74,7 +74,7 @@ enum audio_mode
 -(BOOL)connect:(NSString *)url name:(NSString *)name publishType:(MPMediaPublishType)type;
 -(BOOL)attach:(RTMPClient *)client name:(NSString *)name publishType:(MPMediaPublishType)type;
 -(BOOL)stream:(NSString *)name publishType:(MPMediaPublishType)type;
--(BOOL)sendFrame:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp pts:(CMTime)pts duration:(CMTime)duration;
+-(BOOL)sendFrame:(CVPixelBufferRef)pixelBuffer timestamp:(int)timestamp;
 -(BOOL)sendSampleBuffer:(CMSampleBufferRef)sampleBuffer;
 -(void)sendMetadata:(NSDictionary *)data;
 -(void)sendMetadata:(NSDictionary *)data event:(NSString *)event;
