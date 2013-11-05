@@ -906,6 +906,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "The Midnight Coders, Inc.";
 				TargetAttributes = {
+					F988F2A715AD843B0083CB14 = {
+						DevelopmentTeam = 73FSJC7BUF;
+					};
 					F9F6991F15AC5D01004B6F37 = {
 						DevelopmentTeam = 73FSJC7BUF;
 					};

@@ -19,7 +19,7 @@
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
-static NSString *host = @"rtmp://192.168.1.102:1935/live";
+static NSString *host = @"rtmp://192.168.1.100:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
 //static NSString *host = @"rtmp://80.74.155.7/live";
 
@@ -178,13 +178,14 @@ static BOOL isCrossStreams = NO;
 
 -(void)setDisconnect {
     
-    NSLog(@" ******************> setDisconnect");
+    screen = nil;
+    player = nil;
+    
+    [upstream teardownPreviewLayer];
+    upstream = nil;
     
     [socket disconnect];
     socket = nil;
-    screen = nil;
-    player = nil;
-    upstream = nil;
     
     [netActivity stopAnimating];
    
@@ -320,7 +321,10 @@ static BOOL isCrossStreams = NO;
 
 -(void)connectFailed:(id)sender code:(int)code description:(NSString *)description {
     
-    NSLog(@" $$$$$$ <MPIMediaStreamEvent> connectFailedEvent: %d = %@\n", code, description);
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> connectFailedEvent: sender = %@, %d = %@\n", [sender class], code, description);
+    
+    if (!upstream)
+        return;
     
     [self setDisconnect];
     
@@ -330,7 +334,7 @@ static BOOL isCrossStreams = NO;
 }
 
 -(void)metadataReceived:(id)sender event:(NSString *)event metadata:(NSDictionary *)metadata {
-    NSLog(@" $$$$$$ <MPIMediaStreamEvent> dataReceived: EVENT: %@, METADATA = %@", event, metadata);
+    NSLog(@" $$$$$$ <MPIMediaStreamEvent> dataReceived: sender = %@, EVENT: %@, METADATA = %@", [sender class], event, metadata);
 }
 
 /*/// Send metadata for each video frame
