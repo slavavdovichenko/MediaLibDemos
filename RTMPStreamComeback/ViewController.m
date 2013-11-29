@@ -19,7 +19,7 @@
 //static NSString *host = @"rtmp://10.0.1.33:1935/live";
 //static NSString *host = @"rtmp://192.168.2.63:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
-static NSString *host = @"rtmp://192.168.1.100:1935/live";
+static NSString *host = @"rtmp://192.168.1.102:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
 //static NSString *host = @"rtmp://80.74.155.7/live";
 
@@ -70,7 +70,7 @@ static BOOL isCrossStreams = NO;
     upstream = nil;
     player = nil;
     
-    //echoCancellationOn;
+    echoCancellationOn;
     
     upstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 2 : 1) : 0;
     downstreamCross = isCrossStreams ? ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? 1 : 2) : 0;
@@ -79,9 +79,6 @@ static BOOL isCrossStreams = NO;
 	netActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	netActivity.center = CGPointMake(160.0f, 200.0f);
 	[self.view addSubview:netActivity];
-    
-    // setup the simultaneous record and playback
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
 }
 
 -(void)didReceiveMemoryWarning {

@@ -17,6 +17,9 @@
     MemoryTicker            *memoryTicker;
     RTMPClient              *socket;
     BroadcastStreamClient   *upstream;
+    
+    // test
+    int counter;
 }
 
 -(void)sizeMemory:(NSNumber *)memory;
@@ -48,7 +51,7 @@
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.100:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
@@ -105,11 +108,17 @@
 
 #endif
     
+#if 0 // resolution changing test on during initialization
+    uint resolution = (counter++)%4;
+#else
+    uint resolution = RESOLUTION_LOW;
+#endif
+
 #if 0 // use inside RTMPClient instance
     
-    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:RESOLUTION_LOW];
+    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:resolution];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
-    //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:RESOLUTION_LOW];
+    //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:resolution;
 
 #else // use outside RTMPClient instance
     
@@ -123,13 +132,19 @@
         [socket spawnSocketThread];
    }
     
-    upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:RESOLUTION_LOW];
+    upstream = [[BroadcastStreamClient alloc] initWithClient:socket resolution:resolution];
     
 #endif
     
     [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     //[upstream setVideoBitrate:512000];
+    
+#if 0 // resolution changing test on
+    uint r = (++counter)%4;
+    [upstream setVideoResolution:r];
+    NSLog(@"doConnect: resolution = %u", r);
+#endif
     
     upstream.delegate = self;
     
@@ -205,6 +220,19 @@
     [upstream switchCameras];
     
     [self sendMetadata];
+    
+#if 0 // bitrate changing test on
+    uint b = 512000/(++counter);
+    [upstream setVideoBitrate:b];
+    NSLog(@"camerasToggle: biterate = %u", b);
+#endif
+    
+#if 0 // resolution changing test on
+    uint r = (++counter)%4;
+    [upstream setVideoResolution:r];
+    NSLog(@"camerasToggle: resolution = %u", r);
+#endif
+    
 }
 
 

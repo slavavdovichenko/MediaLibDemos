@@ -53,6 +53,13 @@ enum mp_publish_type
 	PUBLISH_LIVE,
 };
 
+typedef enum mp_audio_pcm_type MPAudioPCMType;
+enum mp_audio_pcm_type
+{
+	MP_AUDIO_PCM_S16,
+	MP_AUDIO_PCM_FLT,
+};
+
 @interface MPMediaData : NSObject
 @property uint8_t *data;
 @property size_t size;
@@ -66,6 +73,7 @@ enum mp_publish_type
 @property (retain) id content;
 
 -(id)initWithData:(uint8_t *)data size:(size_t)size timestamp:(uint)timestamp;
++(BOOL)setAudioStreamBasicDescription:(AudioStreamBasicDescription *)streamDescription pcmType:(MPAudioPCMType)pcmType;
 @end
 
 @protocol MPIMediaStream <NSObject>
