@@ -44,14 +44,14 @@
     socket = nil;
     upstream = nil;
     
-    //echoCancellationOn;
+    echoCancellationOn;
     
     //hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.102:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.104:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
@@ -138,7 +138,7 @@
     
     [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
-    //[upstream setVideoBitrate:512000];
+    //[upstream setVideoBitrate:12000];
     
 #if 0 // resolution changing test on
     uint r = (++counter)%4;
@@ -214,8 +214,10 @@
     if (upstream.state != STREAM_PLAYING)
         return;
     
+#if 0
     [upstream setVideoOrientation:
      upstream.isUsingFrontFacingCamera ? AVCaptureVideoOrientationLandscapeRight : AVCaptureVideoOrientationLandscapeLeft];
+#endif
     
     [upstream switchCameras];
     
