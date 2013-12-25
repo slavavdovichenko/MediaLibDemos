@@ -12,15 +12,11 @@
 #import "MediaStreamPlayer.h"
 #import "VideoPlayer.h"
 
-#import "MPMediaDecoder.h"
-
 
 @interface ViewController () <MPIMediaStreamEvent> {
     MemoryTicker            *memoryTicker;
     RTMPClient              *socket;
     MediaStreamPlayer       *player;
-    
-    MPMediaDecoder          *decoder;
 }
 
 -(void)sizeMemory:(NSNumber *)memory;
@@ -44,16 +40,15 @@
     
     player = nil;
     socket = nil;
-    decoder = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     //hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
-    hostTextField.text = @"rtmp://192.168.1.104:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
     
@@ -96,20 +91,6 @@
 
 -(void)doConnect {
     
-#if 0 // use ffmpeg rtmp
-    
-    decoder = [MPMediaDecoder new];
-    if ( [decoder setupStreamReader] < 0 ) {
-        NSLog( @"Error setting up stream reader" );
-        return;
-    }
-    [decoder setStreamImageView:previewView];
-    previewView.hidden = NO;
-    
-    return;
-    
-#endif
-    
     FramesPlayer *framesPlayer = [[FramesPlayer alloc] initWithView:previewView];
     framesPlayer.orientation = UIImageOrientationRight;
     //framesPlayer.orientation = UIImageOrientationLeft;
@@ -151,7 +132,6 @@
     socket = nil;
 
     player = nil;
-    decoder = nil;
     
     btnConnect.title = @"Connect";
     btnPlay.title = @"Start";

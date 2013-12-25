@@ -11,7 +11,6 @@
 #import "MemoryTicker.h"
 #import "BroadcastStreamClient.h"
 #import "MediaStreamPlayer.h"
-#import "MPMediaEncoder.h"
 
 @interface ViewController () <MPIMediaStreamEvent> {
     MemoryTicker            *memoryTicker;
@@ -44,14 +43,14 @@
     socket = nil;
     upstream = nil;
     
-    echoCancellationOn;
+    //echoCancellationOn;
     
     //hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.104:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.102:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
@@ -94,25 +93,7 @@
 
 -(void)doConnect {
     
-#if 0 // use ffmpeg rtmp
-    
-    NSString *url = [NSString stringWithFormat:@"%@/%@", hostTextField.text, streamTextField.text];
-    upstream = [[BroadcastStreamClient alloc] init:url  resolution:RESOLUTION_LOW];
-    upstream.delegate = self;
-    upstream.encoder = [MPMediaEncoder new];
-    [upstream start];
-    
-    btnConnect.title = @"Disconnect";
-    
-    return;
-
-#endif
-    
-#if 0 // resolution changing test on during initialization
-    uint resolution = (counter++)%4;
-#else
     uint resolution = RESOLUTION_LOW;
-#endif
 
 #if 0 // use inside RTMPClient instance
     
@@ -139,12 +120,6 @@
     [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
     //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     //[upstream setVideoBitrate:12000];
-    
-#if 0 // resolution changing test on
-    uint r = (++counter)%4;
-    [upstream setVideoResolution:r];
-    NSLog(@"doConnect: resolution = %u", r);
-#endif
     
     upstream.delegate = self;
     
@@ -214,27 +189,9 @@
     if (upstream.state != STREAM_PLAYING)
         return;
     
-#if 0
-    [upstream setVideoOrientation:
-     upstream.isUsingFrontFacingCamera ? AVCaptureVideoOrientationLandscapeRight : AVCaptureVideoOrientationLandscapeLeft];
-#endif
-    
     [upstream switchCameras];
     
     [self sendMetadata];
-    
-#if 0 // bitrate changing test on
-    uint b = 512000/(++counter);
-    [upstream setVideoBitrate:b];
-    NSLog(@"camerasToggle: biterate = %u", b);
-#endif
-    
-#if 0 // resolution changing test on
-    uint r = (++counter)%4;
-    [upstream setVideoResolution:r];
-    NSLog(@"camerasToggle: resolution = %u", r);
-#endif
-    
 }
 
 
@@ -266,10 +223,7 @@
             
             if (![description isEqualToString:MP_RTMP_CLIENT_IS_CONNECTED])
                 break;
-            
-#if 0  // use encoder -> MPMediaEncoder instance
-            upstream.encoder = [MPMediaEncoder new];
-#endif
+
             [upstream start];
             
             break;
