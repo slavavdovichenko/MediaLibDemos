@@ -1,40 +1,0 @@
-10
-
-dir
-21903
-svn://www.themidnightcoders.com/mapable/trunk/ORB/IOS/WebORBiOS/lib/ffmpeg-0.9.1_lgpl_ios61
-svn://www.themidnightcoders.com
-
-
-
-2013-08-30T15:33:09.488500Z
-21903
-slava.vdovichenko
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3d429ead-c47d-b04e-b746-2a0b5c1375b7
-
-include
-dir
-
-presets
-dir
-
-lib
-dir
-
-make
-dir
-
