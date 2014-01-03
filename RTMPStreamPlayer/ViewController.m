@@ -41,7 +41,7 @@
     player = nil;
     socket = nil;
     
-    //echoCancellationOn;
+    echoCancellationOn;
     
     //hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
@@ -52,7 +52,7 @@
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
     
-    streamTextField.text = @"slavav";
+    streamTextField.text = @"slavav2";
     //streamTextField.text = @"mediaencoder";
     //streamTextField.text = @"outgoingaudio_c109";
     //streamTextField.text = @"incomingaudio_1111";
