@@ -16,6 +16,7 @@
     MemoryTicker            *memoryTicker;
     RTMPClient              *socket;
     BroadcastStreamClient   *upstream;
+    AVCaptureVideoOrientation orientation;
     
     // test
     int counter;
@@ -43,8 +44,11 @@
     socket = nil;
     upstream = nil;
     
+    orientation = AVCaptureVideoOrientationLandscapeRight;
+    
     echoCancellationOn;
     
+    //hostTextField.text = @"rtmp://23.30.151.197:1935/live";
     //hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
@@ -117,8 +121,13 @@
     
 #endif
     
-    [upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
-    //[upstream setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
+    //orientation = AVCaptureVideoOrientationPortrait;
+    //orientation = AVCaptureVideoOrientationPortraitUpsideDown;
+    //orientation = VCaptureVideoOrientationLandscapeRight;
+    orientation = AVCaptureVideoOrientationLandscapeLeft;
+    //orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
+    [upstream setVideoOrientation:orientation];
+    
     //[upstream setVideoBitrate:12000];
     
     upstream.delegate = self;
@@ -178,6 +187,11 @@
 -(IBAction)publishControl:(id)sender {
    
     NSLog(@"publishControl: stream = %@", streamTextField.text);
+    
+    if (upstream.state != STREAM_PLAYING) {
+        orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
+        [upstream setVideoOrientation:orientation];
+    }
     
     (upstream.state != STREAM_PLAYING) ? [upstream start] : [upstream pause];
 }
