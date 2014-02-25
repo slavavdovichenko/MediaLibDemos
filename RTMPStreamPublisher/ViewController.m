@@ -59,8 +59,6 @@
     hostTextField.delegate = self;
 
     streamTextField.text = @"slavav2";
-    //streamTextField.text = @"outgoingaudio_c109";
-    //streamTextField.text = @"myStream";
 	streamTextField.delegate = self;
     
 }
@@ -128,7 +126,8 @@
     //orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
     [upstream setVideoOrientation:orientation];
     
-    //[upstream setVideoBitrate:12000];
+    [upstream setVideoBitrate:1000];
+    [upstream setAudioBitrate:4000];
     
     upstream.delegate = self;
     
@@ -187,11 +186,13 @@
 -(IBAction)publishControl:(id)sender {
    
     NSLog(@"publishControl: stream = %@", streamTextField.text);
-    
+
+#if 0
     if (upstream.state != STREAM_PLAYING) {
         orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
         [upstream setVideoOrientation:orientation];
     }
+#endif
     
     (upstream.state != STREAM_PLAYING) ? [upstream start] : [upstream pause];
 }
