@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 
+#define RESOLUTION_HIGH_ON 0
+
 #define MP_RTMP_CLIENT_IS_CONNECTED @"RTMP.Client.isConnected"
 #define MP_NETSTREAM_PLAY_STREAM_NOT_FOUND @"NetStream.Play.StreamNotFound"
 #define MP_STREAM_SHOULD_VALID_CONNECT @"You should use a valid 'connect', 'attach' or 'stream' method for making the new stream"
@@ -42,7 +44,9 @@ enum video_encoder_resolution
     RESOLUTION_CIF,     // 352x288px
     RESOLUTION_MEDIUM,  // 480x360px
     RESOLUTION_VGA,     // 640x480px
+#if RESOLUTION_HIGH_ON
     RESOLUTION_HIGH,    // 1280x720px
+#endif
 };
 
 typedef enum mp_publish_type MPMediaPublishType;
