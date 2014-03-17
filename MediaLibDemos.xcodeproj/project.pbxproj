@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D352466318D0ADD8009CE111 /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = D352466218D0ADD8009CE111 /* license.bin */; };
-		D352466418D0ADD8009CE111 /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = D352466218D0ADD8009CE111 /* license.bin */; };
-		D352466518D0ADD8009CE111 /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = D352466218D0ADD8009CE111 /* license.bin */; };
 		F96A830317E8627300FF1B11 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96A82FA17E8627200FF1B11 /* libavcodec.a */; };
 		F96A830417E8627300FF1B11 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96A82FA17E8627200FF1B11 /* libavcodec.a */; };
 		F96A830517E8627300FF1B11 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96A82FA17E8627200FF1B11 /* libavcodec.a */; };
@@ -101,7 +98,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D352466218D0ADD8009CE111 /* license.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = license.bin; sourceTree = "<group>"; };
 		F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F96A82AF17E8627200FF1B11 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		F96A82B017E8627200FF1B11 /* avfft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avfft.h; sourceTree = "<group>"; };
@@ -348,15 +344,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D352466118D0ADD8009CE111 /* com.themidnightcoders.license */ = {
-			isa = PBXGroup;
-			children = (
-				D352466218D0ADD8009CE111 /* license.bin */,
-			);
-			name = com.themidnightcoders.license;
-			path = ../../../WebORBiOS/CommLibiOS/com.themidnightcoders.license;
-			sourceTree = "<group>";
-		};
 		F96A82AC17E8627200FF1B11 /* libav-v9.1965 */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,7 +535,6 @@
 		F9BBFA1614A49BA500C5B39B = {
 			isa = PBXGroup;
 			children = (
-				D352466118D0ADD8009CE111 /* com.themidnightcoders.license */,
 				F9F3EDB8161070D200B0EA20 /* art */,
 				F9BBFA8714A49D0C00C5B39B /* lib */,
 				F9F6992515AC5D01004B6F37 /* RTMPStreamPublisher */,
@@ -833,7 +819,6 @@
 				F988F2BB15AD843C0083CB14 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F988F2BE15AD843C0083CB14 /* MainStoryboard_iPad.storyboard in Resources */,
 				F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */,
-				D352466418D0ADD8009CE111 /* license.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,7 +830,6 @@
 				F9F6993315AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9F6993615AC5D01004B6F37 /* MainStoryboard_iPad.storyboard in Resources */,
 				F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */,
-				D352466318D0ADD8009CE111 /* license.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,7 +838,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F703261652641D004FCA9B /* InfoPlist.strings in Resources */,
-				D352466518D0ADD8009CE111 /* license.bin in Resources */,
 				F9F7032E1652641D004FCA9B /* Default.png in Resources */,
 				F9F703301652641D004FCA9B /* Default@2x.png in Resources */,
 				F9F703321652641D004FCA9B /* Default-568h@2x.png in Resources */,
