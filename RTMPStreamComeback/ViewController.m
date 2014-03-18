@@ -21,6 +21,7 @@
 static NSString *host = @"rtmp://192.168.1.109:1935/live";
 //static NSString *host = @"rtmp://192.168.2.101:1935/live";
 //static NSString *host = @"rtmp://80.74.155.7/live";
+//static NSString *host = @"rtmp://mediaone.entrago.com:1935/videochat";
 //static NSString *host = @"rtmp://wz.glauco.it:1935/videochat";
 
 //static NSString *stream = @"outgoingaudio_c11";
