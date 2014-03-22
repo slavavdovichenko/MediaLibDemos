@@ -24,6 +24,8 @@
 
 // Singleton accessor:  this is how you should ALWAYS get a reference to the class instance.  Never init your own. 
 +(Types *)sharedInstance;
+// managed objects support
+-(BOOL)isManagedObjectSupport;
 // type mapping
 -(void)addAbstractClassMapping:(Class)abstractType mapped:(Class)mappedType;
 -(Class)getAbstractClassMapping:(Class)type;

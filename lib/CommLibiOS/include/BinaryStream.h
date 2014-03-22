@@ -33,6 +33,7 @@ union u_double
 +(id)streamWithAllocation:(size_t)length;
 -(void)print;
 -(void)print:(BOOL)visable;
+-(void)print:(BOOL)visable start:(int)start finish:(int)finish;
 +(void)invertOrder:(char *)stream ofSize:(size_t)length;
 -(BOOL)extend:(size_t)length;
 -(BOOL)extendTo:(size_t)length;
