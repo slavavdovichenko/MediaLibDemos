@@ -789,6 +789,9 @@
 					F9F6991F15AC5D01004B6F37 = {
 						DevelopmentTeam = 73FSJC7BUF;
 					};
+					F9F7031B1652641D004FCA9B = {
+						DevelopmentTeam = 73FSJC7BUF;
+					};
 				};
 			};
 			buildConfigurationList = F9BBFA1B14A49BA500C5B39B /* Build configuration list for PBXProject "MediaLibDemos" */;
