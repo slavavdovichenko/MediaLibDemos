@@ -128,7 +128,7 @@
     //orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
     [upstream setVideoOrientation:orientation];
     
-    //[upstream setVideoBitrate:2000];
+    [upstream setVideoBitrate:4000];
     //[upstream setAudioBitrate:4000];
     
     upstream.delegate = self;
