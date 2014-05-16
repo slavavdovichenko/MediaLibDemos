@@ -96,8 +96,10 @@
 
 -(void)doConnect {
     
-    //uint resolution = RESOLUTION_LOW;
-    uint resolution = RESOLUTION_MEDIUM;
+    uint resolution = RESOLUTION_LOW;
+    //uint resolution = RESOLUTION_CIF;
+    //uint resolution = RESOLUTION_MEDIUM;
+    //uint resolution = RESOLUTION_VGA;
 
 #if 0 // use inside RTMPClient instance
     
@@ -123,12 +125,13 @@
     
     //orientation = AVCaptureVideoOrientationPortrait;
     //orientation = AVCaptureVideoOrientationPortraitUpsideDown;
-    //orientation = VCaptureVideoOrientationLandscapeRight;
+    //orientation = AVCaptureVideoOrientationLandscapeRight;
     orientation = AVCaptureVideoOrientationLandscapeLeft;
     //orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
     [upstream setVideoOrientation:orientation];
     
-    [upstream setVideoBitrate:4000];
+    //[upstream setVideoBitrate:272000];
+    //[upstream setVideoBitrate:4000];
     //[upstream setAudioBitrate:4000];
     
     upstream.delegate = self;

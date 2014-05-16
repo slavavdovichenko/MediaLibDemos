@@ -50,8 +50,6 @@
 		F988F2CC15AD84810083CB14 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAB814A49E2400C5B39B /* libz.dylib */; };
 		F988F2CD15ADD6020083CB14 /* CommLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA8914A49D0C00C5B39B /* CommLibiOS.a */; };
 		F988F2CE15ADD60B0083CB14 /* MediaLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFAA214A49D0D00C5B39B /* MediaLibiOS.a */; };
-		F9B0FFBE17DDE94400546417 /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B0FFBD17DDE94400546417 /* libbz2.dylib */; };
-		F9B0FFBF17DDEB2D00546417 /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B0FFBD17DDE94400546417 /* libbz2.dylib */; };
 		F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */; };
 		F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EDB9161070D200B0EA20 /* Default-568h@2x.png */; };
 		F9F6992215AC5D01004B6F37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BBFA2514A49BA600C5B39B /* UIKit.framework */; };
@@ -189,7 +187,6 @@
 		F9A51DE417BA586F009E2246 /* BinaryStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryStream.h; sourceTree = "<group>"; };
 		F9A51DE517BA586F009E2246 /* FlashorbBinaryReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashorbBinaryReader.h; sourceTree = "<group>"; };
 		F9A51DE617BA586F009E2246 /* FlashorbBinaryWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashorbBinaryWriter.h; sourceTree = "<group>"; };
-		F9B0FFBD17DDE94400546417 /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		F9BB0222187DC0810076BC6D /* make-libav-lgpl-ios70.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "make-libav-lgpl-ios70.sh"; sourceTree = "<group>"; };
 		F9BBFA2514A49BA600C5B39B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9BBFA2714A49BA600C5B39B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -270,7 +267,6 @@
 				F988F2C915AD847A0083CB14 /* CoreMedia.framework in Frameworks */,
 				F988F2CA15AD847C0083CB14 /* CoreVideo.framework in Frameworks */,
 				F988F2CB15AD847E0083CB14 /* Security.framework in Frameworks */,
-				F9B0FFBF17DDEB2D00546417 /* libbz2.dylib in Frameworks */,
 				F988F2CC15AD84810083CB14 /* libz.dylib in Frameworks */,
 				F988F2CD15ADD6020083CB14 /* CommLibiOS.a in Frameworks */,
 				F988F2CE15ADD60B0083CB14 /* MediaLibiOS.a in Frameworks */,
@@ -299,7 +295,6 @@
 				F9F6994215AC5FB9004B6F37 /* CoreMedia.framework in Frameworks */,
 				F9F6994315AC5FBD004B6F37 /* CoreVideo.framework in Frameworks */,
 				F9F6994415AC5FC0004B6F37 /* Security.framework in Frameworks */,
-				F9B0FFBE17DDE94400546417 /* libbz2.dylib in Frameworks */,
 				F9F6994515AC5FC3004B6F37 /* libz.dylib in Frameworks */,
 				F9F6994615AC5FCE004B6F37 /* CommLibiOS.a in Frameworks */,
 				F9F6994715AC5FD4004B6F37 /* MediaLibiOS.a in Frameworks */,
@@ -570,7 +565,6 @@
 				F9BBFAB914A49E2400C5B39B /* Security.framework */,
 				F97C8914170580EC00F0B611 /* CoreData.framework */,
 				F9BBFAB814A49E2400C5B39B /* libz.dylib */,
-				F9B0FFBD17DDE94400546417 /* libbz2.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

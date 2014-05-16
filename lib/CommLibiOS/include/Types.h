@@ -32,6 +32,8 @@
 -(void)addClientClassMapping:(NSString *)clientClass mapped:(Class)mappedServerType;
 -(Class)getServerTypeForClientClass:(NSString *)clientClass;
 -(NSString *)getClientClassForServerType:(NSString *)serverClassName;
+-(NSString *)objectMappedClassName:(id)obj;
+-(NSString *)typeMappedClassName:(Class)type;
 // type reflection
 +(NSString *)objectClassName:(id)obj;
 +(NSString *)typeClassName:(Class)type;

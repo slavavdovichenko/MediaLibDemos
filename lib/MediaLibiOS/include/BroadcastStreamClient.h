@@ -58,9 +58,7 @@ enum audio_mode
 -(id)initOnlyVideoWithClient:(RTMPClient *)client resolution:(MPVideoResolution)resolution;
 
 -(BOOL)setVideoMode:(VideoMode)mode;
--(void)setVideoResolution:(MPVideoResolution)resolution;
 -(void)setVideoBitrate:(uint)bitRate;
--(void)setVideoResolution:(MPVideoResolution)resolution bitRate:(uint)bitRate;
 -(void)setVideoOrientation:(AVCaptureVideoOrientation)orientation;
 -(void)setPreviewLayer:(UIView *)preview;
 -(void)teardownPreviewLayer;
