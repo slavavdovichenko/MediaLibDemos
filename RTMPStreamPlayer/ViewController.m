@@ -91,8 +91,8 @@
     
     FramesPlayer *framesPlayer = [[FramesPlayer alloc] initWithView:previewView];
     //framesPlayer.orientation = UIImageOrientationRight;
-    //framesPlayer.orientation = UIImageOrientationUp;
-    framesPlayer.orientation = UIImageOrientationLeft;
+    framesPlayer.orientation = UIImageOrientationUp;
+    //framesPlayer.orientation = UIImageOrientationLeft;
     
 #if 0
     

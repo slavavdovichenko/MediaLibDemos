@@ -123,10 +123,10 @@
     
 #endif
     
-    //orientation = AVCaptureVideoOrientationPortrait;
+    orientation = AVCaptureVideoOrientationPortrait;
     //orientation = AVCaptureVideoOrientationPortraitUpsideDown;
     //orientation = AVCaptureVideoOrientationLandscapeRight;
-    orientation = AVCaptureVideoOrientationLandscapeLeft;
+    //orientation = AVCaptureVideoOrientationLandscapeLeft;
     //orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
     [upstream setVideoOrientation:orientation];
     
