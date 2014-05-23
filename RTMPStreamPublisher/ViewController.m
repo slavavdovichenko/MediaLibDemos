@@ -79,7 +79,11 @@
 // MEMORY
 
 -(void)sizeMemory:(NSNumber *)memory {
+#if 0
     memoryLabel.text = [NSString stringWithFormat:@"%d", [memory intValue]];
+#else
+    memoryLabel.text = [NSString stringWithFormat:@"%d", [upstream getPendingVideoFrames]];
+#endif
 }
 
 // ALERT
@@ -96,9 +100,9 @@
 
 -(void)doConnect {
     
-    uint resolution = RESOLUTION_LOW;
+    //uint resolution = RESOLUTION_LOW;
     //uint resolution = RESOLUTION_CIF;
-    //uint resolution = RESOLUTION_MEDIUM;
+    uint resolution = RESOLUTION_MEDIUM;
     //uint resolution = RESOLUTION_VGA;
 
 #if 0 // use inside RTMPClient instance

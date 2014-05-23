@@ -64,6 +64,7 @@ enum audio_mode
 -(void)teardownPreviewLayer;
 -(void)switchCameras;
 -(AVCaptureSession *)getCaptureSession;
+-(int)getPendingVideoFrames;
 
 -(BOOL)setAudioMode:(AudioMode)mode;
 -(void)setAudioPickingSeconds:(float)seconds;

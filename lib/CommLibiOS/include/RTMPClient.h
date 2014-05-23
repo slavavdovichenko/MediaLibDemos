@@ -64,6 +64,7 @@
 -(void)flexInvoke:(NSString *)method message:(id)obj responder:(id <IPendingServiceCallback>)responder;
 -(void)metadata:(MetaData *)metadata streamId:(int)streamId channelId:(int)channelId timestamp:(int)timestamp;
 -(void)clearPendingCalls;
+-(NSArray *)rtmpWritingQueue;
 // stream
 -(BOOL)addStreamPlayer:(id <IStreamDispatcher>)player streamId:(int)streamId;
 -(BOOL)removeStreamPlayer:(id <IStreamDispatcher>)player streamId:(int)streamId;
