@@ -65,6 +65,7 @@
 -(void)metadata:(MetaData *)metadata streamId:(int)streamId channelId:(int)channelId timestamp:(int)timestamp;
 -(void)clearPendingCalls;
 -(NSArray *)rtmpWritingQueue;
+-(int)pendingTypedPackets:(int)type streamId:(int)streamId;
 // stream
 -(BOOL)addStreamPlayer:(id <IStreamDispatcher>)player streamId:(int)streamId;
 -(BOOL)removeStreamPlayer:(id <IStreamDispatcher>)player streamId:(int)streamId;

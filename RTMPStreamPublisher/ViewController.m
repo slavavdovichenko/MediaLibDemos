@@ -48,17 +48,15 @@
     
     echoCancellationOn;
     
-    //hostTextField.text = @"rtmp://wz.glauco.it:1935/videochat";
-    //hostTextField.text = @"rtmp://23.30.151.197:1935/live";
-    //hostTextField.text = @"rtmp://80.74.155.7/live";
-    //hostTextField.text = @"rtmp://10.0.1.33:1935/live";
+    hostTextField.text = @"rtmp://10.0.1.33:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.105:1935/live";
+    //hostTextField.text = @"rtmp://192.168.1.105:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
+    //streamTextField.text = @"flv:nachostream1";
     streamTextField.text = @"slavav3";
 	streamTextField.delegate = self;
     
@@ -82,7 +80,8 @@
 #if 0
     memoryLabel.text = [NSString stringWithFormat:@"%d", [memory intValue]];
 #else
-    memoryLabel.text = [NSString stringWithFormat:@"%d", [upstream getPendingVideoFrames]];
+    //memoryLabel.text = [NSString stringWithFormat:@"%d", [upstream getPendingVideoFrames]];
+    memoryLabel.text = [NSString stringWithFormat:@"%g", [upstream getMeanFPS]];
 #endif
 }
 
@@ -101,15 +100,15 @@
 -(void)doConnect {
     
     //uint resolution = RESOLUTION_LOW;
-    //uint resolution = RESOLUTION_CIF;
-    uint resolution = RESOLUTION_MEDIUM;
+    uint resolution = RESOLUTION_CIF;
+    //uint resolution = RESOLUTION_MEDIUM;
     //uint resolution = RESOLUTION_VGA;
 
 #if 0 // use inside RTMPClient instance
     
-    upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:resolution];
+    //upstream = [[BroadcastStreamClient alloc] init:hostTextField.text resolution:resolution];
     //upstream = [[BroadcastStreamClient alloc] initOnlyAudio:hostTextField.text];
-    //upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:resolution;
+    upstream = [[BroadcastStreamClient alloc] initOnlyVideo:hostTextField.text resolution:resolution];
 
 #else // use outside RTMPClient instance
     
@@ -127,14 +126,14 @@
     
 #endif
     
-    orientation = AVCaptureVideoOrientationPortrait;
+    //orientation = AVCaptureVideoOrientationPortrait;
     //orientation = AVCaptureVideoOrientationPortraitUpsideDown;
     //orientation = AVCaptureVideoOrientationLandscapeRight;
-    //orientation = AVCaptureVideoOrientationLandscapeLeft;
+    orientation = AVCaptureVideoOrientationLandscapeLeft;
     //orientation = orientation % AVCaptureVideoOrientationLandscapeLeft + 1;
     [upstream setVideoOrientation:orientation];
     
-    //[upstream setVideoBitrate:272000];
+    //[upstream setVideoBitrate:350000];
     //[upstream setVideoBitrate:4000];
     //[upstream setAudioBitrate:4000];
     

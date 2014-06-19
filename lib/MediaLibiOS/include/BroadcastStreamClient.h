@@ -65,6 +65,7 @@ enum audio_mode
 -(void)switchCameras;
 -(AVCaptureSession *)getCaptureSession;
 -(int)getPendingVideoFrames;
+-(double)getMeanFPS;
 
 -(BOOL)setAudioMode:(AudioMode)mode;
 -(void)setAudioPickingSeconds:(float)seconds;
