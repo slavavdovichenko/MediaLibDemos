@@ -34,7 +34,7 @@
 
 -(void)viewDidLoad {
     
-    [DebLog setIsActive:YES];
+    //[DebLog setIsActive:YES];
     
     [super viewDidLoad];
     
@@ -48,11 +48,16 @@
     
     echoCancellationOn;
     
+    //hostTextField.text = @"rtmp://ec2-54-228-65-3.eu-west-1.compute.amazonaws.com:1935/eyetok-live";
+    //hostTextField.text = @"rtmp://wysiwis.studec.fr:1935/assistance";
+    //hostTextField.text = @"rtmp://wz.glauco.it:1935/videochat";
+    //hostTextField.text = @"rtmp://23.30.151.197:1935/live";
+    hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.29:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.104:1935/live";
+    //hostTextField.text = @"rtmp://192.168.1.104:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
@@ -101,8 +106,8 @@
     
     //uint resolution = RESOLUTION_LOW;
     //uint resolution = RESOLUTION_CIF;
-    uint resolution = RESOLUTION_MEDIUM;
-    //uint resolution = RESOLUTION_VGA;
+    //uint resolution = RESOLUTION_MEDIUM;
+    uint resolution = RESOLUTION_VGA;
 
 #if 0 // use inside RTMPClient instance
     
