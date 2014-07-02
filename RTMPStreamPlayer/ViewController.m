@@ -52,7 +52,7 @@
     hostTextField.delegate = self;
     
     //streamTextField.text = @"flv:nachostream1";
-    streamTextField.text = @"slavav3";
+    streamTextField.text = @"slavav5";
 	streamTextField.delegate = self;
     
 }

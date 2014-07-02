@@ -57,7 +57,7 @@
     hostTextField.delegate = self;
 
     //streamTextField.text = @"stream1.flv";
-    streamTextField.text = @"slavav3";
+    streamTextField.text = @"slavav5";
 	streamTextField.delegate = self;
     
 }
@@ -100,10 +100,9 @@
 -(void)doConnect {
     
     //uint resolution = RESOLUTION_LOW;
-    //uint resolution = RESOLUTION_CIF;
-    uint resolution = RESOLUTION_MEDIUM;
+    uint resolution = RESOLUTION_CIF;
+    //uint resolution = RESOLUTION_MEDIUM;
     //uint resolution = RESOLUTION_VGA;
-    //uint resolution = RESOLUTION_HIGH;
 
 #if 0 // use inside RTMPClient instance
     

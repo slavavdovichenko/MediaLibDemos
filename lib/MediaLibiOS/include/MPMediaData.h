@@ -42,7 +42,6 @@ enum video_encoder_resolution
     RESOLUTION_CIF,     // 288x352px (landscape) & 352x288px (portrait)
     RESOLUTION_MEDIUM,  // 360x480px (landscape) & 480x368px (portrait)
     RESOLUTION_VGA,     // 480x640px (landscape) & 640x480px (portrait)
-    RESOLUTION_HIGH,    // 720x1280px (landscape) & 1280x720px (portrait)
 };
 
 typedef enum mp_publish_type MPMediaPublishType;
