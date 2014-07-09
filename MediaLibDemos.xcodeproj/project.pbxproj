@@ -31,6 +31,9 @@
 		D375D519196AD0B900DCF343 /* build-libav-lgpl-ios71.sh in Resources */ = {isa = PBXBuildFile; fileRef = D375D503196AD0B900DCF343 /* build-libav-lgpl-ios71.sh */; };
 		D375D51A196AD0B900DCF343 /* build-libav-lgpl-ios71.sh in Resources */ = {isa = PBXBuildFile; fileRef = D375D503196AD0B900DCF343 /* build-libav-lgpl-ios71.sh */; };
 		D375D51B196AD0B900DCF343 /* build-libav-lgpl-ios71.sh in Resources */ = {isa = PBXBuildFile; fileRef = D375D503196AD0B900DCF343 /* build-libav-lgpl-ios71.sh */; };
+		D375D51E196AD75900DCF343 /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = D375D51D196AD75900DCF343 /* license.bin */; };
+		D375D51F196AD75900DCF343 /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = D375D51D196AD75900DCF343 /* license.bin */; };
+		D375D520196AD75900DCF343 /* license.bin in Resources */ = {isa = PBXBuildFile; fileRef = D375D51D196AD75900DCF343 /* license.bin */; };
 		F97C89161705810B00F0B611 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97C8914170580EC00F0B611 /* CoreData.framework */; };
 		F97C89171705811500F0B611 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97C8914170580EC00F0B611 /* CoreData.framework */; };
 		F97C89181705811E00F0B611 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97C8914170580EC00F0B611 /* CoreData.framework */; };
@@ -178,6 +181,7 @@
 		D375D500196AD0B900DCF343 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
 		D375D501196AD0B900DCF343 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		D375D503196AD0B900DCF343 /* build-libav-lgpl-ios71.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-libav-lgpl-ios71.sh"; sourceTree = "<group>"; };
+		D375D51D196AD75900DCF343 /* license.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = license.bin; sourceTree = "<group>"; };
 		F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F97C8914170580EC00F0B611 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -511,6 +515,15 @@
 			path = make;
 			sourceTree = "<group>";
 		};
+		D375D51C196AD75900DCF343 /* com.themidnightcoders.license */ = {
+			isa = PBXGroup;
+			children = (
+				D375D51D196AD75900DCF343 /* license.bin */,
+			);
+			name = com.themidnightcoders.license;
+			path = ../../../WebORBiOS/CommLibiOS/com.themidnightcoders.license;
+			sourceTree = "<group>";
+		};
 		F988F2AD15AD843C0083CB14 /* RTMPStreamPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +552,7 @@
 		F9BBFA1614A49BA500C5B39B = {
 			isa = PBXGroup;
 			children = (
+				D375D51C196AD75900DCF343 /* com.themidnightcoders.license */,
 				F9F3EDB8161070D200B0EA20 /* art */,
 				F9BBFA8714A49D0C00C5B39B /* lib */,
 				F9F6992515AC5D01004B6F37 /* RTMPStreamPublisher */,
@@ -824,6 +838,7 @@
 				F988F2B215AD843C0083CB14 /* InfoPlist.strings in Resources */,
 				F988F2BB15AD843C0083CB14 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F988F2BE15AD843C0083CB14 /* MainStoryboard_iPad.storyboard in Resources */,
+				D375D51F196AD75900DCF343 /* license.bin in Resources */,
 				F9F3EDBB161070D200B0EA20 /* Default-568h@2x.png in Resources */,
 				D375D51A196AD0B900DCF343 /* build-libav-lgpl-ios71.sh in Resources */,
 			);
@@ -836,6 +851,7 @@
 				F9F6992A15AC5D01004B6F37 /* InfoPlist.strings in Resources */,
 				F9F6993315AC5D01004B6F37 /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9F6993615AC5D01004B6F37 /* MainStoryboard_iPad.storyboard in Resources */,
+				D375D51E196AD75900DCF343 /* license.bin in Resources */,
 				F9F3EDBA161070D200B0EA20 /* Default-568h@2x.png in Resources */,
 				D375D519196AD0B900DCF343 /* build-libav-lgpl-ios71.sh in Resources */,
 			);
@@ -850,6 +866,7 @@
 				F9F7032E1652641D004FCA9B /* Default.png in Resources */,
 				F9F703301652641D004FCA9B /* Default@2x.png in Resources */,
 				F9F703321652641D004FCA9B /* Default-568h@2x.png in Resources */,
+				D375D520196AD75900DCF343 /* license.bin in Resources */,
 				F9F703351652641D004FCA9B /* MainStoryboard_iPhone.storyboard in Resources */,
 				F9F703381652641D004FCA9B /* MainStoryboard_iPad.storyboard in Resources */,
 			);

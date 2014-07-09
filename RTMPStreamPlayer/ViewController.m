@@ -43,6 +43,12 @@
     
     echoCancellationOn;
     
+    //hostTextField.text = @"rtmp://sks30iyy9if.rtmphost.com:1935/callmeios"; // rtmpd
+    //hostTextField.text = @"rtmp://ec2-54-228-65-3.eu-west-1.compute.amazonaws.com:1935/eyetok-live"; // wowza
+    //hostTextField.text = @"rtmp://wysiwis.studec.fr:1935/assistance"; // red5
+    //hostTextField.text = @"rtmp://wz.glauco.it:1935/videochat";
+    //hostTextField.text = @"rtmp://23.30.151.197:1935/live";
+    //hostTextField.text = @"rtmp://80.74.155.7/live";
     //hostTextField.text = @"rtmp://10.0.1.29:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
