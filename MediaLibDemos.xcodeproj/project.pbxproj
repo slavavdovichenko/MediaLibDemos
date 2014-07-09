@@ -178,6 +178,7 @@
 		D375D500196AD0B900DCF343 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
 		D375D501196AD0B900DCF343 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		D375D503196AD0B900DCF343 /* build-libav-lgpl-ios71.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-libav-lgpl-ios71.sh"; sourceTree = "<group>"; };
+		D375D526196D74F400DCF343 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F959131F14DC2E8E00A3EB94 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F97C8914170580EC00F0B611 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F988F2A815AD843B0083CB14 /* RTMPStreamPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTMPStreamPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -539,6 +540,7 @@
 		F9BBFA1614A49BA500C5B39B = {
 			isa = PBXGroup;
 			children = (
+				D375D526196D74F400DCF343 /* README.md */,
 				F9F3EDB8161070D200B0EA20 /* art */,
 				F9BBFA8714A49D0C00C5B39B /* lib */,
 				F9F6992515AC5D01004B6F37 /* RTMPStreamPublisher */,
