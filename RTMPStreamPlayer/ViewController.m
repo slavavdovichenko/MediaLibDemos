@@ -42,12 +42,12 @@
     socket = nil;
     
     echoCancellationOn;
-    
+    //
     //hostTextField.text = @"rtmp://10.0.1.29:1935/live";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
-    hostTextField.text = @"rtmp://192.168.1.104:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.100:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
     
