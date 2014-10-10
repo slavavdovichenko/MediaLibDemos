@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 The Midnight Coders, Inc. All rights reserved.
 //
 
+#define IS_MEDIA_ENCODER 0
+
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 
@@ -23,7 +25,6 @@ enum mp_media_channel_id
     VIDEO_CHANNEL_ID = 6,
     COMMAND_CHANNEL_ID = 8,
 };
-
 
 typedef enum mp_media_stream_state MPMediaStreamState;
 enum mp_media_stream_state

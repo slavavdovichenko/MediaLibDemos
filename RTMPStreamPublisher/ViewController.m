@@ -44,20 +44,18 @@
     socket = nil;
     upstream = nil;
     
-    orientation = AVCaptureVideoOrientationLandscapeRight;
-    
     echoCancellationOn;
     
-    //hostTextField.text = @"rtmp://10.0.1.29:1935/live";
+    //hostTextField.text = @"rtmp://10.0.1.9:1935/mediaAppLive";
     //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.100:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.105:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
 
     //streamTextField.text = @"stream1.flv";
-    streamTextField.text = @"slavav5";
+    streamTextField.text = @"slavav7";
 	streamTextField.delegate = self;
     
 }
@@ -100,8 +98,8 @@
 -(void)doConnect {
     
     //uint resolution = RESOLUTION_LOW;
-    uint resolution = RESOLUTION_CIF;
-    //uint resolution = RESOLUTION_MEDIUM;
+    //uint resolution = RESOLUTION_CIF;
+    uint resolution = RESOLUTION_MEDIUM;
     //uint resolution = RESOLUTION_VGA;
 
 #if 0 // use inside RTMPClient instance

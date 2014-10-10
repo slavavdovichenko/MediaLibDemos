@@ -47,12 +47,12 @@
     //hostTextField.text = @"rtmp://10.0.1.33:1935/vod";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.63:1935/vod";
-    hostTextField.text = @"rtmp://192.168.1.100:1935/live";
+    hostTextField.text = @"rtmp://192.168.1.105:1935/live";
     //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
     hostTextField.delegate = self;
     
     //streamTextField.text = @"flv:nachostream1";
-    streamTextField.text = @"slavav5";
+    streamTextField.text = @"slavav7";
 	streamTextField.delegate = self;
     
 }
@@ -88,9 +88,11 @@
 -(void)doConnect {
     
     FramesPlayer *framesPlayer = [[FramesPlayer alloc] initWithView:previewView];
-    framesPlayer.orientation = UIImageOrientationRight;
+    //framesPlayer.orientation = UIImageOrientationRight;
     //framesPlayer.orientation = UIImageOrientationUp;
-    //framesPlayer.orientation = UIImageOrientationLeft;
+    //framesPlayer.orientation = UIImageOrientationDown;
+    framesPlayer.orientation = UIImageOrientationLeft;
+    //framesPlayer.orientation = UIImageOrientationLeftMirrored;
     
 #if 0
     
