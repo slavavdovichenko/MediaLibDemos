@@ -1,6 +1,8 @@
 
-!!! PLEASE USE THE NEXT VERSION - MedialibiOS3x (https://github.com/slavavdovichenko/MediaLibDemos3x) !!!
-SUPPORTED: video codecs: H264, H.263 (Sorenson), audio codecs: AAC, Speex, Nelly Moser
+!!! PLEASE USE THE NEXT VERSION !!!
+
+MedialibiOS3x - https://github.com/slavavdovichenko/MediaLibDemos3x
+supported: video codecs: H264, H.263 (Sorenson), audio codecs: AAC, Speex, Nelly Moser
 
 =============
 MediaLibDemos
