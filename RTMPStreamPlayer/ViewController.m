@@ -43,7 +43,7 @@
     
     echoCancellationOn;
     
-    hostTextField.text = @"rtmp://52.17.164.229:1935/live";
+    hostTextField.text = @"rtmp://10.0.1.62:1935/live";
     hostTextField.delegate = self;
     
     streamTextField.text = @"teststream";
