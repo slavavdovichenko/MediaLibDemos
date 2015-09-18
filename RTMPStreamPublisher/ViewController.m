@@ -46,16 +46,10 @@
     
     echoCancellationOn;
     
-    //hostTextField.text = @"rtmp://10.0.1.9:1935/mediaAppLive";
-    //hostTextField.text = @"rtmp://10.0.1.33:1935/videorecording";
-    //hostTextField.text = @"rtmp://192.168.2.63:1935/live";
-    //hostTextField.text = @"rtmp://192.168.2.63:1935/videorecording";
-    hostTextField.text = @"rtmp://192.168.1.105:1935/live";
-    //hostTextField.text = @"rtmp://192.168.2.101:1935/live";
+    hostTextField.text = @"rtmp://52.17.164.229:1935/live";
     hostTextField.delegate = self;
 
-    //streamTextField.text = @"stream1.flv";
-    streamTextField.text = @"slavav7";
+    streamTextField.text = @"teststream";
 	streamTextField.delegate = self;
     
 }
@@ -64,11 +58,11 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
-
+#if 0
 -(NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
 }
-
+#endif
 #pragma mark -
 #pragma mark Private Methods 
 

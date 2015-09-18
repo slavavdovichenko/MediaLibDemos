@@ -26,6 +26,7 @@
 +(Types *)sharedInstance;
 // managed objects support
 -(BOOL)isManagedObjectSupport;
+-(id)managedInstance:(Class)type;
 // type mapping
 -(void)addAbstractClassMapping:(Class)abstractType mapped:(Class)mappedType;
 -(Class)getAbstractClassMapping:(Class)type;
@@ -46,10 +47,14 @@
 +(NSArray *)propertyAttributes:(id)obj;
 +(NSDictionary *)propertyKeysWithAttributes:(id)obj;
 +(NSDictionary *)propertyDictionary:(id)obj;
-//target/plist options 
+// target/plist options
 +(NSString *)targetName;
 +(NSDictionary *)getInfoPlist;
 +(id)getInfoPlist:(NSString *)key;
+// try catch functionality for swift by wrapping around Objective-C
++(void)try:(void(^)())try catch:(void(^)(id exception))catch finally:(void(^)())finally;
++(void)try:(void(^)())try catch:(void(^)(id exception))catch;
++(void)throwObjectAsException:(id)obj;
 @end
 
 @interface NSDictionary (Class)
@@ -73,9 +78,11 @@
 @end
 
 @interface NSObject (Properties)
+-(Class)ofClass;
 -(BOOL)isPropertyResolved:(NSString *)name;
 -(BOOL)getPropertyIfResolved:(NSString *)name value:(id *)value;
 -(BOOL)resolveProperty:(NSString *)name;
 -(BOOL)resolveProperty:(NSString *)name value:(id)value;
+-(BOOL)resolveProperties:(NSDictionary *)properties;
 @end
 
